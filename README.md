@@ -4,57 +4,57 @@
 ---
 [АиСД](https://github.com/Shist/Zhukouski_Pavel_BSU_Projects/tree/master/Algorithms%20and%20data%20structures)
 ---
-Ассемблер
+[Ассемблер](https://github.com/Shist/Zhukouski_Pavel_BSU_Projects/tree/master/Assembler)
 ---
-МВ
+[МВ](https://github.com/Shist/Zhukouski_Pavel_BSU_Projects/tree/master/Calculation%20methods)
 ---
-АК
+[АК](https://github.com/Shist/Zhukouski_Pavel_BSU_Projects/tree/master/Computer%20architecture)
 ---
-КС
+[КС](https://github.com/Shist/Zhukouski_Pavel_BSU_Projects/tree/master/Computer%20networks%20(Cisco))
 ---
-КМ
+[КМ](https://github.com/Shist/Zhukouski_Pavel_BSU_Projects/tree/master/Cryptographic%20methods)
 ---
-МДиСУБД
+[МДиСУБД](https://github.com/Shist/Zhukouski_Pavel_BSU_Projects/tree/master/Data%20models%20and%20DBMS)
 ---
-ПрПС
+[ПрПС](https://github.com/Shist/Zhukouski_Pavel_BSU_Projects/tree/master/Design%20of%20software%20systems)
 ---
-Д/С (банкир)
+[Д/С (банкир)](https://github.com/Shist/Zhukouski_Pavel_BSU_Projects/tree/master/Development%20of%20client-server%20applications%20(DS))
 ---
-Введение в IT
+[Введение в IT](https://github.com/Shist/Zhukouski_Pavel_BSU_Projects/tree/master/Introduction%20to%20IT)
 ---
-ММ
+[ММ](https://github.com/Shist/Zhukouski_Pavel_BSU_Projects/tree/master/Math%20modeling)
 ---
-ПМиВС
+[ПМиВС](https://github.com/Shist/Zhukouski_Pavel_BSU_Projects/tree/master/Mobile%20and%20Embedded%20Systems%20Programming)
 ---
-Д/С (нейронки)
+[Д/С (нейронки)](https://github.com/Shist/Zhukouski_Pavel_BSU_Projects/tree/master/Neural%20networks%20(DS))
 ---
-ОС
+[ОС](https://github.com/Shist/Zhukouski_Pavel_BSU_Projects/tree/master/OS%20(WinApi))
 ---
-Другие проекты на C#
+[Другие проекты на C#](https://github.com/Shist/Zhukouski_Pavel_BSU_Projects/tree/master/Other%20Programming%20(C%23))
 ---
-Другие проекты на C++
+[Другие проекты на C++](https://github.com/Shist/Zhukouski_Pavel_BSU_Projects/tree/master/Other%20Programming%20(C%2B%2B))
 ---
-Другие проекты на Java
+[Другие проекты на Java](https://github.com/Shist/Zhukouski_Pavel_BSU_Projects/tree/master/Other%20Programming%20(Java))
 ---
-Другие проекты на Python
+[Другие проекты на Python](https://github.com/Shist/Zhukouski_Pavel_BSU_Projects/tree/master/Other%20Programming%20(Python))
 ---
-Другие документы (рефераты, курсачи, презы и т.д.)
+[Другие документы (рефераты, курсачи, презы и т.д.)](https://github.com/Shist/Zhukouski_Pavel_BSU_Projects/tree/master/Other%20documents)
 ---
-РИПС (Парал., WinApi)
+[РИПС (Парал., WinApi)](https://github.com/Shist/Zhukouski_Pavel_BSU_Projects/tree/master/Parallel%20systems%20(WinApi))
 ---
-ТП
+[ТП](https://github.com/Shist/Zhukouski_Pavel_BSU_Projects/tree/master/Programming%20technologies)
 ---
-МПО
+[МПО](https://github.com/Shist/Zhukouski_Pavel_BSU_Projects/tree/master/Software%20management)
 ---
-СП
+[СП](https://github.com/Shist/Zhukouski_Pavel_BSU_Projects/tree/master/System%20Programming%20(WinApi))
 ---
-Тестирование
+[Тестирование](https://github.com/Shist/Zhukouski_Pavel_BSU_Projects/tree/master/Testing%20and%20software%20quality%20assessment)
 ---
-УП (1 курс)
+[УП (1 курс)](https://github.com/Shist/Zhukouski_Pavel_BSU_Projects/tree/master/UP%20(Educational%20practice))
 ---
-УП (2 курс, Java GUI)
+[УП (2 курс, Java GUI)](https://github.com/Shist/Zhukouski_Pavel_BSU_Projects/tree/master/UP%20on%20Java%20(Educational%20practice%20on%20Java))
 ---
-Веб
+[Веб](https://github.com/Shist/Zhukouski_Pavel_BSU_Projects/tree/master/Web-programming)
 ---
 ---
 ### P. S. На 3-4 курсах представлены проекты Д/С, соответствующие кафедре КТС.
