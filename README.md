@@ -55,6 +55,7 @@
 ---
 Веб
 ---
-P.S. На 3-4 курсах представлены проекты Д/С, соответствующие кафедре КТС.
+P. S. На 3-4 курсах представлены проекты Д/С, соответствующие кафедре КТС.
 ---
-P.S.S. Ссылка на google-хранилище с аналогичными проектами: https://drive.google.com/drive/folders/1Bmr1bOLwlRVBdFVYIB_5Zw9nivsvPM20?usp=sharing
+P. S. S. Ссылка на google-хранилище с аналогичными проектами: https://drive.google.com/drive/folders/1Bmr1bOLwlRVBdFVYIB_5Zw9nivsvPM20?usp=sharing
+---
