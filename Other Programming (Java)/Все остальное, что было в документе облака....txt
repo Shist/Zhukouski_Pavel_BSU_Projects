@@ -1,0 +1,347 @@
+Вариант 26: сложение assembler 1
+#include <iostream>
+#include "Windows.h"
+using namespace std;
+int main() {
+	BYTE a1[10] = { 0,5,5,5,5,5,7,8,2,3 };
+	BYTE a2[10] = { 0,6,7,1,9,0,9,3,1,8 };
+	BYTE sum[10]; 
+
+	_asm {
+		mov esi, 9
+		mov ecx, 10
+		xor bl, bl
+		_begin_:
+		mov al, bl
+			add al, a1[esi]
+			add al, a2[esi]
+			aaa
+			jc m_carry1
+			xor bl, bl
+			jmp m_carry0
+			m_carry1 :
+		mov bl, 1
+			m_carry0 :
+			mov sum[esi], al
+			dec esi
+			loop _begin_
+	}
+	for (int i = 0; i < 10; i++)
+		cout << " " << (int)sum[i];
+	system("pause");
+	return 0;
+}
+Сложение assembler 2:
+#include <iostream> 
+using namespace std;
+
+int main()
+{
+	int a[9] = { 0, 8, 1, 5, 1, 1, 9, 1, 1 };
+	int b[9] = { 0, 8, 1, 5, 1, 1, 1, 1, 9 };
+	int res[9] = { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+	_asm
+	{
+		mov esi, 8
+		mov ecx, 9
+		count_:
+			mov eax,a[esi*4]
+			mov ebx,b[esi*4]
+			add eax,ebx
+			cmp eax,10
+				jl bezper
+				sub eax,10
+				mov res[esi*4],eax
+				dec esi
+				inc a[esi*4]
+				loop count_
+
+				bezper:
+				mov res[esi*4], eax
+				dec esi
+				loop count_
+	}
+	for (int i = 0; i < 9; i++)
+		cout << res[i];
+	system("pause");
+	return 0;
+}
+Вариант 27: приписать 1
+#include <iostream>
+using namespace std;
+int main() {
+	int a;
+	cin >> a;
+	int buff;
+	_asm {
+		mov eax,a
+		shl eax,1
+		inc eax
+
+		mov buff, eax
+		mov ecx, 0
+		start_: 
+		cmp eax, 0
+			je end_
+			mov ebx, 2
+			cdq
+			div ebx
+			inc ecx
+			jmp start_
+		end_:
+			mov edx, 1
+				loop_mark:
+				imul edx,2
+				loop loop_mark
+		mov eax, buff
+		add eax, edx
+		mov a,eax
+	}
+	cout << a << endl;
+	system("pause");
+	return 0;
+}
+Вариант 28: полиндром
+#include <iostream>
+using namespace std;
+int main() {
+	int a, sim;
+	cin >> a;
+	_asm {
+		mov eax, a
+		mov ecx, 0
+		mov ebx, 10
+		met1:
+		    imul ecx, ebx
+			xor edx, edx
+			div ebx
+			add ecx,edx
+			cmp eax,0
+			je _end
+			jmp met1
+		_end:
+			mov sim,ecx
+			
+		
+	}
+	if (sim == a)
+		cout << "YES" << endl;
+	else
+		cout << "NO" << endl;
+	system("pause");
+	return 0;
+}
+Вариант 29: фибоначи
+#include <iostream>
+using namespace std;
+int main() {
+
+	int n;
+	cin >> n;
+	int buff;
+	_asm
+	{
+		mov edx, n
+		mov ebx, 0
+		mov ecx, 1
+		start:
+			cmp edx,0
+			je _end
+			dec edx
+
+			mov eax, ecx
+			add ecx, ebx
+			mov ebx, eax
+
+			jmp start
+		_end:
+			dec ecx
+			mov n, ecx 
+	}
+	cout << n << endl;
+	system("pause");
+	return 0;
+}
+Вариант 30: окружность двигается горизонтально
+import java.applet.*;
+import java.awt.*;
+public class MovingBall extends Applet{
+    static int CX = 400, CY = 400;
+    DrawBall db;
+    DrawStar ds;
+    static int  rad;
+    Color cc;
+    public void init(){
+        String s = getParameter("radius");
+        try{
+            rad = Integer.parseInt(s);
+        } catch(NumberFormatException e){
+            rad = 30;
+        }
+        cc = getHtmlColor(getParameter("COLOR"),Color.GREEN);
+        db = new DrawBall(cc);
+        ds = new DrawStar(cc);
+        //add(db);
+        add(ds);
+    }
+    public Color getHtmlColor(String strRGB, Color def){
+            if(strRGB!=null && strRGB.charAt(0)=='#')
+                try{
+                    return new Color(Integer.parseInt(strRGB.substring(1),16));
+                }catch(NumberFormatException e){
+                    return def;
+                }
+        return def;
+    }
+    AppletThread at = null;
+    public void start(){
+        startThread();
+    }
+    public void stop(){
+        stopThread();
+    }
+    public void destroy(){
+        stopThread();
+    }
+
+    private void CreateThread(){
+        if(at==null)
+            at = new AppletThread(this);
+    }
+    private void startThread(){
+        CreateThread();
+        at.start();
+    }
+    private void stopThread(){
+        if(at!=null)
+            at.interrupt();
+    }
+}
+class AppletThread extends Thread{
+    MovingBall mb = null;
+    public AppletThread(MovingBall mb){
+        super();
+        this.mb = mb;
+    }
+
+    public void run() {
+        while(true) {
+            try {
+                Thread.sleep(40);
+                paint();
+            } catch (InterruptedException e) {
+                break;
+            }
+        }
+    }
+    public void paint(){
+
+        ((DrawBall)mb.db).moving(4);
+        ((DrawStar)mb.ds).rotate(3);
+
+        mb.db.repaint();
+        mb.ds.repaint();
+    }
+}
+class DrawBall extends Canvas{
+    static boolean direct = false;
+    Dimension dim;
+    int step = 0;
+    Color ballcol;
+    public DrawBall(Color b){
+        super();
+        ballcol = b;
+        setBackground(Color.GRAY);
+        dim = new Dimension(MovingBall.CX, MovingBall.CY/2);
+        setMaximumSize( dim );
+        setBounds( 0, 0, dim.width, dim.height);
+    }
+
+public void paint(Graphics g){
+    drawBall(g);
+}
+ void drawBall(Graphics g){
+    g.setColor(ballcol);
+    //Graphics2D g2D = (Graphics2D) g;
+    g.fillOval(step,0,MovingBall.rad*2,MovingBall.rad*2);
+
+
+
+ }
+ public void moving(int delta){
+
+     if(step > MovingBall.CX - 2*MovingBall.rad)
+         direct = !direct;
+     else if(step < 0)
+         direct = !direct;
+     if(direct)
+         delta = -delta;
+     step+=delta;
+ }
+}
+
+/*class DrawStar extends Canvas{
+
+    Dimension dim;
+    int ang = 0;
+    Color starcol;
+    public DrawStar(Color b){
+        super();
+        starcol = b;
+        setBackground(Color.BLACK);
+        dim = new Dimension(MovingBall.CX, MovingBall.CY);
+        setMaximumSize( dim );
+        setBounds( 0, 0, dim.width, dim.height);
+    }
+
+    public void paint(Graphics g){
+        drawStar(g);
+    }
+    void drawStar(Graphics g){
+        g.setColor(starcol);
+        int X = dim.width/2, Y = dim.height/2;
+
+        Graphics2D g2D= (Graphics2D) g;
+        int r = (int)(Y/2*Math.tan(Math.toRadians(30)));
+
+        g2D.rotate(Math.toRadians(ang),X/2 + r,Y/2+100);
+        Polygon p = new Polygon();
+       // g.drawLine(0,0,X,0);
+        p.addPoint(X/2 - r,Y/2 + 100);
+        p.addPoint(X/2 + r, Y/2 + 100);
+        p.addPoint(X/2, 0+100);
+        Polygon p2 = new Polygon();
+        p2.addPoint(X/2, Y/2 + Y/7+100);
+        p2.addPoint(X/2 - r,Y/7+100);
+        p2.addPoint(X/2 + r,Y/7+100);
+
+        //   p2.addPoint()
+        g.fillPolygon(p2); g.fillPolygon(p);
+
+
+    }
+    public void rotate(int delta){
+
+        if(ang>360)
+            ang = delta - 360;
+        ang+=delta;
+    }
+}*/
+
+
+
+
+
+
+
+/* 
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=Cp1251"/>
+<body>
+<applet code=MovingBall.class width = "400" height = "400">
+<param name="COLOR" value="#609060">
+<param name="radius" value="50">
+</applet>
+</body>
+</html>
+*/
