@@ -1,0 +1,45 @@
+The list of companies:
+Company's name: Almaz
+Company's internet site: almaz.com
+Company's mail_index: 220025
+Company's country: Belarus
+Company's region: Minskaya_oblast
+Company's district: Moskovskiy
+Company's town: Minsk
+Company's street: Nezavisimosti
+Company's house: 4
+Company's flat: 42
+Company's foundation year: 1941
+Company's length of stay in the global market: 45
+Company's number of employees: 10344
+Company's number of Europe branches: 32
+Company's name: Buk
+Company's internet site: buk.org
+Company's mail_index: 470880
+Company's country: Russia
+Company's region: Moskovksaya_oblast
+Company's district: Rhasniy
+Company's town: Moscow
+Company's street: Pobedi
+Company's house: 5
+Company's flat: 49
+Company's foundation year: 1978
+Company's length of stay in the global market: 37
+Company's number of employees: 6782
+Company's number of Europe branches: 17
+The companies that have more than 10000 employes:
+Company's name: Almaz
+Company's internet site: almaz.com
+Company's mail_index: 220025
+Company's country: Belarus
+Company's region: Minskaya_oblast
+Company's district: Moskovskiy
+Company's town: Minsk
+Company's street: Nezavisimosti
+Company's house: 4
+Company's flat: 42
+Company's foundation year: 1941
+Company's length of stay in the global market: 45
+Company's number of employees: 10344
+Company's number of Europe branches: 32
+Deleting the list...
