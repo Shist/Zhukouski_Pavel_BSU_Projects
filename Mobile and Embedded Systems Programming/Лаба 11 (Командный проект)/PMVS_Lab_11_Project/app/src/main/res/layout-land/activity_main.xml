@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/_"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/printingTextSpace"
+        android:layout_width="600dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="@string/default_str_print_text"
+        android:inputType="textMultiLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputText" />
+
+    <Button
+        android:id="@+id/btnFinish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/finish"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/msgsWhilePrintingLbl" />
+
+    <Button
+        android:id="@+id/btnExitTraining"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/exit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnFinish"
+        app:layout_constraintVertical_bias="0.1" />
+
+    <TextView
+        android:id="@+id/inputText"
+        android:layout_width="600dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:hint="@string/default_str_input_text"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/msgsWhilePrintingLbl"
+        android:layout_width="600dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="#FFFFFF"
+        android:text="@string/default_print_msg"
+        android:textColor="#BF0000"
+        android:textColorHint="#FF757575"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/printingTextSpace" />
+</androidx.constraintlayout.widget.ConstraintLayout>

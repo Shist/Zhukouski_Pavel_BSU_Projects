@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/_"
+    android:visibility="visible"
+    tools:context=".MainActivity"
+    tools:visibility="visible">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="center_horizontal"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible">
+
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_weight="0.1"
+            android:orientation="horizontal">
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:visibility="visible"
+            tools:visibility="visible">
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/textview"
+                android:textColor="#30005A"
+                android:textSize="36sp"
+                android:textStyle="bold"
+                android:visibility="visible"
+                tools:text="@string/app_name"
+                tools:visibility="visible" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:visibility="visible"
+            tools:visibility="visible">
+
+            <EditText
+                android:id="@+id/editText1"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:autofillHints=""
+                android:gravity="center"
+                android:inputType="number"
+                android:textColor="#5A4700"
+                android:textSize="24sp"
+                android:visibility="visible"
+                tools:visibility="visible" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:visibility="visible"
+            tools:visibility="visible">
+
+            <Button
+                android:id="@+id/button1"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:onClick="onClick"
+                android:text="@string/button"
+                android:textSize="24sp"
+                android:visibility="visible"
+                app:backgroundTint="#7948B3"
+                tools:text="@string/input_value"
+                tools:visibility="visible" />
+        </TableRow>
+
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:visibility="visible"
+            tools:visibility="visible">
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:onClick="playMore"
+                android:text="@string/play_more"
+                android:textSize="24sp"
+                android:visibility="visible"
+                app:backgroundTint="#A313BC"
+                tools:text="@string/play_more"
+                tools:visibility="visible" />
+
+        </TableRow>
+
+    </TableLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

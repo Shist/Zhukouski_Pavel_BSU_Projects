@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Куда бы поехать в отпуск?</string>
+    <string name="action_settings">Settings</string>
+    <string name="enjoy">Enjoy yourself!</string>
+    <string name="can">Канары</string>
+    <string name="phil">Филиппины</string>
+    <string name="cur">Курилы</string>
+    <string name="mal">Мальдивы</string>
+</resources>

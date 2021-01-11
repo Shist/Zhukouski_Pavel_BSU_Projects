@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Currency converter</string>
+    <string name="translate_to">transfer to</string>
+    <string name="calculate">CALCULATE</string>
+    <string name="num_0">0</string>
+    <string name="num_1">1</string>
+    <string name="num_2">2</string>
+    <string name="num_3">3</string>
+    <string name="num_4">4</string>
+    <string name="num_5">5</string>
+    <string name="num_6">6</string>
+    <string name="num_7">7</string>
+    <string name="num_8">8</string>
+    <string name="num_9">9</string>
+    <string name="dot">.</string>
+    <string name="clear">C</string>
+    <string name="plus">+</string>
+    <string name="minus">-</string>
+    <string name="multiply">*</string>
+    <string name="divide">/</string>
+    <string name="error_nothing">Error! You entered nothing</string>
+    <string name="error_zero">Error! Can\'t divide by zero</string>
+    <string name="TableCalc">Calculator and Converter</string>
+    <string name="FrameCalc">Just Converter</string>
+    <string name="DialogText">TextView</string>
+</resources>
