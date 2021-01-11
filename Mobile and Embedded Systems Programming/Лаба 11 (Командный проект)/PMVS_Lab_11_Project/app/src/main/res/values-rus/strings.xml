@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="DB">Users_DB</string>
+    <string name="app_name">Тренировка печати</string>
+    <string name="mail">Укажите почту</string>
+    <string name="password">Введите пароль</string>
+    <string name="sign_in">Войти</string>
+    <string name="sign_up_msg">Ещё не зарегистрировались?</string>
+    <string name="sign_up">Зарегистрироваться</string>
+    <string name="password_check">Повторите пароль</string>
+    <string name="user_name_lbl">Имя пользователя</string>
+    <string name="best_score_lbl">Лучший результат</string>
+    <string name="avr_score_lbl">Средняя скорость</string>
+    <string name="count_lbl">Количество тренировок</string>
+    <string name="start">Начать тренировку</string>
+    <string name="sign_out">Выйти из аккаунта</string>
+    <string name="default_print_msg">Начинайте печатать!</string>
+    <string name="finish">Завершить тренировку</string>
+    <string name="exit">Выйти к профилю</string>
+    <string name="default_str_input_text">Текст будет здесь</string>
+    <string name="default_str_print_text">Начинайте печатать здесь</string>
+</resources>

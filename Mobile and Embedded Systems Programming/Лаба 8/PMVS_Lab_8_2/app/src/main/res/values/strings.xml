@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">PMVS_Lab_8_2</string>
+    <string name="g_info">Gesture Information</string>
+    <string name="s">Stop</string>
+</resources>

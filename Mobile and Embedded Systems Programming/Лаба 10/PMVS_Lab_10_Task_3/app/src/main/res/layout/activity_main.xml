@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:text="Altitude" />
+
+        <TextView
+            android:id="@+id/AltitudeInfo"
+            android:layout_width="282dp"
+            android:layout_height="100dp" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:text="Latitude" />
+
+        <TextView
+            android:id="@+id/LatitudeInfo"
+            android:layout_width="282dp"
+            android:layout_height="100dp" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:text="Longitude" />
+
+        <TextView
+            android:id="@+id/LongitudeInfo"
+            android:layout_width="282dp"
+            android:layout_height="100dp" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:text="Bearing" />
+
+        <TextView
+            android:id="@+id/BearingInfo"
+            android:layout_width="282dp"
+            android:layout_height="100dp" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+
+        <TextView
+            android:id="@+id/Accuracy"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:text="Accuracy" />
+
+        <TextView
+            android:id="@+id/AccuracyInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp" />
+    </TableRow>
+
+    <LinearLayout
+        android:layout_width="406dp"
+        android:layout_height="609dp"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btnStart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="OnClickStart"
+            android:text="@string/start"
+            app:backgroundTint="#2AFF30" />
+
+        <Button
+            android:id="@+id/btnEnd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="OnClickEnd"
+            android:text="@string/end"
+            app:backgroundTint="#FF4D4D" />
+    </LinearLayout>
+
+</TableLayout>

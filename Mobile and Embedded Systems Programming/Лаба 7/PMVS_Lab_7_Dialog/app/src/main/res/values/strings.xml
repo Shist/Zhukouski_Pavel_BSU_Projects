@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Dialog</string>
+    <string name="action_settings">Settings</string>
+    <string name="bg">Выбрать фон</string>
+    <string name="message">Хотите поменять фон?</string>
+    <color name="redColor">#FFFF0000</color>
+    <color name="yellowColor">#FFFF00</color>
+    <color name="greenColor">#FF00FF00</color>
+    <string name="red">Красный</string>
+    <string name="yellow">Жёлтый</string>
+    <string name="green">Зелёный</string>
+</resources>

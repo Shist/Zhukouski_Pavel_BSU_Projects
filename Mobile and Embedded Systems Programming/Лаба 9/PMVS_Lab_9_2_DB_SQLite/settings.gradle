@@ -1,0 +1,2 @@
+include ':app'
+rootProject.name = "PMVS_Lab_9_2_DB_SQLite"

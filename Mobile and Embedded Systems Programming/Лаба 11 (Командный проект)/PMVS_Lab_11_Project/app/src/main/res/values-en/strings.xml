@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="DB">Users_DB</string>
+    <string name = "app_name">Print Training</string>
+    <string name = "mail">Enter your mail</string>
+    <string name = "password">Enter password</string>
+    <string name = "sign_in">Sign in</string>
+    <string name = "sign_up_msg">Not registered yet?</string>
+    <string name = "sign_up">Register</string>
+    <string name = "password_check">Repeat password</string>
+    <string name = "user_name_lbl">Username</string>
+    <string name = "best_score_lbl">Best score</string>
+    <string name = "avr_score_lbl">Average speed</string>
+    <string name = "count_lbl">Number of workouts</string>
+    <string name = "start">Start Workout</string>
+    <string name = "sign_out">Sign out</string>
+    <string name = "default_print_msg">Start printing!</string>
+    <string name = "finish">Finish workout</string>
+    <string name = "exit">Exit profile</string>
+    <string name = "default_str_input_text">Text will be here</string>
+    <string name = "default_str_print_text">Start typing here</string>
+</resources>

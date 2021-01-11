@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">PMVS_Lab_7_RatingImages</string>
+    <string name="edit_message">Enter your text here</string>
+    <string name="button_send">Go!</string>
+    <string name="cake_description">Just some yummy cake</string>
+    <string name="trumb_up">Like the picture</string>
+    <string name="trumb_down">Dislike the picture</string>
+</resources>

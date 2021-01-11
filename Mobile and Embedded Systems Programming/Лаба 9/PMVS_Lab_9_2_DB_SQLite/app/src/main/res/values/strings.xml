@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">PMVS_Lab_9_2_DB_SQLite</string>
+    <string name="name">Enter name here</string>
+    <string name="mail">Enter email here</string>
+    <string name="insert">Insert to DB</string>
+    <string name="read">Read from DB</string>
+    <string name="clear">Clear DB</string>
+</resources>
