@@ -2,7 +2,7 @@
 ===
 #### В этом репозитории представлены все проекты за 1-5 семестры (в будущем будут добавлены ещё проекты).
 ---
-АиСД
+[АиСД](https://github.com/Shist/Zhukouski_Pavel_BSU_Projects/tree/master/Algorithms%20and%20data%20structures)
 ---
 Ассемблер
 ---
