@@ -1,0 +1,394 @@
+- tag: group-id
+  is_group: True
+  position: 1
+  icon: fas fa-key
+
+- tag: AxGuid
+  parent: group-id
+  default_db_name: rowGuid
+  position: 1
+  is_virtual: True
+  virtual_source: guid
+  comparator:
+  icon: fas fa-key
+
+- tag: AxNum
+  parent: group-id
+  default_db_name: axNum
+  value_type: VARCHAR(255)
+  position: 2
+  is_readonly: True
+  is_backend_available: True
+  is_updated_always: True
+  icon: fas fa-sort-numeric-up
+
+  # Process controll
+- tag: group-process
+  is_group: True
+  position: 2
+  icon: fas fa-code-branch
+
+- tag: AxState
+  parent: group-process
+  default_db_name: rowState
+  position: 1
+  is_virtual: True
+  virtual_source: axState
+  icon: fas fa-code-branch
+
+- tag: AxChangelog
+  parent: group-process
+  position: 4
+  default_db_name: changelog
+  is_columnn_avalible: True
+  value_type: JSON
+  is_backend_available: True
+  is_readonly: True
+  is_updated_always: True
+  is_always_whole_row: True
+  icon: fas fa-code-branch
+
+  # String
+- tag: group-string
+  is_group: True
+  position: 3
+  icon: fas fa-font
+
+- tag: AxString
+  parent: group-string
+  default_db_name: string
+  position: 1
+  value_type: VARCHAR(255)
+  is_inline_editable: True
+  icon: fas fa-font
+
+- tag: AxEmail
+  parent: group-string
+  default_db_name: email
+  position: 2
+  value_type: VARCHAR(255)
+  is_inline_editable: True
+  icon: fas fa-font
+
+- tag: AxTelephone
+  parent: group-string
+  default_db_name: telephone
+  position: 3
+  value_type: VARCHAR(255)
+  is_columnn_avalible: True
+  is_inline_editable: True
+  icon: fas fa-font
+
+  # Decoration
+- tag: group-decoration
+  is_group: True
+  position: 4
+  icon: fas fa-code
+
+- tag: AxHtml
+  parent: group-decoration
+  default_db_name: html
+  position: 1
+  is_virtual: True
+  virtual_source: guid
+  icon: fas fa-code
+
+- tag: AxHtmlGenerated
+  parent: group-decoration
+  default_db_name: html
+  position: 2
+  is_virtual: True
+  virtual_source: guid
+  is_display_backend_avalible: True
+  icon: fas fa-code
+
+  # Text
+- tag: group-text
+  name: types.text
+  is_group: True
+  position: 5
+  icon: fas fa-align-left
+
+- tag: AxText
+  parent: group-text
+  default_db_name: text
+  position: 1
+  value_type: TEXT
+  icon: fas fa-align-left
+
+- tag: AxMarkdown
+  parent: group-text
+  default_db_name: markdown
+  position: 2
+  value_type: TEXT
+  is_always_whole_row: True
+  icon: fas fa-align-left
+
+  # Number
+- tag: group-number
+  is_group: True
+  position: 6
+  icon: fas fa-hashtag
+
+- tag: AxInteger
+  parent: group-number
+  default_db_name: integer
+  position: 1
+  value_type: INT
+  comparator: number
+  is_inline_editable: True
+  is_columnn_avalible: True
+  icon: fas fa-hashtag
+
+- tag: AxDecimal
+  parent: group-number
+  default_db_name: decimal
+  position: 2
+  value_type: DECIMAL(65,2)
+  comparator: number
+  is_columnn_avalible: True
+  is_inline_editable: True
+  icon: fas fa-hashtag
+
+- tag: AxIntSlider
+  parent: group-number
+  default_db_name: intSlider
+  position: 1
+  value_type: INT
+  comparator: number
+  is_inline_editable: True
+  icon: fas fa-hashtag
+
+  # Boolean
+- tag: group-boolean
+  is_group: True
+  position: 7
+  icon: fas fa-toggle-on
+
+- tag: AxCheckbox
+  parent: group-boolean
+  default_db_name: checkbox
+  position: 1
+  value_type: BOOL
+  is_inline_editable: True
+  is_columnn_avalible: True
+  icon: far fa-check-square
+
+- tag: AxSwitch
+  parent: group-boolean
+  default_db_name: switch
+  position: 1
+  value_type: BOOL
+  is_inline_editable: True
+  is_columnn_avalible: True
+  icon: fas fa-toggle-on
+
+  # Relationship
+- tag: group-relationship
+  is_group: True
+  position: 8
+  icon: fas fa-link
+
+- tag: Ax1to1
+  parent: group-relationship
+  default_name: types.ax-1to1-default
+  default_db_name: toOne
+  position: 1
+  value_type: GUID
+  is_inline_editable: False
+  is_columnn_avalible: False
+  icon: fas fa-link
+
+- tag: Ax1tom
+  parent: group-relationship
+  default_db_name: toMany
+  position: 2
+  value_type: JSON
+  is_backend_available: True
+  is_columnn_avalible: False
+  is_inline_editable: False
+  icon: fas fa-link
+
+- tag: Ax1tomTable
+  parent: group-relationship
+  default_db_name: toManyTable
+  position: 3
+  value_type: JSON
+  is_backend_available: True
+  is_columnn_avalible: False
+  is_inline_editable: False
+  icon: fas fa-link
+
+- tag: Ax1to1Children
+  parent: group-relationship
+  default_db_name: toOneChildren
+  position: 4
+  is_virtual: True
+  virtual_source: guid
+  icon: fas fa-link
+
+  #Date and Time
+- tag: group-date
+  is_group: True
+  position: 9
+  icon: fas fa-calendar
+
+- tag: AxDate
+  parent: group-date
+  default_db_name: date
+  position: 1
+  value_type: TIMESTAMP
+  comparator: date
+  is_inline_editable: True
+  is_columnn_avalible: True
+  icon: fas fa-calendar
+
+  # List
+- tag: group-list
+  is_group: True
+  position: 10
+  icon: fas fa-list
+
+- tag: AxChoise
+  parent: group-list
+  default_db_name: choise
+  position: 1
+  value_type: VARCHAR(255)
+  is_inline_editable: True
+  icon: fas fa-list
+
+- tag: AxRadio
+  parent: group-list
+  default_db_name: radio
+  position: 1
+  value_type: VARCHAR(255)
+  is_inline_editable: True
+  icon: fas fa-list
+
+- tag: AxCheckboxList
+  parent: group-list
+  default_db_name: checkboxList
+  position: 1
+  value_type: JSON
+  icon: far fa-list-alt
+
+- tag: AxTags
+  parent: group-list
+  default_db_name: tags
+  position: 1
+  value_type: JSON
+  is_inline_editable: True
+  icon: fas fa-list
+
+- tag: AxRadioSurvey
+  parent: group-list
+  default_db_name: survey
+  position: 1
+  value_type: JSON
+  is_inline_editable: False
+  icon: fas fa-poll
+
+  # Images
+- tag: group-images
+  is_group: True
+  position: 11
+  icon: fas fa-image
+
+- tag: AxImageCropDb
+  parent: group-images
+  position: 4
+  default_db_name: cropImage
+  is_backend_available: True
+  value_type: BLOB
+  icon: fas fa-image
+
+  # Files
+- tag: group-files
+  is_group: True
+  position: 12
+  icon: fas fa-file
+
+- tag: AxFiles
+  parent: group-files
+  position: 1
+  default_db_name: files
+  value_type: JSON
+  is_backend_available: True
+  icon: fas fa-file
+
+  # Users
+- tag: group-users
+  is_group: True
+  position: 13
+  icon: fas fa-users
+
+- tag: AxUsers
+  parent: group-users
+  position: 1
+  default_db_name: users
+  is_columnn_avalible: True
+  value_type: JSON
+  icon: fas fa-user-friends
+
+- tag: AxSingleUser
+  parent: group-users
+  position: 2
+  default_db_name: user
+  is_columnn_avalible: True
+  value_type: VARCHAR(255)
+  icon: fas fa-user
+
+- tag: AxAuthor
+  parent: group-users
+  position: 3
+  default_db_name: author
+  is_columnn_avalible: True
+  is_backend_available: True
+  value_type: VARCHAR(255)
+  is_updated_always: True
+  icon: fas fa-user
+- tag
+  # Communication
+- tag: group-communication
+  is_group: True
+  position: 14
+  icon: fas fa-comments
+
+- tag: AxComments
+  parent: group-communication
+  position: 4
+  default_db_name: comments
+  value_type: GUID
+  is_backend_available: True
+  is_updated_always: True
+  icon: fas fa-comments
+
+- tag: AxApproval
+  parent: group-communication
+  position: 4
+  default_db_name: approval
+  value_type: JSON
+  is_backend_available: True
+  icon: fas fa-hands-helping
+-
+  # Payment
+- tag: group-payment
+  is_group: True
+  position: 14
+  icon: fas fa-money-bill-alt
+
+- tag: AxPaymentStripe
+  parent: group-payment
+  position: 4
+  default_db_name: stripe
+  value_type: JSON
+  is_backend_available: True
+  icon: fab fa-stripe-s
+  is_updated_always: True
+# - tag: AxPaymentYandex
+#   parent: group-payment
+#   position: 4
+#   default_db_name: kassa
+#   value_type: JSON
+#   is_backend_available: True
+#   icon: fab fa-yandex

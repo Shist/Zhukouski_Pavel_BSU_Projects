@@ -1,0 +1,13 @@
+MANIFEST.in
+README.md
+README.rst
+setup.cfg
+setup.py
+Sanic_GraphQL.egg-info/PKG-INFO
+Sanic_GraphQL.egg-info/SOURCES.txt
+Sanic_GraphQL.egg-info/dependency_links.txt
+Sanic_GraphQL.egg-info/requires.txt
+Sanic_GraphQL.egg-info/top_level.txt
+sanic_graphql/__init__.py
+sanic_graphql/graphqlview.py
+sanic_graphql/render_graphiql.py

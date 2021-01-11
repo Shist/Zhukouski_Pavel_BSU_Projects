@@ -1,0 +1,15 @@
+graphql-core<3,>=2.3
+promise<3,>=2.3
+
+[dev]
+flake8==3.7.9
+isort<4.0.0
+black==19.10b0
+mypy==0.761
+check-manifest<1,>=0.40
+pytest==4.6.9
+pytest-cov==2.8.1
+
+[test]
+pytest==4.6.9
+pytest-cov==2.8.1

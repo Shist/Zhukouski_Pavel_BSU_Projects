@@ -1,0 +1,3 @@
+[console_scripts]
+ax = ax.main:main
+
