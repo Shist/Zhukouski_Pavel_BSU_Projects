@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="90aa99cb-5cd4-4dd3-a0ee-727fd7e8ece1" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1TfJVdBztGIb12uYpVIGPYbfqi3" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/junit-4.12.jar!/" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RunManager" selected="JUnit.JUnit_Tests">
+    <configuration name="JUnit_Tests" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Testing_Lab_5" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH" value="C:\Program Files\Java\jdk1.8.0_231\jre" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="JUnit_Tests" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Testing_Lab_5" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JUnit_Tests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Testing_Lab_5" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="JUnit_Tests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JUnit_Tests.Test_1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Testing_Lab_5" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="JUnit_Tests" />
+      <option name="METHOD_NAME" value="Test_1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JUnit_Tests.Test_2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Testing_Lab_5" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="JUnit_Tests" />
+      <option name="METHOD_NAME" value="Test_2" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Android JUnit.JUnit_Tests" />
+      <item itemvalue="Application.Main" />
+      <item itemvalue="JUnit.JUnit_Tests.Test_1" />
+      <item itemvalue="JUnit.JUnit_Tests.Test_2" />
+      <item itemvalue="JUnit.JUnit_Tests" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.JUnit_Tests" />
+        <item itemvalue="Android JUnit.JUnit_Tests" />
+        <item itemvalue="JUnit.JUnit_Tests.Test_2" />
+        <item itemvalue="JUnit.JUnit_Tests.Test_1" />
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="90aa99cb-5cd4-4dd3-a0ee-727fd7e8ece1" name="Default Changelist" comment="" />
+      <created>1573845240965</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1573845240965</updated>
+      <workItem from="1573845244489" duration="2996000" />
+      <workItem from="1573851890857" duration="9327000" />
+      <workItem from="1574258555090" duration="40000" />
+      <workItem from="1574453446954" duration="326000" />
+      <workItem from="1574453785791" duration="31000" />
+      <workItem from="1574454107195" duration="3767000" />
+      <workItem from="1574497674351" duration="734000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="365" y="137" key="#JUnit_Tests" timestamp="1574454372373">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="365" y="137" key="#JUnit_Tests/0.0.1536.864@0.0.1536.864" timestamp="1574454372373" />
+    <state x="223" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1574454215601">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="223" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864@0.0.1536.864" timestamp="1574454215601" />
+    <state x="618" y="321" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1574453796815">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="618" y="321" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1536.864@0.0.1536.864" timestamp="1574453796815" />
+    <state x="499" y="179" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1574457918069">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="499" y="179" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.864@0.0.1536.864" timestamp="1574457918069" />
+    <state x="473" y="173" key="FileChooserDialogImpl" timestamp="1573853577275">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="473" y="173" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1573853577275" />
+    <state width="1493" height="79" key="GridCell.Tab.0.bottom" timestamp="1574498410365">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="79" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1574498410365" />
+    <state width="1493" height="79" key="GridCell.Tab.0.center" timestamp="1574498410365">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="79" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1574498410365" />
+    <state width="1493" height="79" key="GridCell.Tab.0.left" timestamp="1574498410365">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="79" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1574498410365" />
+    <state width="1493" height="79" key="GridCell.Tab.0.right" timestamp="1574498410365">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="79" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1574498410365" />
+    <state width="1493" height="277" key="GridCell.Tab.1.bottom" timestamp="1573861227057">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="277" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1573861227057" />
+    <state width="1493" height="277" key="GridCell.Tab.1.center" timestamp="1573861227057">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="277" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1573861227057" />
+    <state width="1493" height="277" key="GridCell.Tab.1.left" timestamp="1573861227057">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="277" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1573861227057" />
+    <state width="1493" height="277" key="GridCell.Tab.1.right" timestamp="1573861227057">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="277" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1573861227057" />
+    <state x="249" y="6" key="SettingsEditor" timestamp="1574497840038">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="249" y="6" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1574497840038" />
+    <state x="465" y="256" key="com.intellij.ide.util.TipDialog" timestamp="1574258582571">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="465" y="256" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1574258582571" />
+    <state x="209" y="52" key="new project wizard" timestamp="1574454671353">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="209" y="52" key="new project wizard/0.0.1536.864@0.0.1536.864" timestamp="1574454671353" />
+  </component>
+</project>
