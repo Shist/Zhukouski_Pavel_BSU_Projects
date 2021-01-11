@@ -1,0 +1,70 @@
+/* Основные стили */
+
+.content {
+	position: absolute;
+	top: 40%;
+	font-family: 'Open Sans', sans-serif;
+	background-color: #FFE42C;
+	padding: 28px;
+	z-index: 999;
+}
+
+.content h1 {
+	font-size: 2em;
+	font-weight: 700;
+}
+
+.content p {
+	margin-top: 14px;
+}
+
+.content a {
+	color: #333;
+}
+
+
+/* Стили для видеофона */
+
+#video-bg {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	overflow: hidden;
+	z-index: 1;
+	background: url(bg/daisy-stock-poster.jpg) no-repeat #94a233;
+	background-size: cover;
+}
+
+#video-bg > video {
+	position: absolute;
+	top: 0;
+	left: 0;
+	min-width: 100%; 
+	min-height: 100%;
+	width: auto;
+	height: auto; 
+}
+
+
+/* Проверка на поддержку свойства object-fit: */
+
+ @supports (object-fit: cover) {
+     #video-bg > video {
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+     }
+ }
+
+
+/* Отключение видео для устройств с размером экрана менее 800px: */
+
+@media screen and (max-device-width: 800px) {
+	#video-bg > video {
+		display: none;
+		}
+	}
