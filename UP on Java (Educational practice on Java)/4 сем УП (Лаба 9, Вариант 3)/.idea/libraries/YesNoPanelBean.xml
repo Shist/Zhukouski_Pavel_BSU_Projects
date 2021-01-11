@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="YesNoPanelBean">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Task_9/dist/lib/YesNoPanelBean.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Tue Apr 07 20:09:35 MSK 2020:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.12.1.1 - (1704137): instance a816c00e-0171-559e-623b-00002cc21e18 
+on database directory C:\Users\user\IdeaProjects\4 sem УП (Лаба 7, Вариант 10)\db\MonumentsDB with class loader sun.misc.Launcher$AppClassLoader@204b7b1 
+Loaded from file:/C:/Users/user/IdeaProjects/4%20sem%20%d0%a3%d0%9f%20(%d0%9b%d0%b0%d0%b1%d0%b0%207,%20%d0%92%d0%b0%d1%80%d0%b8%d0%b0%d0%bd%d1%82%2010)/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.7.0_80-b15
+user.dir=C:\Users\user\IdeaProjects\4 sem УП (Лаба 7, Вариант 10)
+os.name=Windows 8.1
+os.arch=amd64
+os.version=6.3
+derby.system.home=C:\Users\user\IdeaProjects\4 sem УП (Лаба 7, Вариант 10)\db
+Database Class Loader started - derby.database.classpath=''

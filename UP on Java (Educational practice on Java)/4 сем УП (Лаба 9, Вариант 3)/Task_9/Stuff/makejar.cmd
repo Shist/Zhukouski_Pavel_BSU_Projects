@@ -1,0 +1,1 @@
+jar cmf manifest.stub TaskPanel.jar TaskPanel.class TaskPanelInfo.class AnswerEvent.class AnswerListener.class

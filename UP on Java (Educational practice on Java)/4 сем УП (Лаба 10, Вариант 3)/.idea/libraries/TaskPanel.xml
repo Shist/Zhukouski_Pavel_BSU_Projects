@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="TaskPanel">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Task_9/Stuff/TaskPanel.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
