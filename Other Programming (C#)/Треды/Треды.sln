@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.329
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Треды", "events_var_3\Треды.csproj", "{ADAE425F-E6E6-4EC0-B5A2-758B8F19BFF8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ADAE425F-E6E6-4EC0-B5A2-758B8F19BFF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADAE425F-E6E6-4EC0-B5A2-758B8F19BFF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADAE425F-E6E6-4EC0-B5A2-758B8F19BFF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADAE425F-E6E6-4EC0-B5A2-758B8F19BFF8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {58AEC07D-BF61-4988-BF25-7AA0B7CCEC39}
+	EndGlobalSection
+EndGlobal

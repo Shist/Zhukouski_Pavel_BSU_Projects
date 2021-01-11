@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2046
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Оконное_приложение_C_sharp", "Оконное_приложение_C_sharp\Оконное_приложение_C_sharp.csproj", "{70804AA2-D4AC-4187-99E6-4CFA23403A3C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{70804AA2-D4AC-4187-99E6-4CFA23403A3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70804AA2-D4AC-4187-99E6-4CFA23403A3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70804AA2-D4AC-4187-99E6-4CFA23403A3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70804AA2-D4AC-4187-99E6-4CFA23403A3C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {13C71E4B-F369-43AA-B590-ED455A9D4C2B}
+	EndGlobalSection
+EndGlobal

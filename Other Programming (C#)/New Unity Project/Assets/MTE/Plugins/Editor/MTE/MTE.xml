@@ -1,0 +1,68 @@
+﻿<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MTE</name>
+    </assembly>
+    <members>
+        <member name="T:MTE.MeshFileFormat">
+            <summary>
+            file format of a mesh
+            </summary>
+        </member>
+        <member name="F:MTE.MeshFileFormat.obj">
+            <summary>
+            Wavefront .obj file (recommended)
+            </summary>
+        </member>
+        <member name="F:MTE.MeshFileFormat.asset">
+            <summary>
+            Unity .asset file
+            </summary>
+        </member>
+        <member name="T:MTE.MTEConversion">
+            <summary>
+            MTE Coversion API class
+            </summary>
+        </member>
+        <member name="M:MTE.MTEConversion.ConvertTerrainToMesh(UnityEngine.GameObject,MTE.TerrainConversionSettings)">
+            <summary>
+            Convert a Unity terrain GameObject to a mesh-terrain.
+            </summary>
+            <param name="terrainGameObject">the terrain GameObject</param>
+            <param name="settings">conversion settings <see cref="T:MTE.TerrainConversionSettings"/></param>
+        </member>
+        <member name="T:MTE.TerrainConversionSettings">
+            <summary>
+            MTE terrain-to-mesh converter settings
+            </summary>
+        </member>
+        <member name="P:MTE.TerrainConversionSettings.Name">
+            <summary>
+            Gets or sets name of created mesh-terrain
+            </summary>
+        </member>
+        <member name="P:MTE.TerrainConversionSettings.FileFormat">
+            <summary>
+            Gets or sets the file format of created mesh: *.obj or *.asset
+            </summary>
+        </member>
+        <member name="P:MTE.TerrainConversionSettings.OutPutDir">
+            <summary>
+            Gets or sets the absolute directory path that the mesh-terrain directory will be created in. It should be something like
+            All generated contents of the mesh-terrain will be put in OutputDir/Name/.
+            The directory should be a child directory of /Assets.
+            </summary>
+        </member>
+        <member name="P:MTE.TerrainConversionSettings.ExportTrees">
+            <summary>
+            Gets or sets whether the converter export trees on original Unity3D terrain.
+            No effect if there is none.
+            </summary>
+        </member>
+        <member name="P:MTE.TerrainConversionSettings.VertexCountAlongAnEdge">
+            <summary>
+            Gets or sets the vertex count along an edge.
+            </summary>
+        </member>
+    </members>
+</doc>
