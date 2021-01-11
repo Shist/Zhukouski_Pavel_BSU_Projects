@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Relation_2" directorySegmentName="seg_0" id="C3FA496D-8B4D-3ADE-E3F0-CF3203F92EFA">
+<createdBy>user</createdBy>
+<createdTime>2020-10-14 11:52:35 UTC</createdTime>
+<ownerDesignName>Zhukouski_Pavel_3_course_12_group_6_variant</ownerDesignName>
+<engineerTo>
+<item key="CCF25F27-05F7-4825-AB42-67201106A29F" value="true"/>
+</engineerTo>
+<sourcePk>B2AAAFFE-9B01-B5ED-EF30-E215DB306A91</sourcePk>
+<targetPk>9DF1DC5B-9BAD-F2B3-FC5F-437FFAEAE1DB</targetPk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>424E68E2-A663-856D-954C-68148E191F7F</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>EF2C99C3-8A7F-72F8-9B36-228E98C7C0B8</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

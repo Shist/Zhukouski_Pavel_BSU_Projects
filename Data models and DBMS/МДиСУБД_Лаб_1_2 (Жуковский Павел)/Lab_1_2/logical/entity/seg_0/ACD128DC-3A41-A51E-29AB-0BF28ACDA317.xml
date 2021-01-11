@@ -1,0 +1,114 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="ACD128DC-3A41-A51E-29AB-0BF28ACDA317" name="Visit">
+<createdBy>user</createdBy>
+<createdTime>2020-09-29 19:41:00 UTC</createdTime>
+<ownerDesignName>Lab_1_2</ownerDesignName>
+<engineerTo>
+<item key="42E9F0CE-2309-DD13-BEA2-4059BA395A50" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Visit_ID" id="8CB37B6F-B39D-6BD2-72B9-EC715B807A4C">
+<createdBy>user</createdBy>
+<createdTime>2020-09-29 19:41:07 UTC</createdTime>
+<ownerDesignName>Lab_1_2</ownerDesignName>
+<engineerTo>
+<item key="42E9F0CE-2309-DD13-BEA2-4059BA395A50" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Patient_ID" id="94678CB6-131C-5404-C298-061A7B8B17C9">
+<createdBy>user</createdBy>
+<createdTime>2020-09-29 19:47:51 UTC</createdTime>
+<generatorID>FDA7A6FE-8732-1B2B-B255-45DCBC0423F4</generatorID>
+<ownerDesignName>Lab_1_2</ownerDesignName>
+<engineerTo>
+<item key="42E9F0CE-2309-DD13-BEA2-4059BA395A50" value="true"/>
+</engineerTo>
+<referedAttribute>D11D4A24-6E68-11AD-551F-76760B5658BB</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Visit_Date" id="8F7DFD1D-40C3-A802-1AFB-664A80489BDE">
+<createdBy>user</createdBy>
+<createdTime>2020-09-29 19:41:16 UTC</createdTime>
+<ownerDesignName>Lab_1_2</ownerDesignName>
+<engineerTo>
+<item key="42E9F0CE-2309-DD13-BEA2-4059BA395A50" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Doctor_ID1" id="6279AC29-C926-A45A-B2F9-240E8B7117B0">
+<createdBy>user</createdBy>
+<createdTime>2020-09-29 19:47:59 UTC</createdTime>
+<generatorID>07CDD864-284F-2667-7C91-446CFE804CA0</generatorID>
+<ownerDesignName>Lab_1_2</ownerDesignName>
+<engineerTo>
+<item key="42E9F0CE-2309-DD13-BEA2-4059BA395A50" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>EE0C8A2E-8FBC-278D-C2E2-2171AE5E7114</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Work_Description" id="BF77462F-6BDE-63A1-FD1D-A044AC17837A">
+<createdBy>user</createdBy>
+<createdTime>2020-09-29 19:41:43 UTC</createdTime>
+<ownerDesignName>Lab_1_2</ownerDesignName>
+<engineerTo>
+<item key="42E9F0CE-2309-DD13-BEA2-4059BA395A50" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT040</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Payment_Form_ID" id="1075BBF0-B050-5A87-0A09-9E100BFEBD61">
+<createdBy>user</createdBy>
+<createdTime>2020-09-30 11:58:43 UTC</createdTime>
+<generatorID>8E55D19E-5597-F616-AE42-C1A4859C5824</generatorID>
+<ownerDesignName>Lab_1_2</ownerDesignName>
+<engineerTo>
+<item key="42E9F0CE-2309-DD13-BEA2-4059BA395A50" value="true"/>
+</engineerTo>
+<referedAttribute>A547A9D3-5A9A-4AAE-1896-CC3499D7C7F4</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="FF3C1886-7C43-3CAF-AC14-1DAD8D0E1ECB" name="Visit PK">
+<createdBy>user</createdBy>
+<createdTime>2020-09-29 19:41:15 UTC</createdTime>
+<ownerDesignName>Lab_1_2</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="42E9F0CE-2309-DD13-BEA2-4059BA395A50" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>8CB37B6F-B39D-6BD2-72B9-EC715B807A4C</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

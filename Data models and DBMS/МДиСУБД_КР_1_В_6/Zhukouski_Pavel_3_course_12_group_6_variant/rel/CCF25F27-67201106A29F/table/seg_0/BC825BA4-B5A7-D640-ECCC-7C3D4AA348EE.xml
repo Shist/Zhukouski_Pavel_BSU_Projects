@@ -1,0 +1,74 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="BC825BA4-B5A7-D640-ECCC-7C3D4AA348EE" name="Tester">
+<createdBy>user</createdBy>
+<createdTime>2020-10-14 12:06:35 UTC</createdTime>
+<generatorID>EF2C99C3-8A7F-72F8-9B36-228E98C7C0B8</generatorID>
+<ownerDesignName>Zhukouski_Pavel_3_course_12_group_6_variant</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Tester_ID" id="BC89C545-BFAA-1500-D41D-AA800CB94DEE">
+<createdBy>user</createdBy>
+<createdTime>2020-10-14 12:06:35 UTC</createdTime>
+<generatorID>E5D1B72C-BCA6-EC82-372D-76DB6AC0ABA2</generatorID>
+<ownerDesignName>Zhukouski_Pavel_3_course_12_group_6_variant</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Name" id="FCAD46F4-4353-228C-8C5D-C0F542E0C6FD">
+<createdBy>user</createdBy>
+<createdTime>2020-10-14 12:06:35 UTC</createdTime>
+<generatorID>47B85649-1163-D751-381E-24BA49DA87E1</generatorID>
+<ownerDesignName>Zhukouski_Pavel_3_course_12_group_6_variant</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32</dataTypeSize>
+<ownDataTypeParameters>32,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Surname" id="215F371E-F488-114D-84E0-A0216557876E">
+<createdBy>user</createdBy>
+<createdTime>2020-10-14 12:06:35 UTC</createdTime>
+<generatorID>C738D94D-2CA1-79CF-830A-8BDF64FAAC21</generatorID>
+<ownerDesignName>Zhukouski_Pavel_3_course_12_group_6_variant</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32</dataTypeSize>
+<ownDataTypeParameters>32,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Patronymic" id="04F1CD70-6656-D11A-A990-33960C16B345">
+<createdBy>user</createdBy>
+<createdTime>2020-10-14 12:06:35 UTC</createdTime>
+<generatorID>98A496AE-8A25-4DB9-05D6-DEDB2354F783</generatorID>
+<ownerDesignName>Zhukouski_Pavel_3_course_12_group_6_variant</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32</dataTypeSize>
+<ownDataTypeParameters>32,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="BC9EB81F-071C-56D2-09FA-5139D15E0EB2" name="Tester_PK">
+<createdBy>user</createdBy>
+<createdTime>2020-10-14 12:06:35 UTC</createdTime>
+<generatorID>9DF1DC5B-9BAD-F2B3-FC5F-437FFAEAE1DB</generatorID>
+<ownerDesignName>Zhukouski_Pavel_3_course_12_group_6_variant</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BC89C545-BFAA-1500-D41D-AA800CB94DEE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

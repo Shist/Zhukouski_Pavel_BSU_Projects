@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<LogicalDesign class="oracle.dbtools.crest.model.design.logical.LogicalDesign" name="Logical" id="64F1BE03-2EAC-3B65-174E-7BE66A43070A" mainViewID="B9221782-3127-5B24-6842-EA88C007CF5E">
+<createdBy>user</createdBy>
+<createdTime>2020-10-14 11:37:56 UTC</createdTime>
+<ownerDesignName>Zhukouski_Pavel_3_course_12_group_6_variant</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</LogicalDesign>
