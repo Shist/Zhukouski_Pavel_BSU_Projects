@@ -1,0 +1,43 @@
+Metadata-Version: 2.1
+Name: sign
+Version: 0.0.2
+Summary: inherit **kwargs from another fucntion in the signature. 
+Home-page: https://github.com/Carreau/sign
+License: UNKNOWN
+Author: Matthias Bussonnier
+Author-email: bussonniermatthias@gmail.com
+Requires-Python: >=3.4
+Description-Content-Type: text/markdown
+Classifier: License :: OSI Approved :: MIT License
+
+# Sign 
+
+
+Decorators to inherit signature form one function to another. 
+
+Mainly useful when a function or method takes `*args, **kwargs` and pass them
+(mostly unmodified) to another function or methods. 
+
+This will merge the signature of the decorated function, with the target function to simplify inspection. 
+
+
+## example
+
+```
+def foo(a=1, b=2):
+    pass
+
+@sign.inherit(foo):
+def bar(*args, **kwargs):
+    return foo(*args, **kwargs)
+
+```
+
+
+`bar` signature should appear as:
+
+```
+bar(*args, a=1, b=2, **kwargs)
+```
+
+

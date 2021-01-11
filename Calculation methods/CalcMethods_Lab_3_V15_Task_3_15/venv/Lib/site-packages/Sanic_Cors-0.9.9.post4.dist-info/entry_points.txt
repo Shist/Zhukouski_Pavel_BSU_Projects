@@ -1,0 +1,3 @@
+[sanic_plugins]
+CORS = sanic_cors.extension:instance
+

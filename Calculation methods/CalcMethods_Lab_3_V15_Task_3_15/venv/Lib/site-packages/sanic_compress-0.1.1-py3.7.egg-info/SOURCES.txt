@@ -1,0 +1,9 @@
+setup.cfg
+setup.py
+sanic_compress/__init__.py
+sanic_compress.egg-info/PKG-INFO
+sanic_compress.egg-info/SOURCES.txt
+sanic_compress.egg-info/dependency_links.txt
+sanic_compress.egg-info/not-zip-safe
+sanic_compress.egg-info/requires.txt
+sanic_compress.egg-info/top_level.txt
