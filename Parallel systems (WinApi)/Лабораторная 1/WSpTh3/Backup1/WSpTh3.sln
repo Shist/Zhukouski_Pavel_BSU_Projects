@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.572
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Thr3", "Thr3\Thr3.vcxproj", "{557624F3-0E42-4118-8448-B43B025628E2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{557624F3-0E42-4118-8448-B43B025628E2}.Debug|x86.ActiveCfg = Debug|Win32
+		{557624F3-0E42-4118-8448-B43B025628E2}.Debug|x86.Build.0 = Debug|Win32
+		{557624F3-0E42-4118-8448-B43B025628E2}.Release|x86.ActiveCfg = Release|Win32
+		{557624F3-0E42-4118-8448-B43B025628E2}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {899A31A8-575C-4B29-AC06-0AB524316E67}
+	EndGlobalSection
+EndGlobal
