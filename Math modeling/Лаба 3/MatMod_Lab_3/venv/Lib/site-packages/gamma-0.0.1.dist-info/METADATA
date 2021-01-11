@@ -1,0 +1,21 @@
+Metadata-Version: 2.0
+Name: gamma
+Version: 0.0.1
+Summary: gamma
+Home-page: https://github.com/computron/mqm
+Author: Shyue Ping Ong
+Author-email: shyuep@gmail.com
+License: BSD
+Description-Content-Type: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Development Status :: 4 - Beta
+Classifier: Operating System :: OS Independent
+Requires-Dist: monty (>=0.8.0)
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: requests
+
+# gamma
+
+
