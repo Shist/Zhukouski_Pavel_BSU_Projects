@@ -1,8 +1,0 @@
-<?xml version = '1.0' encoding = 'UTF-8'?>
-<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="Zhukouski_Pavel_3_course_12_group_6_variant" id="C40C1F6D-BBEC-9378-6F4B-50A19D570B09" version="3.5">
-<createdBy>user</createdBy>
-<createdTime>2020-10-14 11:37:56 UTC</createdTime>
-<ownerDesignName>Zhukouski_Pavel_3_course_12_group_6_variant</ownerDesignName>
-<capitalNames>false</capitalNames>
-<designId>C40C1F6D-BBEC-9378-6F4B-50A19D570B09</designId>
-</OSDM_Design>

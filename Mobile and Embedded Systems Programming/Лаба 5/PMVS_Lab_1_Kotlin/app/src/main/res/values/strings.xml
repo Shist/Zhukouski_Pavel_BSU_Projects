@@ -1,9 +1,0 @@
-<resources>
-    <string name="app_name">PMVS_Lab_1_Kotlin</string>
-    <string name="todo">TODO</string>
-    <string name="TextView_1">TextView_1</string>
-    <string name="TextView_2">TextView_2</string>
-    <string name="subscribe">subscribe</string>
-    <string name="TextView2">Интересы и Хобби:\n-Компьютерые игры\n-Программирование\n-Просмотр фильмов и сериалов</string>
-    <string name="TextView1">Павел Жуковский</string>
-</resources>

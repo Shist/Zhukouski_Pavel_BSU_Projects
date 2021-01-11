@@ -1,3 +1,0 @@
-Minsk;Zvezda;4;
-Minsk;Apple;3;
-Moscow;Zvezda;5;

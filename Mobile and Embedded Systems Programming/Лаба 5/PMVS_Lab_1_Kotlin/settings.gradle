@@ -1,2 +1,0 @@
-include ':app'
-rootProject.name = "PMVS_Lab_1_Kotlin"

@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="Lab09-GUI3:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/Lab09_GUI3_jar</output-path>
-    <root id="archive" name="Lab09-GUI3.jar">
-      <element id="module-output" name="Lab09-GUI3" />
-    </root>
-  </artifact>
-</component>

@@ -1,0 +1,8 @@
+﻿  Plugin.cpp
+     Создается библиотека ..\MainProgram\Plugins\Plugin1.lib и объект ..\MainProgram\Plugins\Plugin1.exp
+  Создание кода
+  1 of 8 functions (12.5%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Создание кода завершено
+  Plugin1.vcxproj -> C:\Users\user\Downloads\SP_Lab_5\Lab_5\Plugin1\..\MainProgram\Plugins\Plugin1.dll

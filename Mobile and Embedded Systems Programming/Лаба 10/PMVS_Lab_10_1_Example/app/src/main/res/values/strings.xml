@@ -1,8 +1,0 @@
-<resources>
-    <string name="app_name">PMVS_Lab_10_1_Example</string>
-    <string name="tvOut">tvOut</string>
-    <string name="tvLon">tvLon</string>
-    <string name="tvLat">tvLat</string>
-    <string name="GPS_on">GPS is turned on…</string>
-    <string name="GPS_off">GPS is not turned on…</string>
-</resources>

@@ -1,0 +1,21 @@
+﻿  dns.c
+c:\users\user\source\repos\сп_1_лаба_dns\test\dns.c(21): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+c:\users\user\source\repos\сп_1_лаба_dns\test\dns.c(40): warning C4311: приведение типов: усечение указателя из "Hashtable *" в "DNSHandle"
+c:\users\user\source\repos\сп_1_лаба_dns\test\dns.c(48): warning C4312: приведение типов: преобразование из "DNSHandle" в "Hashtable *" большего размера
+c:\users\user\source\repos\сп_1_лаба_dns\test\dns.c(49): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\stdio.h(208): note:  см. объявление "fopen"
+c:\users\user\source\repos\сп_1_лаба_dns\test\dns.c(56): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\stdio.h(2263): note:  см. объявление "sscanf"
+c:\users\user\source\repos\сп_1_лаба_dns\test\dns.c(66): warning C4312: приведение типов: преобразование из "DNSHandle" в "Hashtable *" большего размера
+c:\users\user\source\repos\сп_1_лаба_dns\test\dns.c(75): warning C4312: приведение типов: преобразование из "DNSHandle" в "Hashtable *" большего размера
+  hashtable.c
+c:\users\user\source\repos\сп_1_лаба_dns\test\hashtable.c(29): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+c:\users\user\source\repos\сп_1_лаба_dns\test\hashtable.c(37): warning C4090: функция: разные квалификаторы "const"
+c:\users\user\source\repos\сп_1_лаба_dns\test\hashtable.c(55): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+  Создание кода
+  16 of 28 functions (57.1%) were compiled, the rest were copied from previous compilation.
+    8 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Создание кода завершено
+Main.Release.x64.lib(main.obj) : warning LNK4099: "Main.pdb" PDB не найден с "Main.Release.x64.lib(main.obj)" или на "C:\Users\user\source\repos\СП_1_Лаба_DNS\test\x64\Release\Main.pdb"; компоновка объекта выполняется как при отсутствии отладочных данных
+  test.vcxproj -> C:\Users\user\source\repos\СП_1_Лаба_DNS\test\x64\Release\test.exe

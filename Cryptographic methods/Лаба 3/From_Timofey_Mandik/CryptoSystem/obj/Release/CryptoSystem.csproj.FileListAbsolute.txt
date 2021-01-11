@@ -1,6 +1,0 @@
-D:\Stud\Study\KM\Task_3\CryptoSystem\bin\Release\Cryptosystem.exe
-D:\Stud\Study\KM\Task_3\CryptoSystem\bin\Release\Cryptosystem.pdb
-D:\Stud\Study\KM\Task_3\CryptoSystem\obj\Release\CryptoSystem.csprojAssemblyReference.cache
-D:\Stud\Study\KM\Task_3\CryptoSystem\obj\Release\CryptoSystem.csproj.CoreCompileInputs.cache
-D:\Stud\Study\KM\Task_3\CryptoSystem\obj\Release\Cryptosystem.exe
-D:\Stud\Study\KM\Task_3\CryptoSystem\obj\Release\Cryptosystem.pdb

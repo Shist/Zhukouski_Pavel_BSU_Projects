@@ -1,0 +1,9 @@
+﻿  dns.c
+  hashtable.c
+C:\Users\user\source\repos\lab_1\lab_1\hashtable.c(39,18): warning C4090: функция: разные квалификаторы "const"
+  main.c
+  Создание кода
+  Previous IPDB not found, fall back to full compilation.
+  All 28 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Создание кода завершено
+  lab_1.vcxproj -> C:\Users\user\source\repos\lab_1\Release\lab_1.exe

@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="windows-1251"?>
-<taskset>
-  <task name="Химия" shortName="chemistry">
-Первая задача отбора к олимпиаде ФПМИ
-<metafile name="chemistry.in" type="input" alias="in" /><metafile name="chemistry.out" type="output" alias="out" /></task>
-</taskset>

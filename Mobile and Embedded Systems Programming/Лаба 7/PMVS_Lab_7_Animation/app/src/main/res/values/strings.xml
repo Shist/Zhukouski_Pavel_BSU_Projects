@@ -1,7 +1,0 @@
-<resources>
-    <string name="app_name">PMVS_Lab_7_Animation</string>
-    <string name="frame_anim">Покадровая анимация</string>
-    <string name="transform_anim">Анимация преобразований</string>
-    <string name="cancel_anim">Отмена анимации</string>
-    <string name="anim_description">Анимация</string>
-</resources>

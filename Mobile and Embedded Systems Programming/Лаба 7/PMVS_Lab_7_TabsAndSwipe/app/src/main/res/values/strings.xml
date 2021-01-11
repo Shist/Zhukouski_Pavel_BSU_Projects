@@ -1,6 +1,0 @@
-<resources>
-    <string name="app_name">PMVS_Lab_7_TabsAndSwipe</string>
-    <string name="title_section1">Лента</string>
-    <string name="title_section2">Фото</string>
-    <string name="title_section3">Карта</string>
-</resources>

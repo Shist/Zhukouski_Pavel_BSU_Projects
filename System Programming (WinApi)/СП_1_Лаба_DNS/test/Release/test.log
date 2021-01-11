@@ -1,0 +1,5 @@
+﻿  dns.c
+  hashtable.c
+C:\Users\user\source\repos\СП_1_Лаба_DNS\test\hashtable.c(38,18): warning C4090: функция: разные квалификаторы "const"
+LINK : fatal error C1047: Файл объекта или библиотеки "Main.Release.Win32.lib" был создан с более старой версией компилятора, чем другие объекты; выполните заново построение старых объектов и библиотек
+LINK : fatal error LNK1257: не удалось создать код

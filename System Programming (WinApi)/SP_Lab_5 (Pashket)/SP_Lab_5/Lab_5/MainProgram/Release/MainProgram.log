@@ -1,0 +1,7 @@
+﻿  dllMain.cpp
+     Создается библиотека C:\Users\user\Downloads\SP_Lab_5\Lab_5\Release\MainProgram.lib и объект C:\Users\user\Downloads\SP_Lab_5\Lab_5\Release\MainProgram.exp
+  Создание кода
+  Previous IPDB was built with incompatible compiler, fall back to full compilation.
+  All 7 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Создание кода завершено
+  MainProgram.vcxproj -> C:\Users\user\Downloads\SP_Lab_5\Lab_5\Release\MainProgram.exe

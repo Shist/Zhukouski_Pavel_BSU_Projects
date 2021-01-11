@@ -1,9 +1,0 @@
-<resources>
-    <string name="app_name">PMVS_Lab_9_1_ConstraintLayout_Project</string>
-    <string name="UserName">Введите логин:</string>
-    <string name="Password">Введите пароль:</string>
-    <string name="Confirm">Подтвердить</string>
-    <string name="LogOut">Выйти из аккаунта</string>
-    <string name="LogIn_1">Здравствуйте, </string>
-    <string name="LogIn_2">, добро пожаловать в систему!</string>
-</resources>
