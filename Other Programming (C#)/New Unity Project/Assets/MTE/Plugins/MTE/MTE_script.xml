@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MTE_script</name>
+    </assembly>
+    <members>
+        <member name="M:MTE.GrassLoader.RemoveOldGrasses">
+            <summary>
+            Remove all grass objects under this GameObject
+            </summary>
+            <remarks>
+            Please keep this method public, because MTE Editor will call this method.
+            </remarks>
+        </member>
+        <member name="M:MTE.GrassLoader.GenerateGrasses">
+            <summary>
+            Generate grass instances in the scene
+            </summary>
+            <remarks>
+            Please keep this method public, because MTE will call this method to generate grasses in editor.
+            </remarks>
+        </member>
+        <member name="M:MTE.GrassQuad.SaveLightmapData(System.Int32,UnityEngine.Vector4)">
+            <summary>Save lightmapping data to this GrassStar.</summary>
+            <param name="lightmapIndex"></param>
+            <param name="lightmapScaleOffset"></param>
+        </member>
+        <member name="M:MTE.GrassQuad.Init(UnityEngine.Material,UnityEngine.Vector3,System.Single,System.Single,System.Single)">
+            <summary>Initialize this GrassStar.</summary>
+            <param name="material"></param>
+            <param name="position">position in world space</param>
+            <param name="rotationY">rotation Y (Euler angles Y)</param>
+            <param name="width">width of a quad</param>
+            <param name="height">height of a quad</param>
+        </member>
+        <member name="M:MTE.GrassStar.SaveLightmapData(System.Int32,UnityEngine.Vector4)">
+            <summary>Save lightmapping data to this GrassStar.</summary>
+            <param name="lightmapIndex"></param>
+            <param name="lightmapScaleOffset"></param>
+        </member>
+        <member name="M:MTE.GrassStar.Init(UnityEngine.Material,UnityEngine.Vector3,System.Single,System.Single,System.Single)">
+            <summary>Initialize this GrassStar.</summary>
+            <param name="material"></param>
+            <param name="position">position in world space</param>
+            <param name="rotationY">rotation Y (Euler angles Y)</param>
+            <param name="width">width of a quad</param>
+            <param name="height">height of a quad</param>
+        </member>
+        <member name="M:VertexColorInitializer.ApplyVertexColor">
+            <summary>
+            Apply the vertex colors in the VertexColor asset file to the mesh
+            </summary>
+            <remarks>
+            Please keep this method public, because MTE will call this method to apply vertex color in editor.
+            </remarks>
+        </member>
+    </members>
+</doc>

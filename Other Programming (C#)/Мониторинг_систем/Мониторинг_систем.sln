@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2046
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Мониторинг_систем", "Мониторинг_систем\Мониторинг_систем.csproj", "{17A3A46F-B5F8-4DFA-BF34-669E4A980DCA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{17A3A46F-B5F8-4DFA-BF34-669E4A980DCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17A3A46F-B5F8-4DFA-BF34-669E4A980DCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17A3A46F-B5F8-4DFA-BF34-669E4A980DCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17A3A46F-B5F8-4DFA-BF34-669E4A980DCA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3411E6CB-A3E3-4BC4-843B-46887CC26CF0}
+	EndGlobalSection
+EndGlobal
