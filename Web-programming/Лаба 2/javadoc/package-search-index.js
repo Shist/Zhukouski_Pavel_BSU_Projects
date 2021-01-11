@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"by.bsu.zhukouski.controller"},{"l":"by.bsu.zhukouski.model.entity"},{"l":"by.bsu.zhukouski.model.exception"},{"l":"by.bsu.zhukouski.view"}]

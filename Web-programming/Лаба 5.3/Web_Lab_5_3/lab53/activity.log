@@ -1,0 +1,212 @@
+2019-12-09 19:46:41 INFO  Client:49 - Client 1 started working
+2019-12-09 19:57:53 INFO  Client:49 - Client 1 started working
+2019-12-09 19:57:54 INFO  ServerHandler:42 -  Server handler added.
+2019-12-09 19:57:58 INFO  ServerHandler:123 - Channel:[id: 0x228fd149, L:/127.0.0.1:8000 - R:/127.0.0.1:63421]
+2019-12-09 19:57:58 INFO  ServerHandler:126 - Client 0got a new message:
+2019-12-09 19:57:58 INFO  ServerHandler:128 - [id: 0x228fd149, L:/127.0.0.1:8000 - R:/127.0.0.1:63421]
+2019-12-09 19:59:12 INFO  ServerHandler:76 -  Server handler removed.
+2019-12-09 19:59:22 INFO  Client:49 - Client 1 started working
+2019-12-09 19:59:23 INFO  ServerHandler:42 -  Server handler added.
+2019-12-09 19:59:29 INFO  ServerHandler:123 - Channel:[id: 0x37457b73, L:/127.0.0.1:8000 - R:/127.0.0.1:63440]
+2019-12-09 19:59:29 INFO  ServerHandler:126 - Client 0got a new message:
+2019-12-09 19:59:29 INFO  ServerHandler:128 - [id: 0x37457b73, L:/127.0.0.1:8000 - R:/127.0.0.1:63440]
+2019-12-09 19:59:54 INFO  Client:49 - Client 1 started working
+2019-12-09 19:59:55 INFO  ServerHandler:42 -  Server handler added.
+2019-12-09 19:59:59 INFO  ServerHandler:123 - Channel:[id: 0x221e47c9, L:/127.0.0.1:8000 - R:/127.0.0.1:63452]
+2019-12-09 19:59:59 INFO  ServerHandler:126 - Client 0got a new message:
+2019-12-09 19:59:59 INFO  ServerHandler:128 - We are happy to see you there!
+2019-12-09 20:01:37 INFO  Client:49 - Client 0 started working
+2019-12-09 20:01:37 INFO  ServerHandler:42 -  Server handler added.
+2019-12-09 20:01:40 INFO  ServerHandler:123 - Channel:1e9186b4
+2019-12-09 20:01:40 INFO  ServerHandler:126 - Client 0got a new message:
+2019-12-09 20:01:40 INFO  ServerHandler:129 - We are happy to see you there!
+2019-12-09 20:03:20 INFO  Client:49 - Client 1 started working
+2019-12-09 20:03:21 INFO  ServerHandler:42 -  Server handler added.
+2019-12-09 20:03:24 INFO  ServerHandler:123 - Channel:7d5abfb7
+2019-12-09 20:03:24 INFO  ServerHandler:126 - Client 0got a new message:
+2019-12-09 20:03:24 INFO  ServerHandler:129 - We are happy to see you there!
+2020-11-30 14:59:20 INFO  Client:52 - Client Pavel started working
+2020-11-30 14:59:21 INFO  ServerHandler:42 -  Server handler added.
+2020-11-30 14:59:21 INFO  ServerHandler:76 -  Server handler removed.
+2020-11-30 14:59:21 WARN  ChannelInitializer:97 - Failed to initialize a channel. Closing: [id: 0x8938f8a9, L:/127.0.0.1:8000 - R:/127.0.0.1:60242]
+io.netty.channel.ChannelPipelineException: ServerHandler.handlerAdded() has thrown an exception; removed.
+	at io.netty.channel.DefaultChannelPipeline.callHandlerAdded0(DefaultChannelPipeline.java:628)
+	at io.netty.channel.DefaultChannelPipeline.addLast(DefaultChannelPipeline.java:223)
+	at io.netty.channel.DefaultChannelPipeline.addLast(DefaultChannelPipeline.java:195)
+	at ServerInitializer.initChannel(ServerInitializer.java:25)
+	at ServerInitializer.initChannel(ServerInitializer.java:12)
+	at io.netty.channel.ChannelInitializer.initChannel(ChannelInitializer.java:129)
+	at io.netty.channel.ChannelInitializer.handlerAdded(ChannelInitializer.java:112)
+	at io.netty.channel.AbstractChannelHandlerContext.callHandlerAdded(AbstractChannelHandlerContext.java:964)
+	at io.netty.channel.DefaultChannelPipeline.callHandlerAdded0(DefaultChannelPipeline.java:613)
+	at io.netty.channel.DefaultChannelPipeline.access$100(DefaultChannelPipeline.java:46)
+	at io.netty.channel.DefaultChannelPipeline$PendingHandlerAddedTask.execute(DefaultChannelPipeline.java:1475)
+	at io.netty.channel.DefaultChannelPipeline.callHandlerAddedForAllHandlers(DefaultChannelPipeline.java:1127)
+	at io.netty.channel.DefaultChannelPipeline.invokeHandlerAddedIfNeeded(DefaultChannelPipeline.java:654)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.register0(AbstractChannel.java:503)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.access$200(AbstractChannel.java:416)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe$1.run(AbstractChannel.java:475)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:510)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:518)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$6.run(SingleThreadEventExecutor.java:1050)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.io.FileNotFoundException: \Users\macpro\Downloads\lab53\src\index.txt (Системе не удается найти указанный путь)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:155)
+	at java.base/java.io.FileReader.<init>(FileReader.java:75)
+	at ServerHandler.handlerAdded(ServerHandler.java:44)
+	at io.netty.channel.AbstractChannelHandlerContext.callHandlerAdded(AbstractChannelHandlerContext.java:964)
+	at io.netty.channel.DefaultChannelPipeline.callHandlerAdded0(DefaultChannelPipeline.java:613)
+	... 22 more
+2020-11-30 15:00:01 INFO  Client:52 - Client Pavel started working
+2020-11-30 15:00:02 INFO  ServerHandler:42 -  Server handler added.
+2020-11-30 15:00:02 INFO  ServerHandler:76 -  Server handler removed.
+2020-11-30 15:00:02 WARN  ChannelInitializer:97 - Failed to initialize a channel. Closing: [id: 0x463760eb, L:/127.0.0.1:8000 - R:/127.0.0.1:60281]
+io.netty.channel.ChannelPipelineException: ServerHandler.handlerAdded() has thrown an exception; removed.
+	at io.netty.channel.DefaultChannelPipeline.callHandlerAdded0(DefaultChannelPipeline.java:628)
+	at io.netty.channel.DefaultChannelPipeline.addLast(DefaultChannelPipeline.java:223)
+	at io.netty.channel.DefaultChannelPipeline.addLast(DefaultChannelPipeline.java:195)
+	at ServerInitializer.initChannel(ServerInitializer.java:25)
+	at ServerInitializer.initChannel(ServerInitializer.java:12)
+	at io.netty.channel.ChannelInitializer.initChannel(ChannelInitializer.java:129)
+	at io.netty.channel.ChannelInitializer.handlerAdded(ChannelInitializer.java:112)
+	at io.netty.channel.AbstractChannelHandlerContext.callHandlerAdded(AbstractChannelHandlerContext.java:964)
+	at io.netty.channel.DefaultChannelPipeline.callHandlerAdded0(DefaultChannelPipeline.java:613)
+	at io.netty.channel.DefaultChannelPipeline.access$100(DefaultChannelPipeline.java:46)
+	at io.netty.channel.DefaultChannelPipeline$PendingHandlerAddedTask.execute(DefaultChannelPipeline.java:1475)
+	at io.netty.channel.DefaultChannelPipeline.callHandlerAddedForAllHandlers(DefaultChannelPipeline.java:1127)
+	at io.netty.channel.DefaultChannelPipeline.invokeHandlerAddedIfNeeded(DefaultChannelPipeline.java:654)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.register0(AbstractChannel.java:503)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.access$200(AbstractChannel.java:416)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe$1.run(AbstractChannel.java:475)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:510)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:518)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$6.run(SingleThreadEventExecutor.java:1050)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.io.FileNotFoundException: \Users\macpro\Downloads\lab53\src\index.txt (Системе не удается найти указанный путь)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:155)
+	at java.base/java.io.FileReader.<init>(FileReader.java:75)
+	at ServerHandler.handlerAdded(ServerHandler.java:44)
+	at io.netty.channel.AbstractChannelHandlerContext.callHandlerAdded(AbstractChannelHandlerContext.java:964)
+	at io.netty.channel.DefaultChannelPipeline.callHandlerAdded0(DefaultChannelPipeline.java:613)
+	... 22 more
+2020-11-30 15:04:17 INFO  Client:52 - Client Pavel started working
+2020-11-30 15:04:18 INFO  ServerHandler:42 -  Server handler added.
+2020-11-30 15:04:18 INFO  ServerHandler:76 -  Server handler removed.
+2020-11-30 15:04:18 WARN  ChannelInitializer:97 - Failed to initialize a channel. Closing: [id: 0x2c29b042, L:/127.0.0.1:8000 - R:/127.0.0.1:60465]
+io.netty.channel.ChannelPipelineException: ServerHandler.handlerAdded() has thrown an exception; removed.
+	at io.netty.channel.DefaultChannelPipeline.callHandlerAdded0(DefaultChannelPipeline.java:628)
+	at io.netty.channel.DefaultChannelPipeline.addLast(DefaultChannelPipeline.java:223)
+	at io.netty.channel.DefaultChannelPipeline.addLast(DefaultChannelPipeline.java:195)
+	at ServerInitializer.initChannel(ServerInitializer.java:25)
+	at ServerInitializer.initChannel(ServerInitializer.java:12)
+	at io.netty.channel.ChannelInitializer.initChannel(ChannelInitializer.java:129)
+	at io.netty.channel.ChannelInitializer.handlerAdded(ChannelInitializer.java:112)
+	at io.netty.channel.AbstractChannelHandlerContext.callHandlerAdded(AbstractChannelHandlerContext.java:964)
+	at io.netty.channel.DefaultChannelPipeline.callHandlerAdded0(DefaultChannelPipeline.java:613)
+	at io.netty.channel.DefaultChannelPipeline.access$100(DefaultChannelPipeline.java:46)
+	at io.netty.channel.DefaultChannelPipeline$PendingHandlerAddedTask.execute(DefaultChannelPipeline.java:1475)
+	at io.netty.channel.DefaultChannelPipeline.callHandlerAddedForAllHandlers(DefaultChannelPipeline.java:1127)
+	at io.netty.channel.DefaultChannelPipeline.invokeHandlerAddedIfNeeded(DefaultChannelPipeline.java:654)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.register0(AbstractChannel.java:503)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.access$200(AbstractChannel.java:416)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe$1.run(AbstractChannel.java:475)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:510)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:518)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$6.run(SingleThreadEventExecutor.java:1050)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.io.FileNotFoundException: C:\Users\user\IdeaProjects\Web_Lab_5_3\lab53\src (Отказано в доступе)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:155)
+	at java.base/java.io.FileReader.<init>(FileReader.java:75)
+	at ServerHandler.handlerAdded(ServerHandler.java:44)
+	at io.netty.channel.AbstractChannelHandlerContext.callHandlerAdded(AbstractChannelHandlerContext.java:964)
+	at io.netty.channel.DefaultChannelPipeline.callHandlerAdded0(DefaultChannelPipeline.java:613)
+	... 22 more
+2020-11-30 15:05:27 INFO  Client:52 - Client A started working
+2020-11-30 15:05:28 INFO  ServerHandler:42 -  Server handler added.
+2020-11-30 15:05:28 INFO  ServerHandler:76 -  Server handler removed.
+2020-11-30 15:05:28 WARN  ChannelInitializer:97 - Failed to initialize a channel. Closing: [id: 0x3350e39f, L:/127.0.0.1:8000 - R:/127.0.0.1:60582]
+io.netty.channel.ChannelPipelineException: ServerHandler.handlerAdded() has thrown an exception; removed.
+	at io.netty.channel.DefaultChannelPipeline.callHandlerAdded0(DefaultChannelPipeline.java:628)
+	at io.netty.channel.DefaultChannelPipeline.addLast(DefaultChannelPipeline.java:223)
+	at io.netty.channel.DefaultChannelPipeline.addLast(DefaultChannelPipeline.java:195)
+	at ServerInitializer.initChannel(ServerInitializer.java:25)
+	at ServerInitializer.initChannel(ServerInitializer.java:12)
+	at io.netty.channel.ChannelInitializer.initChannel(ChannelInitializer.java:129)
+	at io.netty.channel.ChannelInitializer.handlerAdded(ChannelInitializer.java:112)
+	at io.netty.channel.AbstractChannelHandlerContext.callHandlerAdded(AbstractChannelHandlerContext.java:964)
+	at io.netty.channel.DefaultChannelPipeline.callHandlerAdded0(DefaultChannelPipeline.java:613)
+	at io.netty.channel.DefaultChannelPipeline.access$100(DefaultChannelPipeline.java:46)
+	at io.netty.channel.DefaultChannelPipeline$PendingHandlerAddedTask.execute(DefaultChannelPipeline.java:1475)
+	at io.netty.channel.DefaultChannelPipeline.callHandlerAddedForAllHandlers(DefaultChannelPipeline.java:1127)
+	at io.netty.channel.DefaultChannelPipeline.invokeHandlerAddedIfNeeded(DefaultChannelPipeline.java:654)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.register0(AbstractChannel.java:503)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.access$200(AbstractChannel.java:416)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe$1.run(AbstractChannel.java:475)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:510)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:518)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$6.run(SingleThreadEventExecutor.java:1050)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.io.FileNotFoundException: C:\Users\user\IdeaProjects\Web_Lab_5_3\lab53\src (Отказано в доступе)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:155)
+	at java.base/java.io.FileReader.<init>(FileReader.java:75)
+	at ServerHandler.handlerAdded(ServerHandler.java:44)
+	at io.netty.channel.AbstractChannelHandlerContext.callHandlerAdded(AbstractChannelHandlerContext.java:964)
+	at io.netty.channel.DefaultChannelPipeline.callHandlerAdded0(DefaultChannelPipeline.java:613)
+	... 22 more
+2020-11-30 15:07:09 INFO  Client:52 - Client Pavel started working
+2020-11-30 15:07:10 INFO  ServerHandler:42 -  Server handler added.
+2020-11-30 15:07:10 INFO  ServerHandler:76 -  Server handler removed.
+2020-11-30 15:07:10 WARN  ChannelInitializer:97 - Failed to initialize a channel. Closing: [id: 0x384b95d5, L:/127.0.0.1:8000 - R:/127.0.0.1:60709]
+io.netty.channel.ChannelPipelineException: ServerHandler.handlerAdded() has thrown an exception; removed.
+	at io.netty.channel.DefaultChannelPipeline.callHandlerAdded0(DefaultChannelPipeline.java:628)
+	at io.netty.channel.DefaultChannelPipeline.addLast(DefaultChannelPipeline.java:223)
+	at io.netty.channel.DefaultChannelPipeline.addLast(DefaultChannelPipeline.java:195)
+	at ServerInitializer.initChannel(ServerInitializer.java:25)
+	at ServerInitializer.initChannel(ServerInitializer.java:12)
+	at io.netty.channel.ChannelInitializer.initChannel(ChannelInitializer.java:129)
+	at io.netty.channel.ChannelInitializer.handlerAdded(ChannelInitializer.java:112)
+	at io.netty.channel.AbstractChannelHandlerContext.callHandlerAdded(AbstractChannelHandlerContext.java:964)
+	at io.netty.channel.DefaultChannelPipeline.callHandlerAdded0(DefaultChannelPipeline.java:613)
+	at io.netty.channel.DefaultChannelPipeline.access$100(DefaultChannelPipeline.java:46)
+	at io.netty.channel.DefaultChannelPipeline$PendingHandlerAddedTask.execute(DefaultChannelPipeline.java:1475)
+	at io.netty.channel.DefaultChannelPipeline.callHandlerAddedForAllHandlers(DefaultChannelPipeline.java:1127)
+	at io.netty.channel.DefaultChannelPipeline.invokeHandlerAddedIfNeeded(DefaultChannelPipeline.java:654)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.register0(AbstractChannel.java:503)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.access$200(AbstractChannel.java:416)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe$1.run(AbstractChannel.java:475)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:510)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:518)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$6.run(SingleThreadEventExecutor.java:1050)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.io.FileNotFoundException: C:\Users\user\IdeaProjects\Web_Lab_5_3\lab53\src (Отказано в доступе)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:155)
+	at java.base/java.io.FileReader.<init>(FileReader.java:75)
+	at ServerHandler.handlerAdded(ServerHandler.java:44)
+	at io.netty.channel.AbstractChannelHandlerContext.callHandlerAdded(AbstractChannelHandlerContext.java:964)
+	at io.netty.channel.DefaultChannelPipeline.callHandlerAdded0(DefaultChannelPipeline.java:613)
+	... 22 more

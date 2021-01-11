@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"model","l":"Bus"},{"p":"model","l":"BusStop"},{"p":"model","l":"BusStopCoordinate"},{"p":"model","l":"BusStopNameEnum"},{"p":"exception","l":"BusWorkException"},{"p":"controller","l":"Main"},{"p":"model","l":"Passenger"},{"p":"util","l":"PassengerListGenerator"}]

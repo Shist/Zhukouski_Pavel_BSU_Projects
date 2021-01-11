@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="info">
+    <Properties>
+        <property name="LOG_DIR">logs</property>
+        <property name="ARCHIVE_LOG_DIR">${LOG_DIR}/archive</property>
+        <property name="pattern">%d{yyyy-MM-dd HH:mm:ss} %-5level [%logger{5}.%M]: %msg%n</property>
+        <property name="pattern_0">%d{HH:mm:ss} %-5level %logger{1}.%M - %msg%n</property>
+    </Properties>
+    <ThresholdFilter level="trace"/>
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="${pattern_0}"/>
+        </Console>
+        <RollingFile name="RunFile" fileName="log_files/lab3.log" append="true"
+                     filePattern="log_files/${date:yyyy-MM-dd}/lab3_%d{yyyy-MM-dd_HH-mm}_%i.log">
+            <PatternLayout pattern="${pattern}"/>
+            <Policies>
+                <OnStartupTriggeringPolicy/>
+                <CronTriggeringPolicy schedule="*/30 * * * * ?"/>
+                <TimeBasedTriggeringPolicy/>
+                <SizeBasedTriggeringPolicy size="100 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="50"/>
+        </RollingFile>
+    </Appenders>
+
+    <Loggers>
+        <Logger name="controller" level="debug">
+            <Appender-ref ref="RunFile" level="trace"/>
+        </Logger>
+        <Logger name="model" level="debug">
+            <Appender-ref ref="RunFile" level="trace"/>
+        </Logger>
+        <Root level="debug">
+            <Appender-ref ref="Console" level = "trace"/>
+        </Root>
+    </Loggers>
+</Configuration>

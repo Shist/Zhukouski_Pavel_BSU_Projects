@@ -1,0 +1,6 @@
+by.bsu.zhukouski.enums.EnumPorS
+by.bsu.zhukouski.enums.EnumTriangleType
+by.bsu.zhukouski.model.entity.ClassTriangle
+by.bsu.zhukouski.model.entity.ClassTriangle.ClassTrianglePrism
+by.bsu.zhukouski.model.entity.ClassTriangle.ClassTrianglePyramid
+by.bsu.zhukouski.view

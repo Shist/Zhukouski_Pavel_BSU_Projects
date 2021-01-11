@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.GridPane?>
+
+<GridPane hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.172-ea"
+          xmlns:fx="http://javafx.com/fxml/1" fx:controller="by.bsu.zhukouski.view.gui.controllers.CompositionController">
+
+    <Label text="Composition Type: " GridPane.rowIndex="2" GridPane.columnIndex="2"/>
+    <ComboBox fx:id="compositionTypeComboBox" prefWidth="150.0" GridPane.rowIndex="2" GridPane.columnIndex="3"/>
+
+    <Button onAction="#confirmType" text="Confirm music type" GridPane.rowIndex="2" GridPane.columnIndex="4"/>
+
+    <Label text="Composition Genre: " GridPane.rowIndex="4" GridPane.columnIndex="2"/>
+    <ComboBox fx:id="HipHopGenreComboBox" prefWidth="180.0" GridPane.rowIndex="4" GridPane.columnIndex="4"/>
+    <ComboBox fx:id="PopGenreComboBox" prefWidth="180.0" GridPane.rowIndex="4" GridPane.columnIndex="4"/>
+    <ComboBox fx:id="RockGenreComboBox" prefWidth="180.0" GridPane.rowIndex="4" GridPane.columnIndex="4"/>
+
+    <Label text="Song's Title: " GridPane.rowIndex="6" GridPane.columnIndex="2"/>
+    <TextField fx:id="compositionNameTextField" GridPane.rowIndex="6" GridPane.columnIndex="4"/>
+
+    <Label text="Author's Name: " GridPane.rowIndex="8" GridPane.columnIndex="2"/>
+    <TextField fx:id="compositionAuthorTextField" GridPane.rowIndex="8" GridPane.columnIndex="4"/>
+
+    <Label text="Song's Duration: " GridPane.rowIndex="10" GridPane.columnIndex="2"/>
+    <TextField fx:id="compositionDurationTextField" GridPane.rowIndex="10" GridPane.columnIndex="4"/>
+
+    <TextArea fx:id="compositionsTextArea" prefHeight="700.0" prefWidth="500.0" GridPane.rowSpan="32" GridPane.columnIndex="10"/>
+
+    <Label fx:id="wrongDataLabel" text="Wrong data!!!" textFill="RED" visible="false" GridPane.rowIndex="1" GridPane.columnIndex="10"/>
+
+    <Button onAction="#recordComposition" text="Record composition on disc" GridPane.rowIndex="12" GridPane.columnIndex="4"/>
+
+    <Button onAction="#clearDisc" text="Clear disc" GridPane.rowIndex="14" GridPane.columnIndex="2"/>
+
+    <Button onAction="#printDiscInfo" text="Print all disc info" GridPane.rowIndex="16" GridPane.columnIndex="2"/>
+
+    <Button onAction="#countDuration" text="Count whole disk duration" GridPane.rowIndex="18" GridPane.columnIndex="2"/>
+
+    <Button onAction="#printAllHipHop" text="Print all hip-hop" GridPane.rowIndex="14" GridPane.columnIndex="3"/>
+
+    <Button onAction="#printAllPop" text="Print all pop" GridPane.rowIndex="16" GridPane.columnIndex="3"/>
+
+    <Button onAction="#printAllRock" text="Print all rock" GridPane.rowIndex="18" GridPane.columnIndex="3"/>
+
+    <Button onAction="#printSortedNameInfo" text="Sort by name" GridPane.rowIndex="14" GridPane.columnIndex="4"/>
+
+    <Button onAction="#printSortedAuthorInfo" text="Sort by author" GridPane.rowIndex="16" GridPane.columnIndex="4"/>
+
+    <Button onAction="#printSortedDurationInfo" text="Sort by duration" GridPane.rowIndex="18" GridPane.columnIndex="4"/>
+
+    <TextField fx:id="FindByNameTextField" GridPane.rowIndex="20" GridPane.columnIndex="2"/>
+
+    <TextField fx:id="FindByAuthorTextField" GridPane.rowIndex="22" GridPane.columnIndex="2"/>
+
+    <TextField fx:id="FindByDurationTextField" GridPane.rowIndex="24" GridPane.columnIndex="2"/>
+
+    <Button onAction="#findByName" text="Find by name" GridPane.rowIndex="20" GridPane.columnIndex="4"/>
+
+    <Button onAction="#findByAuthor" text="Find by author" GridPane.rowIndex="22" GridPane.columnIndex="4"/>
+
+    <Button onAction="#findByDuration" text="Find by duration" GridPane.rowIndex="24" GridPane.columnIndex="4"/>
+
+    <TextField fx:id="FindByNameRangeTextField1" GridPane.rowIndex="26" GridPane.columnIndex="2"/>
+
+    <TextField fx:id="FindByNameRangeTextField2" GridPane.rowIndex="26" GridPane.columnIndex="3"/>
+
+    <TextField fx:id="FindByAuthorRangeTextField1" GridPane.rowIndex="28" GridPane.columnIndex="2"/>
+
+    <TextField fx:id="FindByAuthorRangeTextField2" GridPane.rowIndex="28" GridPane.columnIndex="3"/>
+
+    <TextField fx:id="FindByDurationRangeTextField1" GridPane.rowIndex="30" GridPane.columnIndex="2"/>
+
+    <TextField fx:id="FindByDurationRangeTextField2" GridPane.rowIndex="30" GridPane.columnIndex="3"/>
+
+    <Button onAction="#findByNameRange" text="Find by name range" GridPane.rowIndex="26" GridPane.columnIndex="4"/>
+
+    <Button onAction="#findByAuthorRange" text="Find by author range" GridPane.rowIndex="28" GridPane.columnIndex="4"/>
+
+    <Button onAction="#findByDurationRange" text="Find by duration range" GridPane.rowIndex="30" GridPane.columnIndex="4"/>
+
+</GridPane>

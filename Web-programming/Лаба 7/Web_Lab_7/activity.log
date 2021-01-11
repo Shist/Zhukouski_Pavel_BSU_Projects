@@ -1,0 +1,50 @@
+2020-12-14 12:57:33 INFO  Runner:40 - Start work
+2020-12-14 12:57:33 INFO  Runner:47 - Create iTunes
+2020-12-14 12:57:33 INFO  Controller:78 - Validation succeed
+2020-12-14 12:57:33 INFO  Runner:56 - Valid xml
+2020-12-14 12:57:33 INFO  Runner:81 - Try to parse xml
+2020-12-14 12:57:33 INFO  Parser:50 - Starting DOM parsing
+2020-12-14 12:57:33 INFO  Parser:206 - Finish DOM parsing
+2020-12-14 12:57:33 INFO  Runner:88 - Add parsed songs to itunes
+2020-12-14 12:57:33 INFO  Runner:102 - 
+-----------Just list of songs in itunes---------
+2020-12-14 12:57:34 INFO  Runner:105 - 
+Name: Cher-Believe
+Time: 3,27
+Released date: Mon Dec 14 12:57:33 MSK 2020
+Genre: Disco
+Album: oneIs this Cher: true
+
+2020-12-14 12:57:34 INFO  Runner:105 - 
+
+Name: two
+Time: 2,40
+Released date: Mon Dec 14 12:57:33 MSK 2020
+Genre: Jazz
+Album: twoIs the singer black again: true
+
+2020-12-14 12:57:34 INFO  Runner:105 - 
+
+Name: Hello
+Time: 3,20
+Released date: Mon Dec 14 12:57:33 MSK 2020
+Genre: Blues
+Album: 2.4Is the singer black: false
+
+2020-12-14 12:57:34 INFO  Runner:105 - 
+Name: Monster
+Time: 4,41
+Released date: Mon Dec 14 12:57:33 MSK 2020
+Genre: Rap
+ Electronic sounds percent: 50,50
+Is fast: true
+
+2020-12-14 12:57:34 INFO  Runner:105 - 
+Name: SomeMusic
+Time: 5,05
+Released date: Mon Dec 14 12:57:33 MSK 2020
+Genre: House
+ Electronic sounds percent: 5,40
+Is slow: true
+
+2020-12-14 12:57:34 INFO  Runner:97 - Finish work

@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<xs:schema
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.bsu.by"
+        xmlns="http://www.bsu.by"
+        elementFormDefault="qualified">
+
+    <xs:complexType name="Song" abstract="true">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="Genre" type="xs:string"/>
+            <xs:element name="time" type="xs:double"/>
+            <xs:element name="releaseDate" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="OldSong" abstract="true">
+        <xs:complexContent>
+            <xs:extension base="Song">
+                <xs:sequence>
+                    <xs:element name="Album" type="xs:string"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="Disco">
+        <xs:complexContent>
+            <xs:extension base="OldSong">
+                <xs:sequence>
+                    <xs:element name="isThisCher" type="xs:boolean"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="Jazz">
+        <xs:complexContent>
+            <xs:extension base="OldSong">
+                <xs:sequence>
+                    <xs:element name="isTheSingerBlack" type="xs:boolean"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="Blues">
+        <xs:complexContent>
+            <xs:extension base="OldSong">
+                <xs:sequence>
+                    <xs:element name="isTheSingerBlackAgain" type="xs:boolean"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="NewSong" abstract="true">
+        <xs:complexContent>
+            <xs:extension base="Song">
+                <xs:sequence>
+                    <xs:element name="electronicsPercent" type="xs:double"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="House">
+        <xs:complexContent>
+            <xs:extension base="NewSong">
+                <xs:sequence>
+                    <xs:element name="isSlow" type="xs:boolean"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="Rap">
+        <xs:complexContent>
+            <xs:extension base="NewSong">
+                <xs:sequence>
+                    <xs:element name="isFast" type="xs:boolean"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:element name="songs">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:choice maxOccurs="unbounded" minOccurs="0">
+                    <xs:element name="Disco" type="Disco"/>
+                    <xs:element name="Blues" type="Blues"/>
+                    <xs:element name="Jazz" type="Jazz"/>
+                    <xs:element name="House" type="House"/>
+                    <xs:element name="Rap" type="Rap"/>
+                </xs:choice>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
