@@ -1,0 +1,9 @@
+Minsk;Natowoll;4
+Minsk;Axerce;3
+Minsk;Esano;5
+Zhodino;Plooton;5
+Zhodino;Usiner;5
+Zhodino;Disir;5
+Zhodino;Tappi;4
+Gomel;Tomurix;3
+Gomel;Natowoll;3

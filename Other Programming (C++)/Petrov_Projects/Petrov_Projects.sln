@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2046
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Petrov_Projects", "Petrov_Projects\Petrov_Projects.vcxproj", "{BCD0B28F-3A1E-4F57-A5D9-50A119196EAA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BCD0B28F-3A1E-4F57-A5D9-50A119196EAA}.Debug|x64.ActiveCfg = Debug|x64
+		{BCD0B28F-3A1E-4F57-A5D9-50A119196EAA}.Debug|x64.Build.0 = Debug|x64
+		{BCD0B28F-3A1E-4F57-A5D9-50A119196EAA}.Debug|x86.ActiveCfg = Debug|Win32
+		{BCD0B28F-3A1E-4F57-A5D9-50A119196EAA}.Debug|x86.Build.0 = Debug|Win32
+		{BCD0B28F-3A1E-4F57-A5D9-50A119196EAA}.Release|x64.ActiveCfg = Release|x64
+		{BCD0B28F-3A1E-4F57-A5D9-50A119196EAA}.Release|x64.Build.0 = Release|x64
+		{BCD0B28F-3A1E-4F57-A5D9-50A119196EAA}.Release|x86.ActiveCfg = Release|Win32
+		{BCD0B28F-3A1E-4F57-A5D9-50A119196EAA}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AC59235C-51ED-4B66-8FED-F146493DCF3A}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,21 @@
+START
+
+Query of the 1st type:
+Information about hotels in the town named Zhodino:
+Hotel Plooton, 5 stars
+Hotel Usiner, 5 stars
+Hotel Disir, 5 stars
+Hotel Tappi, 4 stars
+
+Query of the 2nd type:
+There are 2 towns with the hotel named Natowoll
+
+Query of the 3rd type:
+Gomel - 3 stars
+Minsk - 3 stars
+Minsk - 4 stars
+Minsk - 5 stars
+Zhodino - 4 stars
+Zhodino - 5 stars
+
+FINISH
