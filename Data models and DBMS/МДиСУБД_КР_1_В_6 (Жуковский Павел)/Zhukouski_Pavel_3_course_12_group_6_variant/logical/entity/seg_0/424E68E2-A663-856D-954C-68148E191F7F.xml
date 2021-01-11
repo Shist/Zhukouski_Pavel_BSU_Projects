@@ -1,0 +1,98 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="424E68E2-A663-856D-954C-68148E191F7F" name="Document">
+<createdBy>user</createdBy>
+<createdTime>2020-10-14 11:51:41 UTC</createdTime>
+<ownerDesignName>Zhukouski_Pavel_3_course_12_group_6_variant</ownerDesignName>
+<engineerTo>
+<item key="CCF25F27-05F7-4825-AB42-67201106A29F" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Document_ID" id="F29F6224-D4AC-227E-6C89-F8A2718B63AA">
+<createdBy>user</createdBy>
+<createdTime>2020-10-14 11:51:49 UTC</createdTime>
+<ownerDesignName>Zhukouski_Pavel_3_course_12_group_6_variant</ownerDesignName>
+<engineerTo>
+<item key="CCF25F27-05F7-4825-AB42-67201106A29F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Document_Number" id="5E1F176C-141D-403D-1194-AD088932B754">
+<createdBy>user</createdBy>
+<createdTime>2020-10-14 11:51:59 UTC</createdTime>
+<ownerDesignName>Zhukouski_Pavel_3_course_12_group_6_variant</ownerDesignName>
+<engineerTo>
+<item key="CCF25F27-05F7-4825-AB42-67201106A29F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>64</dataTypeSize>
+<ownDataTypeParameters>64,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Specialty" id="1ECBA6D0-0FBD-FDB8-33A9-18FBAE045BE8">
+<createdBy>user</createdBy>
+<createdTime>2020-10-14 11:52:10 UTC</createdTime>
+<ownerDesignName>Zhukouski_Pavel_3_course_12_group_6_variant</ownerDesignName>
+<engineerTo>
+<item key="CCF25F27-05F7-4825-AB42-67201106A29F" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>256</dataTypeSize>
+<ownDataTypeParameters>256,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Tester_ID" id="99CAB9A9-6C6B-8CD4-628A-2CCB5ADADEAA">
+<createdBy>user</createdBy>
+<createdTime>2020-10-14 11:52:38 UTC</createdTime>
+<generatorID>C3FA496D-8B4D-3ADE-E3F0-CF3203F92EFA</generatorID>
+<ownerDesignName>Zhukouski_Pavel_3_course_12_group_6_variant</ownerDesignName>
+<engineerTo>
+<item key="CCF25F27-05F7-4825-AB42-67201106A29F" value="true"/>
+</engineerTo>
+<referedAttribute>E5D1B72C-BCA6-EC82-372D-76DB6AC0ABA2</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Average_Mark" id="7FF83F2F-2A6F-8563-AC2D-1EE4627B84E5">
+<createdBy>user</createdBy>
+<createdTime>2020-10-14 11:53:50 UTC</createdTime>
+<ownerDesignName>Zhukouski_Pavel_3_course_12_group_6_variant</ownerDesignName>
+<engineerTo>
+<item key="CCF25F27-05F7-4825-AB42-67201106A29F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="B2AAAFFE-9B01-B5ED-EF30-E215DB306A91" name="Document PK">
+<createdBy>user</createdBy>
+<createdTime>2020-10-14 11:51:58 UTC</createdTime>
+<ownerDesignName>Zhukouski_Pavel_3_course_12_group_6_variant</ownerDesignName>
+<engineerTo>
+<item key="CCF25F27-05F7-4825-AB42-67201106A29F" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>F29F6224-D4AC-227E-6C89-F8A2718B63AA</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

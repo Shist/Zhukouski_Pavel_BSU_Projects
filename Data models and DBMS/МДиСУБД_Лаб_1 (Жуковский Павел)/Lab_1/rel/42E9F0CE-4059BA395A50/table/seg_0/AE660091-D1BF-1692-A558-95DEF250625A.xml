@@ -1,0 +1,133 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="AE660091-D1BF-1692-A558-95DEF250625A" name="EMPLOYEEv1">
+<createdBy>user</createdBy>
+<createdTime>2020-09-09 12:36:14 UTC</createdTime>
+<generatorID>86275F37-808A-1868-34F5-F6B488FD10BC</generatorID>
+<ownerDesignName>Lab_1</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="badge_number" id="4C7E448F-7424-3240-C20E-80D6F331A42C">
+<createdBy>user</createdBy>
+<createdTime>2020-09-09 12:36:14 UTC</createdTime>
+<generatorID>63BCDDF6-577C-3E03-A86C-741063CA6B57</generatorID>
+<ownerDesignName>Lab_1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="first_name" id="2358148E-43DC-730C-8B66-C9E04C0C62B9">
+<createdBy>user</createdBy>
+<createdTime>2020-09-09 12:36:14 UTC</createdTime>
+<generatorID>E01F9FA2-2709-92FB-09B8-07469C899BB9</generatorID>
+<ownerDesignName>Lab_1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="job" id="A584614F-9DD1-B800-DF62-6C8AB491D07A">
+<createdBy>user</createdBy>
+<createdTime>2020-09-09 12:36:14 UTC</createdTime>
+<generatorID>0E23D429-6721-648D-AC90-84B26A777922</generatorID>
+<ownerDesignName>Lab_1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="salary" id="EC5455AE-F302-FEEF-4B06-80824AC5BCF4">
+<createdBy>user</createdBy>
+<createdTime>2020-09-09 12:36:14 UTC</createdTime>
+<generatorID>AC51016F-7610-5070-00F7-72E2200BF313</generatorID>
+<ownerDesignName>Lab_1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="budget" id="DB16C9AD-F0BC-0C95-FD65-F2D2CA1CE7E7">
+<createdBy>user</createdBy>
+<createdTime>2020-09-09 12:36:14 UTC</createdTime>
+<generatorID>CC2D849F-B18E-0B6E-BF9F-CC1EA38F163F</generatorID>
+<ownerDesignName>Lab_1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="bonus_plan" id="62E388A2-C140-A3FD-410E-BAB41CEEC977">
+<createdBy>user</createdBy>
+<createdTime>2020-09-09 12:36:14 UTC</createdTime>
+<generatorID>60BFBB48-D92A-0412-4EA7-A0A1CFFB9EB4</generatorID>
+<ownerDesignName>Lab_1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT040</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="car_plan" id="EC1DA012-20C0-93D1-FE5A-F3E70572DB72">
+<createdBy>user</createdBy>
+<createdTime>2020-09-09 12:36:14 UTC</createdTime>
+<generatorID>66517254-EE16-CF87-890F-A291F49D9CE4</generatorID>
+<ownerDesignName>Lab_1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT040</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="EMPLOYEEv1_badge_number" id="87FA608D-5BAF-4EA2-3AE3-37D82472CBB5">
+<createdBy>user</createdBy>
+<createdTime>2020-09-09 12:36:14 UTC</createdTime>
+<generatorID>6BDBE06B-3CE4-9F8C-6F92-E34E2E5389AB</generatorID>
+<ownerDesignName>Lab_1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="7300CD6A-2ABC-8333-CED7-AE42BED9D5A6" referredColumn="4C7E448F-7424-3240-C20E-80D6F331A42C"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="87AD3B08-FE69-D2F3-4C14-B6356300BEE8" name="EMPLOYEEv1_PK">
+<createdBy>user</createdBy>
+<createdTime>2020-09-09 12:36:14 UTC</createdTime>
+<generatorID>18DDFE9B-4AC4-B409-66A5-808ED71A2726</generatorID>
+<ownerDesignName>Lab_1</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4C7E448F-7424-3240-C20E-80D6F331A42C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1A809C6F-5F74-B0C5-8409-02111476B86A" name="EMPLOYEEv1_EMPLOYEEv1_FK">
+<createdBy>user</createdBy>
+<createdTime>2020-09-09 12:36:14 UTC</createdTime>
+<generatorID>F583756E-B4B4-E036-3D9C-C7FE7970132F</generatorID>
+<ownerDesignName>Lab_1</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="87FA608D-5BAF-4EA2-3AE3-37D82472CBB5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

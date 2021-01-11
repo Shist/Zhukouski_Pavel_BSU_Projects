@@ -1,0 +1,85 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="EF2C99C3-8A7F-72F8-9B36-228E98C7C0B8" name="Tester">
+<createdBy>user</createdBy>
+<createdTime>2020-10-14 11:38:12 UTC</createdTime>
+<ownerDesignName>Zhukouski_Pavel_3_course_12_group_6_variant</ownerDesignName>
+<engineerTo>
+<item key="CCF25F27-05F7-4825-AB42-67201106A29F" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Tester_ID" id="E5D1B72C-BCA6-EC82-372D-76DB6AC0ABA2">
+<createdBy>user</createdBy>
+<createdTime>2020-10-14 11:40:24 UTC</createdTime>
+<ownerDesignName>Zhukouski_Pavel_3_course_12_group_6_variant</ownerDesignName>
+<engineerTo>
+<item key="CCF25F27-05F7-4825-AB42-67201106A29F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Name" id="47B85649-1163-D751-381E-24BA49DA87E1">
+<createdBy>user</createdBy>
+<createdTime>2020-10-14 11:40:40 UTC</createdTime>
+<ownerDesignName>Zhukouski_Pavel_3_course_12_group_6_variant</ownerDesignName>
+<engineerTo>
+<item key="CCF25F27-05F7-4825-AB42-67201106A29F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32</dataTypeSize>
+<ownDataTypeParameters>32,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Surname" id="C738D94D-2CA1-79CF-830A-8BDF64FAAC21">
+<createdBy>user</createdBy>
+<createdTime>2020-10-14 11:41:03 UTC</createdTime>
+<ownerDesignName>Zhukouski_Pavel_3_course_12_group_6_variant</ownerDesignName>
+<engineerTo>
+<item key="CCF25F27-05F7-4825-AB42-67201106A29F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32</dataTypeSize>
+<ownDataTypeParameters>32,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Patronymic" id="98A496AE-8A25-4DB9-05D6-DEDB2354F783">
+<createdBy>user</createdBy>
+<createdTime>2020-10-14 11:41:27 UTC</createdTime>
+<ownerDesignName>Zhukouski_Pavel_3_course_12_group_6_variant</ownerDesignName>
+<engineerTo>
+<item key="CCF25F27-05F7-4825-AB42-67201106A29F" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32</dataTypeSize>
+<ownDataTypeParameters>32,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="9DF1DC5B-9BAD-F2B3-FC5F-437FFAEAE1DB" name="Tester PK">
+<createdBy>user</createdBy>
+<createdTime>2020-10-14 11:40:34 UTC</createdTime>
+<ownerDesignName>Zhukouski_Pavel_3_course_12_group_6_variant</ownerDesignName>
+<engineerTo>
+<item key="CCF25F27-05F7-4825-AB42-67201106A29F" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>E5D1B72C-BCA6-EC82-372D-76DB6AC0ABA2</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

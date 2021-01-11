@@ -1,0 +1,81 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D96A3B6E-37F2-4385-5821-81E4C02FB6D0" name="TRAINING_COMPANY">
+<createdBy>user</createdBy>
+<createdTime>2020-09-09 12:36:14 UTC</createdTime>
+<generatorID>D2515D94-F74E-BE24-1170-46FAD28DEF13</generatorID>
+<ownerDesignName>Lab_1</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="D55E17E0-2270-54D9-1A1B-CC01AD8DE571">
+<createdBy>user</createdBy>
+<createdTime>2020-09-09 12:36:14 UTC</createdTime>
+<generatorID>820E2F08-6C14-10F1-4F84-7D38D2EEBA0E</generatorID>
+<ownerDesignName>Lab_1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="name" id="521E48BD-7E6C-7B9A-9386-C05ABF919F0F">
+<createdBy>user</createdBy>
+<createdTime>2020-09-09 12:36:14 UTC</createdTime>
+<generatorID>16CC6B76-8E76-B6C8-F99D-B17DB6B3D466</generatorID>
+<ownerDesignName>Lab_1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="address" id="38C562A8-5195-93AE-8261-2DD09C66A05A">
+<createdBy>user</createdBy>
+<createdTime>2020-09-09 12:36:14 UTC</createdTime>
+<generatorID>3F58A60D-59B1-EDA4-77AF-B53F5E959104</generatorID>
+<ownerDesignName>Lab_1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="speciality" id="4E989F88-C948-6776-AC1B-3C4DDD822BF0">
+<createdBy>user</createdBy>
+<createdTime>2020-09-09 12:36:14 UTC</createdTime>
+<generatorID>8893FEF3-FFD3-3844-9D26-DED6BB7287F6</generatorID>
+<ownerDesignName>Lab_1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="contact_name" id="50E54B4B-122D-4FCC-7D46-E5E383F71EC2">
+<createdBy>user</createdBy>
+<createdTime>2020-09-09 12:36:14 UTC</createdTime>
+<generatorID>06E1B0D8-7A77-5969-22AE-7F3FD54CE072</generatorID>
+<ownerDesignName>Lab_1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="0B2E4246-B5E5-4921-8ACD-7E780981192A" name="TRAINING_COMPANY_PK">
+<createdBy>user</createdBy>
+<createdTime>2020-09-09 12:36:14 UTC</createdTime>
+<generatorID>D2C16E47-9C28-98B3-64BD-75ABDC0DF1D4</generatorID>
+<ownerDesignName>Lab_1</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D55E17E0-2270-54D9-1A1B-CC01AD8DE571"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

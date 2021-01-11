@@ -1,0 +1,108 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="388A20C6-7BC2-DAE7-C3DF-E258092FFD90" name="EVENT">
+<createdBy>user</createdBy>
+<createdTime>2020-09-09 12:17:34 UTC</createdTime>
+<ownerDesignName>Lab_1</ownerDesignName>
+<engineerTo>
+<item key="42E9F0CE-2309-DD13-BEA2-4059BA395A50" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id" id="E92D7009-09FE-095E-91E3-3BF8A58562AB">
+<createdBy>user</createdBy>
+<createdTime>2020-09-09 12:17:41 UTC</createdTime>
+<ownerDesignName>Lab_1</ownerDesignName>
+<engineerTo>
+<item key="42E9F0CE-2309-DD13-BEA2-4059BA395A50" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cost" id="A80B7FED-93FE-8502-DD4E-7E7695A90570">
+<createdBy>user</createdBy>
+<createdTime>2020-09-09 12:17:50 UTC</createdTime>
+<ownerDesignName>Lab_1</ownerDesignName>
+<engineerTo>
+<item key="42E9F0CE-2309-DD13-BEA2-4059BA395A50" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="name" id="B753D28D-C422-D8FB-CF62-6B114B4334F1">
+<createdBy>user</createdBy>
+<createdTime>2020-09-09 12:17:59 UTC</createdTime>
+<ownerDesignName>Lab_1</ownerDesignName>
+<engineerTo>
+<item key="42E9F0CE-2309-DD13-BEA2-4059BA395A50" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="date" id="5B625449-1473-F7D8-F104-2E4D500602EF">
+<createdBy>user</createdBy>
+<createdTime>2020-09-09 12:19:04 UTC</createdTime>
+<ownerDesignName>Lab_1</ownerDesignName>
+<engineerTo>
+<item key="42E9F0CE-2309-DD13-BEA2-4059BA395A50" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="description" id="454168DB-6F72-C346-7264-FB3A8D746035">
+<createdBy>user</createdBy>
+<createdTime>2020-09-09 12:19:13 UTC</createdTime>
+<ownerDesignName>Lab_1</ownerDesignName>
+<engineerTo>
+<item key="42E9F0CE-2309-DD13-BEA2-4059BA395A50" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT040</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id1" id="129F559D-CA8B-CD7A-EB0B-B6BECB35C0D7">
+<createdBy>user</createdBy>
+<createdTime>2020-09-09 12:23:54 UTC</createdTime>
+<generatorID>98574A00-C65E-3F88-BAA9-A877D4C6672E</generatorID>
+<ownerDesignName>Lab_1</ownerDesignName>
+<engineerTo>
+<item key="42E9F0CE-2309-DD13-BEA2-4059BA395A50" value="true"/>
+</engineerTo>
+<referedAttribute>0B593375-66D5-C708-D10E-E582819D87F2</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="88D379F5-9EAC-19A2-C899-44E28C79C6BC" name="EVENT PK">
+<createdBy>user</createdBy>
+<createdTime>2020-09-09 12:17:47 UTC</createdTime>
+<ownerDesignName>Lab_1</ownerDesignName>
+<engineerTo>
+<item key="42E9F0CE-2309-DD13-BEA2-4059BA395A50" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>E92D7009-09FE-095E-91E3-3BF8A58562AB</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

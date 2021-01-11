@@ -1,0 +1,33 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="F0951F3C-8158-301F-C76A-2D7F34A3F10F" name="PRIVATE HOME">
+<createdBy>user</createdBy>
+<createdTime>2020-09-09 12:21:47 UTC</createdTime>
+<ownerDesignName>Lab_1</ownerDesignName>
+<engineerTo>
+<item key="42E9F0CE-2309-DD13-BEA2-4059BA395A50" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<hierarchicalParent>00A90D0D-2121-470C-38B5-A441234F6BC3</hierarchicalParent>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="accessibility" id="4B1E09A7-7B31-F52B-B251-093BDD8E8799">
+<createdBy>user</createdBy>
+<createdTime>2020-09-09 12:22:04 UTC</createdTime>
+<ownerDesignName>Lab_1</ownerDesignName>
+<engineerTo>
+<item key="42E9F0CE-2309-DD13-BEA2-4059BA395A50" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT040</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+</Entity>

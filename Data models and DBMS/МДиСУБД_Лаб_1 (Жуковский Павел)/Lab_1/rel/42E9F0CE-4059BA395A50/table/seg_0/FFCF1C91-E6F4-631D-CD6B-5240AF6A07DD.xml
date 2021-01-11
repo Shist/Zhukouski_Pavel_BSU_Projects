@@ -1,0 +1,96 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="FFCF1C91-E6F4-631D-CD6B-5240AF6A07DD" name="DIRECTOR">
+<createdBy>user</createdBy>
+<createdTime>2020-09-09 12:36:14 UTC</createdTime>
+<generatorID>3E87E058-230E-6ED5-2DB3-4AA108B23EA5</generatorID>
+<ownerDesignName>Lab_1</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="badge_number" id="1583CA25-CF04-65B2-8719-8630F50FF78A">
+<createdBy>user</createdBy>
+<createdTime>2020-09-09 12:36:14 UTC</createdTime>
+<generatorID>0EDE09E6-9A71-90AC-834E-31453D4CF5DE</generatorID>
+<ownerDesignName>Lab_1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="name" id="FBD83907-601C-4E33-9A2D-E0635AD270D2">
+<createdBy>user</createdBy>
+<createdTime>2020-09-09 12:36:14 UTC</createdTime>
+<generatorID>7FEC07F1-2A53-6069-F311-DD04E5DCAF98</generatorID>
+<ownerDesignName>Lab_1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="salary" id="7D11CD02-54E3-17A4-AB5F-F297BCF61006">
+<createdBy>user</createdBy>
+<createdTime>2020-09-09 12:36:14 UTC</createdTime>
+<generatorID>53451BF5-C059-1F21-67C8-A0FA97EFBE32</generatorID>
+<ownerDesignName>Lab_1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="bonus_plan" id="CCBDC2E5-C7E6-1FE6-0A5F-02A3433D7423">
+<createdBy>user</createdBy>
+<createdTime>2020-09-09 12:36:14 UTC</createdTime>
+<generatorID>3E7F280C-E0E4-72D4-44B4-2927691CABE3</generatorID>
+<ownerDesignName>Lab_1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT040</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PRESIDENT_badge_number" id="D6476281-C1C6-7C57-45CE-F664D397D490">
+<createdBy>user</createdBy>
+<createdTime>2020-09-09 12:36:14 UTC</createdTime>
+<generatorID>EC0CF6E3-F04A-7E62-9155-EDB7DAF91BA9</generatorID>
+<ownerDesignName>Lab_1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="8FF054F2-8EE9-EB36-FFC9-D57CFA77DC5D" referredColumn="6917EE35-A619-C81D-6FFB-4BA858ED46C7"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="8D526B86-BFB8-FBFB-D0AD-763427491FFF" name="DIRECTOR_PK">
+<createdBy>user</createdBy>
+<createdTime>2020-09-09 12:36:14 UTC</createdTime>
+<generatorID>0023F8FF-D73C-B7B7-8351-F3CDAA5C2154</generatorID>
+<ownerDesignName>Lab_1</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1583CA25-CF04-65B2-8719-8630F50FF78A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="747DA94E-3962-7AA8-D93D-74E836B44619" name="DIRECTOR_PRESIDENT_FK">
+<createdBy>user</createdBy>
+<createdTime>2020-09-09 12:36:14 UTC</createdTime>
+<generatorID>D6872CAF-D047-C5B4-58F3-399D1B7C9519</generatorID>
+<ownerDesignName>Lab_1</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D6476281-C1C6-7C57-45CE-F664D397D490"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,111 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="85FA6B48-5D2D-338C-03AC-A1684874AD31" name="TRAINING_EVENT">
+<createdBy>user</createdBy>
+<createdTime>2020-09-09 12:36:14 UTC</createdTime>
+<generatorID>938D09FC-E66D-58C1-2196-30DA131C0BE6</generatorID>
+<ownerDesignName>Lab_1</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="991D6129-A60A-18FF-2EC9-FEDF3694A484">
+<createdBy>user</createdBy>
+<createdTime>2020-09-09 12:36:14 UTC</createdTime>
+<generatorID>78CF4133-B7A9-E398-5898-EEB4896A5640</generatorID>
+<ownerDesignName>Lab_1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="date" id="235FFB41-CECA-22D3-A1E2-A8B154D89CEE">
+<createdBy>user</createdBy>
+<createdTime>2020-09-09 12:36:14 UTC</createdTime>
+<generatorID>E93D8792-B258-2E7F-8D5F-03565B8BE659</generatorID>
+<ownerDesignName>Lab_1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="name" id="28E9D41A-19EA-DBE8-25FC-C0C0FFED6DEF">
+<createdBy>user</createdBy>
+<createdTime>2020-09-09 12:36:14 UTC</createdTime>
+<generatorID>E7EF3CE3-541E-0E0B-D229-F194AF14C917</generatorID>
+<ownerDesignName>Lab_1</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="IN_HOUSE_TRAINER_id" id="60F0C94C-DADA-9BB7-90FD-C6345812C5CB">
+<createdBy>user</createdBy>
+<createdTime>2020-09-09 12:36:14 UTC</createdTime>
+<generatorID>77FFC266-3D50-EE6D-0C6C-CA9D334B512F</generatorID>
+<ownerDesignName>Lab_1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0C5FC51D-1974-58A5-1766-F4C96E4FF49F" referredColumn="60824E29-E8D8-CB23-C884-04CDF50C09C9"/>
+</associations>
+</Column>
+<Column name="TRAINING_COMPANY_id" id="FBF93AB5-3767-B0BA-F325-E716846EC7DF">
+<createdBy>user</createdBy>
+<createdTime>2020-09-09 12:36:14 UTC</createdTime>
+<generatorID>1778D78D-070C-6539-2B62-3F0358C47308</generatorID>
+<ownerDesignName>Lab_1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="AF47B6A7-E58C-A1A8-3DFF-476911F5EF07" referredColumn="D55E17E0-2270-54D9-1A1B-CC01AD8DE571"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="33E43206-8786-0ABC-7F4A-75CB9E412E7E" name="TRAINING_EVENT_PK">
+<createdBy>user</createdBy>
+<createdTime>2020-09-09 12:36:14 UTC</createdTime>
+<generatorID>8A557713-F5ED-F4A9-39E7-458AEE8B707A</generatorID>
+<ownerDesignName>Lab_1</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="991D6129-A60A-18FF-2EC9-FEDF3694A484"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1827CEE1-E486-FC77-47D2-353D8A8D652A" name="TRAINING_EVENT_IN_HOUSE_TRAINER_FK">
+<createdBy>user</createdBy>
+<createdTime>2020-09-09 12:36:14 UTC</createdTime>
+<generatorID>DE3E777B-8ECB-A580-9A93-96B66043BB7E</generatorID>
+<ownerDesignName>Lab_1</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="60F0C94C-DADA-9BB7-90FD-C6345812C5CB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="83532CD7-FE1A-72B9-B532-7DEC180EAE85" name="TRAINING_EVENT_TRAINING_COMPANY_FK">
+<createdBy>user</createdBy>
+<createdTime>2020-09-09 12:36:14 UTC</createdTime>
+<generatorID>34E5C425-3850-695F-1508-A3F8ECA97CB3</generatorID>
+<ownerDesignName>Lab_1</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FBF93AB5-3767-B0BA-F325-E716846EC7DF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

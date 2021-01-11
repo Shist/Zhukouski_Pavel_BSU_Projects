@@ -1,0 +1,84 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="76C5A90F-E76F-F07E-671C-3287CD476032" name="Payment_Form">
+<createdBy>user</createdBy>
+<createdTime>2020-09-30 11:56:43 UTC</createdTime>
+<ownerDesignName>Lab_1_2</ownerDesignName>
+<engineerTo>
+<item key="42E9F0CE-2309-DD13-BEA2-4059BA395A50" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Payment_Form_ID" id="A547A9D3-5A9A-4AAE-1896-CC3499D7C7F4">
+<createdBy>user</createdBy>
+<createdTime>2020-09-30 11:56:59 UTC</createdTime>
+<ownerDesignName>Lab_1_2</ownerDesignName>
+<engineerTo>
+<item key="42E9F0CE-2309-DD13-BEA2-4059BA395A50" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Payment_Method" id="81B1AFE9-BED9-7B2D-654A-4B0465EAB0D8">
+<createdBy>user</createdBy>
+<createdTime>2020-09-30 11:57:16 UTC</createdTime>
+<ownerDesignName>Lab_1_2</ownerDesignName>
+<engineerTo>
+<item key="42E9F0CE-2309-DD13-BEA2-4059BA395A50" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32</dataTypeSize>
+<ownDataTypeParameters>32,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Price" id="CF1A5379-8ABC-85CB-3E06-B57291510D51">
+<createdBy>user</createdBy>
+<createdTime>2020-09-30 11:57:50 UTC</createdTime>
+<ownerDesignName>Lab_1_2</ownerDesignName>
+<engineerTo>
+<item key="42E9F0CE-2309-DD13-BEA2-4059BA395A50" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Visit_ID" id="79DBC99E-675A-ECEA-45EC-7D524C80F8EB">
+<createdBy>user</createdBy>
+<createdTime>2020-09-30 11:58:35 UTC</createdTime>
+<generatorID>8E55D19E-5597-F616-AE42-C1A4859C5824</generatorID>
+<ownerDesignName>Lab_1_2</ownerDesignName>
+<engineerTo>
+<item key="42E9F0CE-2309-DD13-BEA2-4059BA395A50" value="true"/>
+</engineerTo>
+<referedAttribute>8CB37B6F-B39D-6BD2-72B9-EC715B807A4C</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="B56339F1-30A3-0284-2CA3-D0C7DDA9C0D8" name="Payment_Form PK">
+<createdBy>user</createdBy>
+<createdTime>2020-09-30 11:57:07 UTC</createdTime>
+<ownerDesignName>Lab_1_2</ownerDesignName>
+<engineerTo>
+<item key="42E9F0CE-2309-DD13-BEA2-4059BA395A50" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>A547A9D3-5A9A-4AAE-1896-CC3499D7C7F4</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

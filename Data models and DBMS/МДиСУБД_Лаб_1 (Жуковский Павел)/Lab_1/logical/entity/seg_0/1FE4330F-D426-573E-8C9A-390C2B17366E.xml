@@ -1,0 +1,69 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="1FE4330F-D426-573E-8C9A-390C2B17366E" name="IN HOUSE TRAINER">
+<createdBy>user</createdBy>
+<createdTime>2020-09-09 11:57:48 UTC</createdTime>
+<ownerDesignName>Lab_1</ownerDesignName>
+<engineerTo>
+<item key="42E9F0CE-2309-DD13-BEA2-4059BA395A50" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id" id="5190ABD7-66B5-C9A8-F7C5-5BEB10447F49">
+<createdBy>user</createdBy>
+<createdTime>2020-09-09 11:58:08 UTC</createdTime>
+<ownerDesignName>Lab_1</ownerDesignName>
+<engineerTo>
+<item key="42E9F0CE-2309-DD13-BEA2-4059BA395A50" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="first Name" id="0173FE7D-28AC-8110-C71B-7689C882C4F8">
+<createdBy>user</createdBy>
+<createdTime>2020-09-09 11:58:26 UTC</createdTime>
+<ownerDesignName>Lab_1</ownerDesignName>
+<engineerTo>
+<item key="42E9F0CE-2309-DD13-BEA2-4059BA395A50" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="last name" id="263BA545-B487-FE54-88C8-E9353F32D1D8">
+<createdBy>user</createdBy>
+<createdTime>2020-09-09 11:58:40 UTC</createdTime>
+<ownerDesignName>Lab_1</ownerDesignName>
+<engineerTo>
+<item key="42E9F0CE-2309-DD13-BEA2-4059BA395A50" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="AE78E845-2BDE-C5AB-9676-114D5192D948" name="IN HOUSE TRAINER PK">
+<createdBy>user</createdBy>
+<createdTime>2020-09-09 11:58:22 UTC</createdTime>
+<ownerDesignName>Lab_1</ownerDesignName>
+<engineerTo>
+<item key="42E9F0CE-2309-DD13-BEA2-4059BA395A50" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>5190ABD7-66B5-C9A8-F7C5-5BEB10447F49</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

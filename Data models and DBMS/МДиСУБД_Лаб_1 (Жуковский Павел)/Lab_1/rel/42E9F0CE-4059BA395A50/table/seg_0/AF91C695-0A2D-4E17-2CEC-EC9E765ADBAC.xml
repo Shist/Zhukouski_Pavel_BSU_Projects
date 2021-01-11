@@ -1,0 +1,70 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="AF91C695-0A2D-4E17-2CEC-EC9E765ADBAC" name="JOB">
+<createdBy>user</createdBy>
+<createdTime>2020-09-09 12:36:14 UTC</createdTime>
+<generatorID>9AD7CEE7-DDD9-CAFA-F1BE-00B48FE2577C</generatorID>
+<ownerDesignName>Lab_1</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Job_ID" id="B521D756-23F0-8ADC-8265-61E42221981B">
+<createdBy>user</createdBy>
+<createdTime>2020-09-09 12:36:14 UTC</createdTime>
+<generatorID>5947995E-C0FA-44A0-039B-4A5E5982BB84</generatorID>
+<ownerDesignName>Lab_1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Title" id="1A103599-D52F-3E90-C670-DA99190E5973">
+<createdBy>user</createdBy>
+<createdTime>2020-09-09 12:36:14 UTC</createdTime>
+<generatorID>61E77977-D770-0C96-DB2F-5E9A24D5E1CD</generatorID>
+<ownerDesignName>Lab_1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Max_Salary" id="4416F8FB-09DB-E336-BF65-EB096A87F304">
+<createdBy>user</createdBy>
+<createdTime>2020-09-09 12:36:14 UTC</createdTime>
+<generatorID>9B63F1C1-E81A-E4A3-BE02-78EDD546A90B</generatorID>
+<ownerDesignName>Lab_1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Min_Salary" id="C08F3CDA-2D70-6ACC-2D35-1F5183C5651D">
+<createdBy>user</createdBy>
+<createdTime>2020-09-09 12:36:14 UTC</createdTime>
+<generatorID>F520C34C-9B24-F1FD-0F7F-86490E06C1B6</generatorID>
+<ownerDesignName>Lab_1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="00AE86FA-B9EE-4EC7-5625-B2506B6A1EA3" name="JOB_PK">
+<createdBy>user</createdBy>
+<createdTime>2020-09-09 12:36:14 UTC</createdTime>
+<generatorID>B39782FB-1ED9-7312-7C06-F70E3E2361AE</generatorID>
+<ownerDesignName>Lab_1</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B521D756-23F0-8ADC-8265-61E42221981B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
