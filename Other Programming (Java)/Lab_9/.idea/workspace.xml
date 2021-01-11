@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b22f7716-3b6b-4834-88af-c3c322d92675" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1TfFLzjqquNBPdE4lNsAvAKIR8e" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="js.buildTools.gulp.gulp_package_dir" value="" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RunManager">
+    <configuration name="app.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Lab_9/app.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.app.html" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b22f7716-3b6b-4834-88af-c3c322d92675" name="Default Changelist" comment="" />
+      <created>1573843190329</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1573843190329</updated>
+      <workItem from="1573843193083" duration="243000" />
+      <workItem from="1573843957049" duration="628000" />
+      <workItem from="1574258597262" duration="350000" />
+      <workItem from="1574259001968" duration="165000" />
+      <workItem from="1574259530390" duration="218000" />
+      <workItem from="1574259775545" duration="351000" />
+      <workItem from="1574260144830" duration="1280000" />
+      <workItem from="1574313483363" duration="1175000" />
+      <workItem from="1574453425733" duration="19000" />
+      <workItem from="1574454091406" duration="15000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="428" y="84" key="#Project_Structure" timestamp="1574259863604">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="428" y="84" key="#Project_Structure/0.0.1536.864@0.0.1536.864" timestamp="1574259863604" />
+    <state x="244" y="70" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1574314441216">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="244" y="70" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864@0.0.1536.864" timestamp="1574314441216" />
+    <state x="549" y="186" key="FileChooserDialogImpl" timestamp="1574259856861">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="549" y="186" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1574259856861" />
+    <state x="465" y="256" key="com.intellij.ide.util.TipDialog" timestamp="1574453425471">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="465" y="256" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1574453425471" />
+    <state x="209" y="52" key="new project wizard" timestamp="1573845240915">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="209" y="52" key="new project wizard/0.0.1536.864@0.0.1536.864" timestamp="1573845240915" />
+  </component>
+</project>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f8036549-cf38-41d2-8409-5c70a8546c03" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1REWxSnKWMRaRWTVIWI4grz3okt" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+  </component>
+  <component name="RunDashboard">
+    <option name="excludedTypes">
+      <set>
+        <option value="#com.intellij.j2ee.web.jsr45.JSR45ConfigurationFactory" />
+        <option value="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" />
+        <option value="GeronimoConfiguration" />
+        <option value="GlassfishConfiguration" />
+        <option value="GoogleAppEngineDevServer" />
+        <option value="JBossConfiguration" />
+        <option value="JettyConfiguration" />
+        <option value="ResinConfigurationType" />
+        <option value="TomeeConfiguration" />
+        <option value="WebLogic Instance" />
+        <option value="WebSphereRunConfigurationType" />
+        <option value="com.intellij.dmserver.run.DMServerRunConfigurationType:id" />
+      </set>
+    </option>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f8036549-cf38-41d2-8409-5c70a8546c03" name="Default Changelist" comment="" />
+      <created>1569232981695</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1569232981695</updated>
+      <workItem from="1569232989875" duration="124000" />
+      <workItem from="1569398454980" duration="492000" />
+      <workItem from="1569451348337" duration="474000" />
+      <workItem from="1574453958762" duration="23000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="618" y="321" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1574453963411">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="618" y="321" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1536.864@0.0.1536.864" timestamp="1574453963411" />
+    <state x="589" y="187" key="FileChooserDialogImpl" timestamp="1569451801822">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="589" y="187" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1569451801822" />
+    <state x="505" y="256" key="com.intellij.ide.util.TipDialog" timestamp="1569451782004">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="505" y="256" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1569451782004" />
+  </component>
+</project>
