@@ -1,0 +1,9 @@
+Information about the amount of cities with such a hotel: Zvezda
+There are 2 cities with such a hotel
+Information about the hotels in the city: Minsk
+Zvezda - 4 stars
+Apple - 3 stars
+The result of the 3d request:
+Pair ¹ 1 - Minsk - 3
+Pair ¹ 2 - Minsk - 4
+Pair ¹ 3 - Moscow - 5

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1082
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Nuclear_Ghandi", "Nuclear_Ghandi\Nuclear_Ghandi.vcxproj", "{35BC43AA-2B10-4364-ABF7-E0ACB35CE801}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{35BC43AA-2B10-4364-ABF7-E0ACB35CE801}.Debug|x64.ActiveCfg = Debug|x64
+		{35BC43AA-2B10-4364-ABF7-E0ACB35CE801}.Debug|x64.Build.0 = Debug|x64
+		{35BC43AA-2B10-4364-ABF7-E0ACB35CE801}.Debug|x86.ActiveCfg = Debug|Win32
+		{35BC43AA-2B10-4364-ABF7-E0ACB35CE801}.Debug|x86.Build.0 = Debug|Win32
+		{35BC43AA-2B10-4364-ABF7-E0ACB35CE801}.Release|x64.ActiveCfg = Release|x64
+		{35BC43AA-2B10-4364-ABF7-E0ACB35CE801}.Release|x64.Build.0 = Release|x64
+		{35BC43AA-2B10-4364-ABF7-E0ACB35CE801}.Release|x86.ActiveCfg = Release|Win32
+		{35BC43AA-2B10-4364-ABF7-E0ACB35CE801}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5FE87479-6BCC-485D-A6D4-83197D9B6991}
+	EndGlobalSection
+EndGlobal
