@@ -1,0 +1,111 @@
+1) быть - be - was - been
+2) вносить, порождать - bear - bore - born (borne)
+3) бить - beat - beat - beaten
+4) становиться - become - became - become
+5) начинать - begin - began - begun
+6) кусать - bite - bit - bitten
+7) дуть - blow - blew - blown
+8) ломать - break - broke - broken
+9) приносить - bring - brought - brought
+10) строить - build - built - built
+11) жечь - burn - burnt (burned) - burnt (burned)
+12) взрываться - burst - burst - burst
+13) покупать - but - bought - bought
+14) мочь, уметь - can - could - (been able to)
+15) поймать - catch - caught - caught
+16) выбирать - choose - chose - chosen
+17) приходить - come - came - come
+18) стоить - cost - cost - cost
+19) резать - cut - cut - cut
+20) иметь дело - deal - dealt - dealt
+21) копать - dig - dug - dug
+22) делать - do - did - done
+23) рисовать (карандашом) - draw - drew - drown
+24) мечтать - dream - dreamt (dreamed) - dreamt (dreamed)
+25) пить - drink - drank - drunk
+26) водить - drive - drove - driven
+27) есть - eat - ate - eaten
+28) падать - fall - fell - fallen
+29) кормить - feed - fed - fed
+30) чувствовать - feel - felt - felt
+31) драться - fight - fought - fought
+32) искать - find - found - found
+33) летать - fly - flew - flown
+34) запретить - forbid - forbade - forbidden
+35) забыть - forget - forgot - forgotten
+36) простить - forgive - forgave - forgiven
+37) заморозить - freeze - froze - frozen
+38) получить - get - got - got
+39) дать - give - gave - given
+40) идти - go - went - gone
+41) расти - grow - grew - grown
+42) вешать - hang - hung (hanged) - hung (hanged)
+43) иметь - have - had - had
+44) слышать - hear - heard - heard
+45) прятать, прятаться - hide - hid - hidden
+46) ударить - hit - hit - hit
+47) проводить - spend - spent - spent
+48) болеть - hurt - hurt - hurt
+49) содержать - keep - kept - kept
+50) знать - know - knew - known
+51) лежать - lay - laid - laid
+52) вести (за собой), руководить - lead - led - led
+53) учить - learn - learnt (learned) - learnt (learned)
+54) покидать - leave - left - left
+55) давать в долг - lend - lent - lent
+56) позволять - let - let - let
+57) лгать - lie - lay - lain
+58) светить - light - lit - lit
+59) потерять - lose - lost - lost
+60) делать - do - did - done
+61) иметь в виду - mean - meant - meant
+62) встретить - meet - met - met
+63) платить - pay - paid - paid
+64) положить - put - put - put
+65) читать - read - read - read
+66) кататься - ride - rode - ridden
+67) звонить - ring - rang - rung
+68) бежать - run - ran - run
+69) сказать - say - said - said
+70) видеть - see - saw - seen
+71) искать - seek - sought - sought
+72) продать - sell - sold - sold
+73) посылать - send - sent - sent
+74) устанавливать - set - set - set
+75) шить - sew - sewed - sewn
+76) трясти - shake - shook - shaken
+77) сиять - shine - shone - shone
+78) стрелять - shoot - shot - shot
+79) показывать - show - showed - shown
+80) заткнуться, закрыть, захлопнуть - shut - shut - shut
+81) петь - sing - sang  - sung
+82) сидеть - sit - sit - sit
+83) спать - sleep - slept - slept
+84) нюхать (пахнуть) - smell - smelt (smelled) - smelt (smelled)
+85) сказать - say - said - said
+86) произносить - spell - spelt (spelled) - spelt (spelled)
+87) проводить (время) - spend - spent - spent
+88) проливать - spill - spilt - spilt
+89) раскалывать, расщеплять - split - split - split
+90) портить - spoil - spoilt (spoiled) - spoilt (spoiled)
+91) распространять - spread - spread - spread
+92) пружинить, прыгать - spring - sprang - sprung
+93) встать - stand - stood - stood
+94) красть - steal - stole - stolen
+95) приклеить, придержать - stick - stuck - stuck
+96) жалить - sting - stung - stung
+97) бить - strike - struck - struck
+98) ругаться, клясться - swear - swore - sworn
+99) подметать - sweep - swept - swept
+100) плавать - swim - swam - swum
+101) брать - take - took - taken
+102) учить - teach - taught - taught
+103) разрывать - tear - tore - torn
+104) рассказывать - tell - told - told
+105) думать - think - thought - thought
+106) бросать - throw - threw - trown
+107) понимать - unserstand - understood - understood
+108) просыпаться - wake - woke - waken
+109) носить - wear - wore - worn
+110) выигрывать - win - won - won
+111) писать - write - wrote - written
