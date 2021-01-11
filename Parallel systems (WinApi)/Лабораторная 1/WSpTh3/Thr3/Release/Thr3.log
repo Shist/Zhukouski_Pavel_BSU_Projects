@@ -1,0 +1,2 @@
+﻿  StdAfx.cpp
+c:\program files (x86)\windows kits\8.1\include\um\winnt.h(31): fatal error C1083: Не удается открыть файл включение: ctype.h: No such file or directory,
