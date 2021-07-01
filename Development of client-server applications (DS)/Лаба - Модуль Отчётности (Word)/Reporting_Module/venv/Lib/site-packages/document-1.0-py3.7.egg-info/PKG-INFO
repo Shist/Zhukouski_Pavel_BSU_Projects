@@ -1,0 +1,247 @@
+Metadata-Version: 1.1
+Name: document
+Version: 1.0
+Summary: Wraps dicts in an object for convenient document management
+Home-page: https://bitbucket.org/brankovukelic/document/
+Author: Branko Vukelic
+Author-email: branko@brankovukelic.com
+License: MIT
+Download-URL: https://bitbucket.org/brankovukelic/document/downloads
+Description: ========
+        Document
+        ========
+        
+        Document is a simple wrapper for dicts that provides an object-oriented
+        interface for accessing keys, as well as the ability to add metadata and
+        utility functions to your data. The primary purpose of the ``Document`` class
+        is to make working with PyMongo data easier, but it is in no way restricted to
+        this use case. It has no dependencies outside of Python's standard library.
+        
+        Document is released under MIT license.
+        
+        Installation
+        ============
+        
+        Document can be installed from PyPI::
+        
+            easy_install document
+        
+        or::
+        
+            pip install document
+        
+        You can also simply download the ``document`` module and add it to your
+        project.
+        
+        Basics
+        ======
+        
+        Let's first take a look at the constructor. The ``Document`` constructor takes
+        any number of keyword argument which are stored as a dict internally. ::
+        
+            >>> from document import Document
+            >>> my_doc = Document(foo='bar', baz=12)
+        
+        The dictionary keys can be accessed either as properties or keys::
+        
+            >>> my_doc.foo
+            'bar'
+            >>> my_doc['baz']
+            12
+        
+        When using property access, you can also set new keys::
+        
+            >>> my_doc.bar = 1
+        
+        If you access a missing property, you will get a ``KeyError`` instead of
+        ``AttributeError`` because, under the hood, we are looking up dictionary keys
+        rather than attributes. ::
+        
+            >>> my_doc.bogus
+            Traceback (most recent call last):
+            ....
+            KeyError: 'bogus'
+        
+        This difference is worth noting if you are a practicioner of EAFP_.
+        
+        Unlike normal Python dictionaries, key access can drill down multiple levels.
+        Consider this example::
+        
+            >>> another_doc = Document(foo={'bar': 'baz'})
+            >>> another_doc['foo.bar']
+            'baz'
+        
+        As you can see, using a period in the key name will give us access to the
+        nested dict's key. For breviti, we will call such keys 'multipart' keys.
+        
+        The multipart keys also work when setting values::
+        
+            >>> another_doc['foo.bar'] = 'fam'
+            >>> another_doc.foo
+            {'bar': 'fam'}
+        
+        You can also use the ``get()`` method with the multipart keys. ::
+        
+            >>> another_doc.get('foo.bar')
+            'fam'
+            >>> another_doc.get('foo.baz')
+            None
+        
+        Testing for existence of a key works with multipart keys as well::
+        
+            >>> 'foo.bar' in another_doc
+            True
+            >>> 'foo.baz' in another_doc
+            False
+        
+        Because of the multipart keys, you cannot use periods in your keys. Those will
+        simply become inaccessible through the normal interface. You can still access
+        them through the private ``_document`` key, but that is not recommended, since
+        the private property is an implementation detail and may be renamed or removed
+        in future releases.
+        
+        Although ``Document`` sports the full array of dict methods like ``pop()`` and
+        ``items()``, they don't work with mutlipart keys but only with top-level keys.
+        
+        Apart from dict methods, ``Document`` implements a few non-standard methods.
+        One of them is ``slice()`` which allows you to get a dict containing a subset
+        of the keys. ::
+        
+            >>> a_doc = Document(foo=1, bar=2, baz=3)
+            >>> a_doc.slice('foo', 'baz')
+            {'foo': 1, 'baz': 3}
+        
+        To get back the full dict with all keys, use the ``to_dict()`` method::
+        
+            >>> a_doc.to_dict()
+            {'foo': 1, 'bar': 2, 'baz': 3}
+        
+        Note that ``to_dict()`` always returns a copy of the internal dict, not a
+        reference to it. Any modification you do to the dict returned by ``to_dict()``
+        will not reflect on whatever is stored in the document.
+        
+        For convenience, and for Python purists, the ``Document`` object provides a
+        ``from_dict()`` method that returns a new document from a dict. ::
+        
+            >>> b_doc = Document.from_dict({'foo': 'bar'})
+            >>> b_doc.foo
+            'bar'
+        
+        If you don't care about purity, you can always use the ``**`` magic and the
+        constructor. ::
+        
+            >>> b_doc = Document(**{'foo': 'bar'})
+        
+        The main difference between using ``from_dict`` and the ``**`` magic is the
+        type of the keys that end up in the dict. When you use the magic (and keyword
+        arguments for that matter), the keys all become strings (in Python 2.x),
+        whereas unicode keys can be preserved when using ``from_dict()`` (and also the
+        ``update()`` method).
+        
+        Extending
+        =========
+        
+        Now you might be wondering why you need a whole class to deal with dicts when
+        dicts work perfectly fine in Python. That's a valid question. The main
+        motivation behind ``Document`` was to allow developers to define custom methods
+        and especially properties that would be separate from the data, but still
+        accessible using a similar interface. What this allows us is to have ultitiy
+        methods and metadata attached to our data, that are not serialized and/or saved
+        into the database.
+        
+        To demonstrate this we will create a custom ``User`` document.
+        
+        To create such a document, we first subclass the ``Document`` class. This is
+        generally the intended purpose of the ``Document`` class, and you should always
+        subclass it and add new properties. If you feel you don't need to subclass, you
+        can probably get away with a plain ``dict``.
+        
+        Back to our example, let's say we have a user document that should have an
+        ``authenticated`` flag that is, for obvious reasons, only used during a
+        request-response cycle, and not saved to the database. We also want to have a
+        method that will check passwords, as well as one that will set it. The subclass
+        might look something like this::
+        
+            class User(Document):
+                authenticated = False
+        
+                def check_password(self, password):
+                    return encrypt(password) == self.password
+        
+                def set_password(self, password):
+                    self.password = encrypt(password)
+        
+        Now we can, say, retrieve a dict from a database and convert it to a user
+        document (using some imaginary database and request API in this example)::
+        
+            user_dict = db.users.get(username='foo')
+            password = request.params['password']
+            user = User.from_dict(user_dict)
+            if user.check_password(password):
+                user.authenticated = True
+                session['user'] = user
+                return 'success!'
+            return 'wrong username or password'
+        
+        Suppose the database expects us to save a new record by passing it a dict
+        representing the record's data (which is how PyMongo works, for example). 
+        Let's store a new user::
+        
+            username = request.params['username']
+            password = request.params['password']
+            user = User(usernam=username)
+            user.set_password(password)
+            db.users.save(user.to_dict())
+        
+        By using the ``to_dict()`` method, we avoid having to deal with
+        ``authenticated`` property, as well as the two methods we have defined on the
+        ``User`` document. Only the username and encrypted passwords are saved. This
+        provides a clean separation of what we consider metadata and actual data.
+        
+        This separation has other consequences. Comparing two records with different
+        metadata will only compare the actual data. For example::
+        
+            >>> class FooDoc(Document):
+            ...    meta = True
+            >>> foo1 = FooDoc(foo=1)
+            >>> foo2 = FooDoc(foo=1)
+            >>> foo1.meta = False
+            >>> foo1 == foo2
+            True
+        
+        Despite the two documents having different values for the ``meta`` property,
+        they are still considered equal because the actual data is equal.
+        
+        Another thing to note that, because we can have custom properties, and also
+        assign dictionary keys using properties, only the properties that are defined
+        on the class can actually be set as properties, and everything else is
+        considered a dictionary key. To demonstrate this, we will use the ``FooDoc``
+        class defined before. ::
+        
+            >>> foo1 = FooDoc(foo=1)
+            >>> foo1.meta = True  # Sets the ``meta`` property
+            >>> foo1.metadata = 'bar'  # Creates an actual dict key called ``metadata``
+            >>> foo1.to_dict()
+            {'foo': 1, 'metadata': 'bar'}
+        
+        API documentation
+        =================
+        
+        The whole ``document`` module is a little under 440 lines of code including
+        inline documentation and doctests. Therefore, you are advised to look at the
+        source code for in-depth API documentation. All examples in the inline
+        documentation double as unit tests so they are virtually guaranteed to work as
+        documented.
+        
+        Reporting bugs
+        ==============
+        
+        Report all bugs to the `BitBucket issue tracker`_
+        
+        .. _EAFP: http://docs.python.org/2/glossary.html#term-eafp
+        .. _BitBucket issue tracker: https://bitbucket.org/brankovukelic/document/issues
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License

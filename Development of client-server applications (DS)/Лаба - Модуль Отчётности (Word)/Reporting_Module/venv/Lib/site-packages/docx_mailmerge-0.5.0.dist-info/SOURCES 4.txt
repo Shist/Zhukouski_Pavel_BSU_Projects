@@ -1,0 +1,16 @@
+LICENSE.txt
+MANIFEST.in
+README.rst
+mailmerge.py
+setup.cfg
+setup.py
+docx_mailmerge.egg-info/.SOURCES.txt.icloud
+docx_mailmerge.egg-info/.pbr.json.icloud
+docx_mailmerge.egg-info/PKG-INFO
+docx_mailmerge.egg-info/SOURCES 2.txt
+docx_mailmerge.egg-info/SOURCES 3.txt
+docx_mailmerge.egg-info/SOURCES.txt
+docx_mailmerge.egg-info/dependency_links.txt
+docx_mailmerge.egg-info/not-zip-safe
+docx_mailmerge.egg-info/requires.txt
+docx_mailmerge.egg-info/top_level.txt

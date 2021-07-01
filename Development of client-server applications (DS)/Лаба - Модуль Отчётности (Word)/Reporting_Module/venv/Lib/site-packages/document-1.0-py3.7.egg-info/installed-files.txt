@@ -1,0 +1,6 @@
+..\__pycache__\document.cpython-37.pyc
+..\document.py
+PKG-INFO
+SOURCES.txt
+dependency_links.txt
+top_level.txt
