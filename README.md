@@ -6,9 +6,13 @@
 ---
 [Ассемблер](https://github.com/Shist/Zhukouski_Pavel_BSU_Projects/tree/master/Assembler)
 ---
+[МТ](https://github.com/Shist/Zhukouski_Pavel_BSU_Projects/tree/master/Broadcast%20methods)
+---
 [МВ](https://github.com/Shist/Zhukouski_Pavel_BSU_Projects/tree/master/Calculation%20methods)
 ---
 [АК](https://github.com/Shist/Zhukouski_Pavel_BSU_Projects/tree/master/Computer%20architecture)
+---
+[КГ](https://github.com/Shist/Zhukouski_Pavel_BSU_Projects/tree/master/Computer%20graphics)
 ---
 [КС](https://github.com/Shist/Zhukouski_Pavel_BSU_Projects/tree/master/Computer%20networks%20(Cisco))
 ---
@@ -29,6 +33,8 @@
 [Д/С (нейронки)](https://github.com/Shist/Zhukouski_Pavel_BSU_Projects/tree/master/Neural%20networks%20(DS))
 ---
 [ОС](https://github.com/Shist/Zhukouski_Pavel_BSU_Projects/tree/master/OS%20(WinApi))
+---
+[ИСО](https://github.com/Shist/Zhukouski_Pavel_BSU_Projects/tree/master/Operations%20research%20(ISO))
 ---
 [Другие проекты на C#](https://github.com/Shist/Zhukouski_Pavel_BSU_Projects/tree/master/Other%20Programming%20(C%23))
 ---
