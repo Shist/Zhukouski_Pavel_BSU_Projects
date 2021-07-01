@@ -1,0 +1,24 @@
+/* Можно переходить 1 --> 2 --> 3 --> 4 --> 5, но не в обратную сторону (ещё допускается 5 --> 4)
+1) молочный
+2) постоянный
+3) коронка
+4) отсутствует
+5) искуственный
+*/
+
+CREATE OR REPLACE TRIGGER CHECK_TEETH_FORMULA
+BEFORE UPDATE OF DENTITION ON PATIENT
+FOR EACH ROW
+DECLARE
+   OLD_TOOTH_STATE INTEGER;
+   NEW_TOOTH_STATE INTEGER;
+BEGIN
+  FOR i IN 1 .. 32
+  LOOP
+      OLD_TOOTH_STATE := TO_NUMBER(SUBSTR(:old.DENTITION, i, 1));
+      NEW_TOOTH_STATE := TO_NUMBER(SUBSTR(:new.DENTITION, i, 1));
+      IF (NEW_TOOTH_STATE < OLD_TOOTH_STATE AND NEW_TOOTH_STATE != 4)
+          THEN RAISE_APPLICATION_ERROR(-20001, 'Error: can not set new teeth formula, incorrect teeth state change!');
+      END IF;
+  END LOOP;
+END;

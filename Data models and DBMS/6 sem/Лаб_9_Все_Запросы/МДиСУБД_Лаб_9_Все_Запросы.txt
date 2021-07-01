@@ -1,0 +1,84 @@
+-- drop table - удаляет таблицу, если такая уже существует
+drop table patient_obj_table; 
+drop table patient_ref_table; 
+
+-- Задание 1
+-- Создать объектный тип, который соответствует предметной области базы данных
+-- из лабораторной работы №2.
+-- Создаём объект partient_ty
+create or replace type patient_ty as object
+ (PATIENT_ID NUMBER(3),
+  NAME VARCHAR2(32),
+  SURNAME VARCHAR2(32),
+  PATRONYMIC VARCHAR2(32),
+  ADDRESS VARCHAR2(4000),
+  BIRTH_DATE DATE,
+  DOCTOR_DOCTOR_ID NUMBER(3),
+  DENTITION VARCHAR2(4000),
+  PAYMENT_FORM VARCHAR2(4000)
+ );
+ /
+
+-- Задание 2
+-- Создать объектную таблицу на основе объектного типа из задания 1. 
+-- Создатём таблицу-объект partient_obj_table
+create table patient_obj_table of patient_ty;
+
+-- Задание 3
+-- Вставить в объектную таблицу несколько строк.
+-- Выполняем вставку строк в таблицу-объект patient_obj_table
+insert into patient_obj_table values (1, 'Марк', 'Уваров', 'Петрович', '858578, Орловская область, город Талдом, пл. Сталина, 64', TO_DATE('1953/04/23', 'yyyy/mm/dd'), 2,
+                                     '1 3 4 5 1 3 3 4 5 5 4 3 4 2 3 4 5 5 5 3 4 5 4 3 5 3 2 2 3 5 4 3', 'cash');
+insert into patient_obj_table values (2, 'Леонард', 'Калинин', 'Всеволодович', '303582, Оренбургская область, город Луховицы, спуск Ломоносова, 27', TO_DATE('1967/11/30', 'yyyy/mm/dd'), 3,
+                                     '1 2 1 2 4 3 1 4 3 3 4 1 3 3 4 3 3 5 5 5 5 2 4 4 2 1 1 5 3 3 5 1', 'credit card');
+insert into patient_obj_table values (3, 'Феликс', 'Мышкин', 'Юрьевич', '671251, Свердловская область, город Волоколамск, пер. Балканская, 29', TO_DATE('1969/05/16', 'yyyy/mm/dd'), 1,
+                                     '1 3 4 4 1 4 1 3 4 4 5 1 1 3 5 4 2 4 5 5 1 1 3 4 5 4 2 3 5 4 5 2', 'cash');
+insert into patient_obj_table values (4, 'Лаврентий', 'Жуков', 'Антонович', '968253, Иркутская область, город Шаховская, ул. Балканская, 10', TO_DATE('1979/06/21', 'yyyy/mm/dd'), 4,
+                                     '2 2 3 1 1 5 3 1 1 4 5 5 3 4 4 3 5 4 1 2 3 1 3 2 4 2 1 5 2 1 2 5', 'credit card');
+
+-- Задание 4
+-- Создать таблицу, содержащую объект-столбец.
+-- Создаём таблицу, содержащую столбец-объект patient
+create table patient_ref_table (
+    id NUMBER primary key,
+    patient ref patient_ty);
+
+-- Задание 5
+-- Вставить в объект-столбец данные (из объектной таблицы).
+-- Заполняем столбец-объект, т.е. указываем данные, на которые ссылается столбец-объект
+insert into patient_ref_table select 1, ref(b) 
+from patient_obj_table b 
+where PATIENT_ID = 1;
+
+insert into patient_ref_table select 2, ref(b) 
+from patient_obj_table b 
+where PATIENT_ID = 2;
+
+insert into patient_ref_table select 3, ref(b)
+from patient_obj_table b
+where PATIENT_ID = 3;
+
+insert into patient_ref_table select 4, ref(b)
+from patient_obj_table b
+where PATIENT_ID = 4;
+
+-- Задание 6
+-- Выполнить выборку, обновление, удаление из таблицы, содержащей объект-столбец.
+-- Выполняем выборку данных из таблицы, содержащей столбец-объект
+select * from patient_obj_table p;
+
+select id, DEREF(patient).NAME as "Имя",  DEREF(patient).SURNAME as "Фамилия"
+from patient_ref_table;
+
+-- Выполнить обновление данных  таблицы, содержащей столбец-объект
+update  patient_obj_table set NAME = 'Дмитрий' where NAME = 'Леонард';
+update  patient_obj_table set NAME = 'Александр' where NAME = 'Лаврентий';
+
+-- Выполнить удаление данных из таблицы, содержащей столбец-объект
+delete from patient_obj_table where NAME = 'Марк';
+
+
+select * from patient_obj_table p;
+
+select id, DEREF(patient).NAME as "Имя",  DEREF(patient).SURNAME as "Фамилия"
+from patient_ref_table;

@@ -1,0 +1,98 @@
+-- Запросы к лабработе 3.6
+
+-- Запрос 1
+-- Получить результирующее множество,  содержащее количество сотрудников в 
+-- каждом отделе, а также общее количество сотрудников.
+SELECT CASE GROUPING (deptname)
+    when 0 then deptname
+    else 'total'
+    end deptname,
+    count (empno) empcount
+from emp join career using(empno) join dept using(deptno)
+group by rollup (deptname);
+
+
+-- Запрос 2
+-- Требуется найти количество сотрудников по отделам, по должностям и для 
+-- каждого сочетания DEPTNAME/JOBNAME. 
+select deptname, jobname,
+       case GROUPING(deptname) || GROUPING(jobname)
+            when '00' then 'TOTAL BY DEPT and JOB'
+            when '10' then 'TOTAL BY JOB'
+            when '01' then 'TOTAL BY DEPT'
+            when '11' then 'GRAND TOTAL FOR TABLE'
+        end category,
+       count(empno) empnum
+from emp join career using(empno) join job using(jobno)
+join dept using(deptno)
+group by cube(deptname, jobname)
+order by grouping(deptname), grouping(jobname);
+
+
+-- Запрос 3
+-- Требуется найти среднее значение суммы всех заработных плат по отделам, по 
+-- должностям и для каждого сочетания DEPTNAME/JOBNAME.
+select deptname, jobname,
+        case GROUPING(deptname) || GROUPING(jobname)
+            when '00' then 'TOTAL BY DEPT and JOB'
+            when '10' then 'TOTAL BY JOB'
+            when '01' then 'TOTAL BY DEPT'
+            when '11' then 'GRAND TOTAL FOR TABLE'
+        end category,
+       count(salvalue) empnum
+from emp join career using(empno) join job using(jobno)
+join dept using(deptno) join salary using(empno)
+group by cube(deptname, jobname)
+order by grouping(deptname), grouping(jobname);
+
+
+-- Запрос 4
+-- Создайте запрос на распознавание строк, сформированных оператором GROUP BY, 
+-- и строк, являющихся результатом выполнения CUBE.
+select deptname, jobname, sum(salvalue) salary,
+       GROUPING(deptname) dept_subtotal,
+       GROUPING(jobname) job_subtotal
+from emp join salary using(empno) join career using(empno) join job using(jobno)
+join dept using(deptno)
+group by cube(deptname, jobname);
+
+
+-- Запрос 5
+-- Создайте запрос, использующий расширение GROUPING SET  оператора GROUP BY.
+select deptname, jobname, avg(salvalue)
+from emp join career using(empno)
+join dept using(deptno)
+join salary using(empno)
+group by GROUPING SETS (
+    (deptname, empname, jobno),
+    (deptname, empname)
+    (empname, jobname)
+    )
+
+
+--Запрос 6
+-- Создайте запросы по заданиям пунктов 4-6.
+select empname, deptname,
+    count(*) over (partition by deptno) as deptname_emp_count,
+    jobname,
+    count(*) over (partition by jobno) as jobname_emp_count,
+    count(*) over () total
+from emp join career using(empno)
+join dept using(deptno)
+join job using(jobno)
+
+select to_char(startdate, 'DDFMMonthYYYY'), salvalue,
+       sum(salvalue) over (PARTITION BY startdate order by startdate range between 90 preceding and current row) spending_pattern
+from career join salary using(empno)
+
+select jobname, emps_num, sum(rr)
+from (
+     select jobname, count(*) over(partition by jobname) as emps_num,
+            ratio_to_report(sum_salvalue) over () as rr
+    from emp join career using(empno)
+    join job using(jobno)
+    join (
+        select empno, sum(salvalue) as sum_salvalue from emp join salary using(empno) group by empno
+        ) using(empno)
+         )
+group by jobname, emps_num

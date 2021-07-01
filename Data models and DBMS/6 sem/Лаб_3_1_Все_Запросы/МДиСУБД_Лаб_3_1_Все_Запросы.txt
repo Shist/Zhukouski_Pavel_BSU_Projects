@@ -1,0 +1,91 @@
+-- Запросы к лабработе 3.1
+
+-- Запрос 1
+-- Выдать информацию о местоположении отдела продаж (SALES) компании
+SELECT Deptaddr from Dept WHERE Deptname = 'SALES';
+
+-- Запрос 2
+-- Выдать информацию об отделах, расположенных в Chicago и New York
+SELECT Deptname from Dept WHERE Deptaddr = 'CHICAGO' OR Deptaddr='NEW YORK';
+
+-- Запрос 3
+-- Найти минимальную заработную плату, начисленную в 2009 году.
+SELECT MIN(Salvalue) FROM Salary WHERE Year = 2009;
+
+-- Запрсо 4
+-- Выдать информацию обо всех работниках, родившихся не позднее 1 января 1960 года.
+SELECT Empname FROM Emp WHERE Birthdate <= to_date('01-01-1960', 'dd-mm-yyyy');
+
+-- Запрос 5
+-- Подсчитать число работников, сведения о которых имеются в базе данных.
+SELECT COUNT(*) FROM Emp WHERE Birthdate != null;
+
+-- Запрос 6
+-- Найти работников, чьё имя состоит из одного слова. Имена выдать на нижнем регистре, с удалением стоящей справа буквы t.
+SELECT CONCAT( LOWER(SUBSTR(Empname, 0, LENGTH(Empname) - 1)), RTRIM(LOWER(SUBSTR(Empname, LENGTH(Empname), LENGTH(Empname))), 't') ) FROM Emp WHERE Empname NOT LIKE('%, %');
+-- RTRIM - удаляет все указанные символы из строки с правой стороны
+
+-- Запрос 7
+-- Выдать информацию о работниках, указав дату рождения в формате день(число), месяц(название), год(название).
+SELECT EMPNO, EMPNAME, TO_CHAR(BIRTHDATE, 'DD-MONTH-YEAR','NLS_DATE_LANGUAGE =    RUSSIAN') FROM EMP
+
+-- Запрос 8
+-- Выдать информацию о должностях, изменив названия должности “CLERK” и “DRIVER” на “WORKER”.
+SELECT DECODE(JOBNAME, 'DRIVER', 'WORKER', 'CLERK', 'WORKER', JOBNAME) AS NEWJOB 
+FROM JOB;
+-- DECODE работает по принципу If-Than-Else
+
+-- Запрос 9
+-- Определите среднюю зарплату за годы, в которые были начисления не менее чем за три месяца.
+SELECT YEAR, AVG(SALVALUE) 
+FROM SALARY 
+GROUP BY YEAR 
+HAVING COUNT(MONTH) >= 3;
+
+-- Запрос 10
+-- Выведете ведомость получения зарплаты с указанием имен служащих.
+SELECT Emp.Empname, Salary.Month, Salary.Salvalue
+FROM Emp, Salary
+WHERE Emp.Empno = Salary.Empno;
+
+-- Запрос 11
+-- Найдите сведения о карьере сотрудников с указанием вместо номера сотрудника его имени.
+SELECT E.EMPNAME, C.STARTDATE, C.ENDDATE 
+FROM EMP E NATURAL JOIN CAREER C;
+-- NATURAL JOIN автоматически осуществляет проверку на равенство между значениями каждого столбца, которые есть в обеих таблицах
+
+-- Запрос 12
+-- Найдите сведения о карьере сотрудников с указанием вместо номера сотрудника его имени.
+SELECT E.EMPNAME, C.STARTDATE, C.ENDDATE
+FROM EMP E INNER JOIN CAREER C ON (E.EMPNO = C.EMPNO);
+-- INNER JOIN ... ON - объединяет таблицы на основе условия, указанного в запросе
+
+-- Запрос 13
+-- Укажите сведения о начислении сотрудникам зарплаты, попадающей в вилку:
+-- минимальный оклад по должности - минимальный оклад по должности плюс пятьсот. Укажите соответствующую вилке должность.
+SELECT EMP.EMPNAME, JOB.JOBNAME, SALARY.SALVALUE, JOB.MINSALARY
+FROM SALARY 
+    INNER JOIN EMP 
+        ON SALARY.EMPNO = EMP.EMPNO 
+    INNER JOIN CAREER 
+        ON CAREER.EMPNO = EMP.EMPNO 
+    INNER JOIN JOB 
+        ON JOB.JOBNO = CAREER.JOBNO
+WHERE SALARY.SALVALUE > JOB.MINSALARY AND SALARY.SALVALUE < JOB.MINSALARY + 500;
+
+-- Запрос 14
+-- Выдайте сведения о карьере сотрудников с указанием их имён, наименования должности, и названия отдела.
+SELECT E.EMPNAME, D.DEPTNAME, J.JOBNAME, C.STARTDATE, C.ENDDATE
+FROM EMP E
+    NATURAL JOIN CAREER C 
+    NATURAL JOIN DEPT D 
+    NATURAL JOIN JOB J 
+ORDER BY E.EMPNAME, C.STARTDATE;
+
+-- Запрос 15
+-- Выдайте сведения о карьере сотрудников с указанием их имён
+SELECT E.EMPNAME, C.STARTDATE, C.ENDDATE
+FROM EMP E
+    RIGHT OUTER JOIN CAREER C
+        ON (E.EMPNO = C.EMPNO)
+ORDER BY E.EMPNAME, C.STARTDATE;

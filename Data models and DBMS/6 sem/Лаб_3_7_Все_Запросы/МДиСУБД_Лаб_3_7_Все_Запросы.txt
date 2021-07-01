@@ -1,0 +1,83 @@
+-- Запросы к лабработе 3.7
+
+-- Запрос 1
+-- Выполнить ранжирование сотрудников по значениям средних зарплат за каждый год.
+select empname, year, round(avg_salary, 2),
+    dense_rank()over (partition by year order by avg_salary desc) as salary_rank
+from (SELECT empno, year, avg(salvalue) as avg_salary from salary group by empno, year) natural join emp
+
+
+-- Запрос 2
+-- Выведите результирующее множество, отражающее распределение заработных плат 
+-- по отделам, чтобы можно было увидеть, какая из должностей обходится 
+-- компании дороже всего.
+select deptname, num_emps, sum(round(percentage, 2)) || '%' as PCT_OF_ALL_SALARIES
+from (
+    select deptname, count(*) over (PARTITION BY deptname) as num_emps,
+           ratio_to_report(salvalue) over () * 100 as percentage
+    from ((emp natural join career) natural join dept) natural join salary
+    where enddate is null
+)
+group by deptname, num_emps
+
+
+-- Запрос 3
+-- Составьте запросы, которые будут выполнять подсчет долей с помощью 
+-- функций CUME_DIST, PERCENT_RANK.
+select distinct year, month, empname, salvalue,
+                cume_dist() over (PARTITION BY year order by salvalue) as cume_dist,
+                percent_rank() over (partition by year order by salvalue) as pct_rank
+from salary natural join emp
+order by year, salvalue
+
+
+-- Запрос 4
+-- Требуется организовать данные в одинаковые по размеру блоки с преопределенным 
+-- количеством элементов в каждом блоке. Используем ранжирующую функцию ROW_NUMBER OVER, 
+-- чтобы ранжировать сотрудников по EMPNO. Ранжирующая функция ROW_NUMBER OVER 
+-- присваивает «порядковые номера» строкам, сортированным по столбцу EMPNO
+select ceil(row_number() over(order by empno) / 3.0) as grp,
+empno, empname
+from emp
+
+
+-- Запрос 5
+-- Требуется организовать данные в определенное число блоков. Для создания 
+-- заданного числа блоковиспользуем функцию NTILE. NTILE разбивает упорядоченное 
+-- множество на требуемое число сегментов.
+select ntile(3) over (order by empno) as grp,
+       empno, empname
+from emp
+
+
+-- Запрос 6
+-- Требуется создать горизонтальную гистограмму. Первый шаг – подсчитываем количество 
+-- служащих  в каждом отделе Следующий шаг – возвращаем для каждого отдела 
+-- соответствующее число символов «*», исходя из значения, возвращаемого COUNT(*). 
+-- Для этого передаем COUNT(*) как аргумент в строковую функцию LPAD
+select deptno, lpad('*', count(*), '*') as cnt
+from career
+group by deptno
+order by cnt
+
+
+-- Запрос 7
+-- Требуется создать гистограмму, в которой значения увеличиваются вдоль оси 
+-- снизу вверх. Используем ранжирующую функцию ROW_NUMBER OVER, чтобы уникально 
+-- идентифицировать каждый экземпляр символа «*» для каждого DEPTNO.С помощью 
+-- агрегатной функции MAX разворачиваем результирующее множество и группируем 
+-- его по значениям, возвращенным ROW_NUMBER OVER
+select max(deptno_10) d10,
+       max(deptno_20) d20,
+       max(deptno_30) d30,
+       max(deptno_40) d40
+from(
+    select ROW_NUMBER()over (partition by deptno order by empno) rn,
+           case when deptno = 10 then '*' else null end deptno_10,
+           case when deptno = 20 then '*' else null end deptno_20,
+           case when deptno = 30 then '*' else null end deptno_30,
+           case when deptno = 40 then '*' else null end deptno_40
+    from career
+        )
+group by rn
+order by 1 desc , 2 DESC , 3 DESC , 4 DESC

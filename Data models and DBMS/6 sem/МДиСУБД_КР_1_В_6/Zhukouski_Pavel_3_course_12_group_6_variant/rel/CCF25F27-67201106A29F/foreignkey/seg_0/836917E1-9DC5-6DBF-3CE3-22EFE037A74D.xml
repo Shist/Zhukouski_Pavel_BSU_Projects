@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="836917E1-9DC5-6DBF-3CE3-22EFE037A74D" containerWithKeyObject="6F80B539-7DEC-61B9-AE3E-923B6C2AC191" localFKIndex="91D9D7F4-1348-407F-8FA2-47E43377FF99" name="Relation_1_Institution_FK">
+<createdBy>user</createdBy>
+<createdTime>2020-10-14 12:06:35 UTC</createdTime>
+<generatorID>7726A9D7-AE89-0691-ECDE-04090ECE45B2</generatorID>
+<ownerDesignName>Zhukouski_Pavel_3_course_12_group_6_variant</ownerDesignName>
+<referredTableLongName>Institution</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>BF5A6D7C-A12B-517E-C60F-CE84C9FF51A2</referredTableID>
+<keyObject>4B98CEDD-131B-A077-7C15-944F8B699FE8</keyObject>
+<referredKeyID>4B98CEDD-131B-A077-7C15-944F8B699FE8</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>Institution_ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

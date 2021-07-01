@@ -1,0 +1,99 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="8CB2346B-0228-ECA3-24D2-FC7F268AEA1C" name="Document">
+<createdBy>user</createdBy>
+<createdTime>2020-10-14 12:06:35 UTC</createdTime>
+<generatorID>424E68E2-A663-856D-954C-68148E191F7F</generatorID>
+<ownerDesignName>Zhukouski_Pavel_3_course_12_group_6_variant</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Document_ID" id="610815A1-789A-61D8-07C4-A76FCD4D3C66">
+<createdBy>user</createdBy>
+<createdTime>2020-10-14 12:06:35 UTC</createdTime>
+<generatorID>F29F6224-D4AC-227E-6C89-F8A2718B63AA</generatorID>
+<ownerDesignName>Zhukouski_Pavel_3_course_12_group_6_variant</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Document_Number" id="7788432B-9A70-868E-3DAD-7AAF6560664F">
+<createdBy>user</createdBy>
+<createdTime>2020-10-14 12:06:35 UTC</createdTime>
+<generatorID>5E1F176C-141D-403D-1194-AD088932B754</generatorID>
+<ownerDesignName>Zhukouski_Pavel_3_course_12_group_6_variant</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>64</dataTypeSize>
+<ownDataTypeParameters>64,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Specialty" id="51F5A590-65E3-F362-4CE6-DF239E1F677E">
+<createdBy>user</createdBy>
+<createdTime>2020-10-14 12:06:35 UTC</createdTime>
+<generatorID>1ECBA6D0-0FBD-FDB8-33A9-18FBAE045BE8</generatorID>
+<ownerDesignName>Zhukouski_Pavel_3_course_12_group_6_variant</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>256</dataTypeSize>
+<ownDataTypeParameters>256,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Tester_Tester_ID" id="3B68D692-D3AA-C8CE-98AB-E62FE1C854FA">
+<createdBy>user</createdBy>
+<createdTime>2020-10-14 12:06:35 UTC</createdTime>
+<generatorID>99CAB9A9-6C6B-8CD4-628A-2CCB5ADADEAA</generatorID>
+<ownerDesignName>Zhukouski_Pavel_3_course_12_group_6_variant</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5B57DB02-51CA-FEA9-745C-A2520C3DE347" referredColumn="BC89C545-BFAA-1500-D41D-AA800CB94DEE"/>
+</associations>
+</Column>
+<Column name="Average_Mark" id="1404EF55-F80F-487D-8052-451E732F8C10">
+<createdBy>user</createdBy>
+<createdTime>2020-10-14 12:06:35 UTC</createdTime>
+<generatorID>7FF83F2F-2A6F-8563-AC2D-1EE4627B84E5</generatorID>
+<ownerDesignName>Zhukouski_Pavel_3_course_12_group_6_variant</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="B55E35A0-402A-9B6F-4651-1ADBBA3A4881" name="Document_PK">
+<createdBy>user</createdBy>
+<createdTime>2020-10-14 12:06:35 UTC</createdTime>
+<generatorID>B2AAAFFE-9B01-B5ED-EF30-E215DB306A91</generatorID>
+<ownerDesignName>Zhukouski_Pavel_3_course_12_group_6_variant</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="610815A1-789A-61D8-07C4-A76FCD4D3C66"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DCA2E11B-C9E4-4168-01BB-4694AB81A0CC" name="Document_Tester_FK">
+<createdBy>user</createdBy>
+<createdTime>2020-10-14 12:06:35 UTC</createdTime>
+<generatorID>C3FA496D-8B4D-3ADE-E3F0-CF3203F92EFA</generatorID>
+<ownerDesignName>Zhukouski_Pavel_3_course_12_group_6_variant</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3B68D692-D3AA-C8CE-98AB-E62FE1C854FA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

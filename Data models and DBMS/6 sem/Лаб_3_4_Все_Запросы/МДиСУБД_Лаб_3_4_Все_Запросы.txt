@@ -1,0 +1,122 @@
+-- Запросы к лабработе 3.4
+
+-- Запрос 1
+-- Добавление, вычитание дней, месяцев, лет.
+-- Требуется используя значения столбца START_DATE получить дату за десять дней до и после приема на работу, 
+-- полгода до и после приема на работу, год до и после приема на работу сотрудника JOHN KLINTON.
+-- Функция ADD_MONTHS возвращает дату плюс n месяцев
+SELECT STARTDATE, 
+ENDDATE,
+(STARTDATE - 10), 
+(ENDDATE + 10),
+ADD_MONTHS(STARTDATE, -6), 
+ADD_MONTHS(ENDDATE, 6), 
+ADD_MONTHS(STARTDATE, -12), 
+ADD_MONTHS(ENDDATE, 12)
+FROM CAREER 
+WHERE EMPNO = (SELECT EMPNO FROM EMP WHERE EMPNAME = 'JOHN KLINTON');
+
+-- Запрос 2
+-- Определение количества дней между двумя датами.
+-- Требуется найти разность между двумя датами и представить результат в днях. 
+-- Вычислите разницу в днях между датами приема на работу сотрудников JOHN MARTIN и ALEX BOUSH.
+-- DUAL - виртуальная таблица; помогает в запросах, в которых у нас не подразумевается возврат какой-либо таблицы изначально
+SELECT 
+((SELECT STARTDATE 
+         FROM CAREER 
+         WHERE EMPNO = (SELECT EMPNO FROM EMP WHERE EMPNAME = 'ALEX BOUSH')) - 
+(SELECT STARTDATE 
+        FROM CAREER 
+        WHERE EMPNO = (SELECT EMPNO FROM EMP WHERE EMPNAME = 'JOHN MARTIN')))
+FROM DUAL;
+
+-- Запрос 3
+-- Определение количества месяцев или лет между датами.
+-- Требуется найти разность между двумя датами в месяцах и в годах.
+-- Функция MONTHS_BETWEEN возвращает количество месяцев между двумя датами
+-- Функция SYSDATE возвращает текущую системную дату и время на вашей локальной базе данных.
+SELECT 
+MONTHS_BETWEEN(SYSDATE, TO_DATE('08-26-1999', 'MM-DD-YYYY')), 
+(MONTHS_BETWEEN(SYSDATE, TO_DATE('08-26-1999', 'MM-DD-YYYY')) / 12)
+FROM DUAL;
+
+-- Запрос 4
+-- Определение интервала времени между текущей и следующей записями.
+-- Требуется определить интервал времени в днях между двумя датами. 
+-- Для каждого сотрудника 20-го отдела найти сколько дней прошло между датой его приема на работу и датой приема на работу следующего сотрудника.
+-- Функция LEAD является аналитической функцией, что позволяет запрашивать более одной строки в таблице, в то же время, не имея для присоединения 
+-- к себе таблицы. Возвращает значения из следующей строки в таблице.
+-- OVER - определяет окно для применения оконной функции
+SELECT STARTDATE, 
+      ((LEAD(STARTDATE, 1) OVER (ORDER BY STARTDATE)) - STARTDATE) AS DAYS_BETWEEN 
+FROM CAREER 
+WHERE DEPTNO = '20';
+
+-- Запрос 5
+-- Определение количества дней в году.
+-- Требуется подсчитать количество дней в году по столбцу START_DATE.
+-- Функция EXTRACT извлекает значение из даты или значения интервала.
+-- Функция TRUNC возвращает дату, усеченную к определенной единице измерения.
+SELECT EXTRACT(YEAR FROM STARTDATE) AS YEAR, 
+       (ADD_MONTHS(TRUNC(STARTDATE, 'y'), 12) - TRUNC(STARTDATE, 'y')) AS DAYS
+FROM CAREER;
+
+-- Запрос 6
+-- Извлечение единиц времени из даты.
+-- Требуется разложить текущую дату на день, месяц, год, секунды, минуты, часы. Результаты вернуть в численном виде.
+SELECT TO_CHAR(SYSDATE, 'DD.MM.YYYY HH24:MI:SS') AS DATE_CHAR, 
+       TO_NUMBER(TO_CHAR(SYSDATE, 'DDMMYYYYHH24MISS')) AS DATE_NUMBER 
+FROM DUAL;
+
+-- Запрос 7
+-- Определение первого и последнего дней месяца.
+-- Требуется получить первый и последний дни текущего месяца.
+-- Функция LAST_DAY возвращает последний день месяца на основе значения даты.
+SELECT TRUNC((SYSDATE) - 1, 'mm') AS FIRST_DAY,
+       SYSDATE,
+       LAST_DAY(SYSDATE) AS LAST_DAY
+FROM DUAL;
+
+-- Запрос 8
+-- Выбор всех дат года, выпадающих на определенный день недели.
+-- Требуется возвратить даты начала и конца каждого из четырех кварталов данного года.
+-- LEVEL - возвращает уровень, положение которого в измерении или иерархии указано числовым выражением или имя которого указано строковым выражением.
+SELECT LEVEL AS QUARTER,
+       ADD_MONTHS(trunc(sysdate, 'YEAR'), (LEVEL - 1) * 3) AS QUARTER_START,
+       ADD_MONTHS(trunc(sysdate, 'YEAR'), LEVEL * 3) - 1 AS QUARTER_END
+FROM DUAL 
+CONNECT BY LEVEL <= 4;
+
+-- Запрос 9
+-- Выбор всех дат года, выпадающих на определенный день недели.
+-- Требуется найти все даты года, соответствующие заданному дню недели. Сформируйте список понедельников текущего года.
+-- Маска формата ‘fmDay’ в функции TO_CHAR вернет наименование дня, а не числовое значение дня.
+SELECT * 
+FROM (SELECT (trunc(sysdate, 'YEAR') + LEVEL - 1)  AS DAY 
+             FROM DUAL
+             CONNECT BY LEVEL <= 366)
+WHERE TO_CHAR(DAY, 'fmday') = 'monday';
+
+-- Запрос 10
+-- Создание календаря.
+-- Требуется создать календарь на текущий месяц. Календарь должен иметь семь столбцов в ширину и пять строк вниз.
+WITH X AS (SELECT * FROM (SELECT TRUNC(SYSDATE, 'MM') + LEVEL - 1 MONTH_DATE,
+                                 TO_CHAR(TRUNC(SYSDATE, 'MM') + LEVEL - 1, 'IW') WEEK_NUMBER,
+                                 TO_CHAR(TRUNC(SYSDATE, 'MM') + LEVEL - 1, 'DD') DAY_NUMBER,
+                                 TO_NUMBER(TO_CHAR(TRUNC(SYSDATE, 'MM')+ LEVEL - 1, 'D')) WEEK_DAY,
+                                 TO_CHAR(TRUNC(SYSDATE, 'MM') + LEVEL - 1, 'MM') CURR_MONTH,
+                                 TO_CHAR(SYSDATE, 'MM') MONTH
+                          FROM DUAL
+                          CONNECT BY LEVEL <=31)      
+            WHERE CURR_MONTH = MONTH)
+-- Оператор CASE имеет функциональные возможности оператора IF-THEN-ELSE
+SELECT MAX(CASE WEEK_DAY WHEN 2 THEN DAY_NUMBER END) AS MONDAY,
+       MAX(CASE WEEK_DAY WHEN 3 THEN DAY_NUMBER END) AS TUESDAY,
+       MAX(CASE WEEK_DAY WHEN 4 THEN DAY_NUMBER END) AS WEDNESDAY,
+       MAX(CASE WEEK_DAY WHEN 5 THEN DAY_NUMBER END) AS THURSDAY,
+       MAX(CASE WEEK_DAY WHEN 6 THEN DAY_NUMBER END) AS FRIDAY,
+       MAX(CASE WEEK_DAY WHEN 7 THEN DAY_NUMBER END) AS SATURDAY,
+       MAX(CASE WEEK_DAY WHEN 1 THEN DAY_NUMBER END) AS SUNDAY
+FROM X
+GROUP BY WEEK_NUMBER
+ORDER BY WEEK_NUMBER;

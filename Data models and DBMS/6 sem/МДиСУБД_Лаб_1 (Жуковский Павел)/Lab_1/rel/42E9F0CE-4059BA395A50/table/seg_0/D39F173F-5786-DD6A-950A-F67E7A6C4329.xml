@@ -1,0 +1,62 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D39F173F-5786-DD6A-950A-F67E7A6C4329" name="PUBLIC_SPACE">
+<createdBy>user</createdBy>
+<createdTime>2020-09-09 12:36:14 UTC</createdTime>
+<generatorID>515F093E-613B-F19B-AA98-F91596CDA0F3</generatorID>
+<ownerDesignName>Lab_1</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="8F3FF4D5-E665-270F-0B68-A599AD9A8DE5">
+<createdBy>user</createdBy>
+<createdTime>2020-09-09 12:36:14 UTC</createdTime>
+<generatorID>0B593375-66D5-C708-D10E-E582819D87F2</generatorID>
+<ownerDesignName>Lab_1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1A6A48A0-0DE6-8981-68CE-FCE22F976B5A" referredColumn="8631C820-CF05-E319-7315-E0113D10D0BA"/>
+</associations>
+</Column>
+<Column name="rental_fee" id="163358C6-4353-949B-5D77-A48BF5299DE7">
+<createdBy>user</createdBy>
+<createdTime>2020-09-09 12:36:14 UTC</createdTime>
+<generatorID>1CFFC7E0-7599-05F4-6440-91E29A9E0B1C</generatorID>
+<ownerDesignName>Lab_1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT040</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A7FA5434-E9D7-C611-323B-13476EAAEEF6" name="PUBLIC_SPACE_PK">
+<createdBy>user</createdBy>
+<createdTime>2020-09-09 12:36:14 UTC</createdTime>
+<generatorID>8A4A94D6-DB23-CBF0-AA9A-F4429414D8A1</generatorID>
+<ownerDesignName>Lab_1</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8F3FF4D5-E665-270F-0B68-A599AD9A8DE5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="AAA6053D-D6A3-C9A5-0021-E6D9C58D21DF" name="PUBLIC_SPACE_VENUE_FK">
+<createdBy>user</createdBy>
+<createdTime>2020-09-09 12:36:14 UTC</createdTime>
+<generatorID>07B39C43-9183-512C-D3B2-250D4418378E</generatorID>
+<ownerDesignName>Lab_1</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8F3FF4D5-E665-270F-0B68-A599AD9A8DE5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

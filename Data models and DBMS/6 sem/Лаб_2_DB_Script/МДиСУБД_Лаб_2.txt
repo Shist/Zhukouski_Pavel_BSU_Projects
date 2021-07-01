@@ -1,0 +1,218 @@
+CREATE TABLE doctor (
+    doctor_id   INTEGER NOT NULL,
+    name        VARCHAR2(32) NOT NULL,
+    surname     VARCHAR2(32) NOT NULL,
+    patronymic  VARCHAR2(32),
+    address     CLOB NOT NULL,
+    birth_date  DATE NOT NULL
+);
+
+COMMIT;
+
+ALTER TABLE doctor ADD CONSTRAINT doctor_pk PRIMARY KEY ( doctor_id );
+
+COMMIT;
+
+INSERT INTO doctor VALUES
+	(1, 'Putinova',   'Taisiya', 'Andriyanovna', '3431  Morgan Street', TO_DATE('1994/12/16', 'yyyy/mm/dd'));
+INSERT INTO doctor VALUES
+	(2, 'Karnaukhova',   'Maya', 'Rostislavovna', '2306  Harper Street', TO_DATE('1997/07/11', 'yyyy/mm/dd'));
+INSERT INTO doctor VALUES
+	(3, 'Pashin',   'Samson', 'Mikhailovich', '1371  May Street', TO_DATE('1991/03/08', 'yyyy/mm/dd'));
+INSERT INTO doctor VALUES
+	(4, 'Rudin',   'Kondrat', 'Timurovich', '3664  Mattson Street', TO_DATE('1987/06/24', 'yyyy/mm/dd'));
+INSERT INTO doctor VALUES
+	(5, 'Albina',   'Mefodievna', 'Plemyannikova', '3800  Webster Street', TO_DATE('1996/09/14', 'yyyy/mm/dd'));
+
+COMMIT;
+
+CREATE TABLE patient (
+    patient_id        INTEGER NOT NULL,
+    name              VARCHAR2(32) NOT NULL,
+    surname           VARCHAR2(32) NOT NULL,
+    patronymic        VARCHAR2(32),
+    address           VARCHAR2(4000) NOT NULL,
+    birth_date        DATE NOT NULL,
+    doctor_doctor_id  INTEGER NOT NULL,
+    dentition         VARCHAR2(4000) NOT NULL,
+    payment_form      VARCHAR2(4000) NOT NULL
+);
+
+COMMIT;
+
+ALTER TABLE patient ADD CONSTRAINT patient_pk PRIMARY KEY ( patient_id );
+
+COMMIT;
+
+INSERT INTO patient VALUES
+	(1, 'Kirkhenstein',   'Iosif', 'Vsevolodovich', '912  Railroad Street', TO_DATE('1985/07/12', 'yyyy/mm/dd'), 1, '3 3 5 5 1 3 3 4 5 5 4 3 4 4 3 4 5 5 5 3 4 5 4 3 5 3 2 2 3 5 4 3', 'cash');
+INSERT INTO patient VALUES
+	(2, 'Kipriyanova',   'Natalia', 'Nestorovna', '3833  Walnut Hill Drive', TO_DATE('1979/04/17', 'yyyy/mm/dd'), 2, '3 2 4 4 2 2 4 1 4 3 2 5 2 1 2 2 4 5 3 2 2 5 5 1 1 3 4 3 1 2 3 3', 'credit card');
+INSERT INTO patient VALUES
+	(3, 'Vorobieva',   'Larisa', 'Evgenievna', '929  Village View Drive', TO_DATE('1986/06/12', 'yyyy/mm/dd'), 3, '1 4 5 5 5 3 1 4 3 3 4 1 3 3 4 3 3 5 5 5 5 2 3 4 2 1 1 5 3 3 5 1', 'credit card');
+INSERT INTO patient VALUES
+	(4, 'Kalnberzin',   'Vadim', 'Davydovich', '1877  Pinewood Avenue', TO_DATE('1975/08/06', 'yyyy/mm/dd'), 4, '3 5 3 2 4 1 5 1 1 4 2 2 5 5 2 2 3 5 1 5 2 5 5 4 2 3 5 5 1 1 3 1', 'credit card');
+INSERT INTO patient VALUES
+	(5, 'Mitrokhin',   'Andrey', 'Glebovich', '1709  Davis Avenue', TO_DATE('1978/04/24', 'yyyy/mm/dd'), 5, '4 3 5 4 1 4 1 3 4 4 5 1 1 3 5 4 2 4 5 5 1 1 3 4 5 4 2 3 5 4 5 2', 'cash');
+INSERT INTO patient VALUES
+	(6, 'Korotaev',   'Oleg', 'Tikhonovich', '1114  Shobe Lane', TO_DATE('1971/12/28', 'yyyy/mm/dd'), 1, '3 4 1 4 2 4 5 2 5 4 2 3 2 2 5 4 4 2 4 5 4 4 4 3 1 1 2 2 1 3 5 1', 'cash');
+INSERT INTO patient VALUES
+	(7, 'Korneeva',   'Nika', 'Yulievna', '2598  Moore Avenue', TO_DATE('1985/11/23', 'yyyy/mm/dd'), 2, '1 3 2 1 1 5 3 1 1 4 5 5 3 4 4 3 5 4 1 2 3 1 3 2 4 2 1 5 2 1 2 5', 'credit card');
+
+COMMIT;
+
+CREATE TABLE payment_form (
+    payment_form_id  INTEGER NOT NULL,
+    payment_method   VARCHAR2(32) NOT NULL,
+    price            NUMBER NOT NULL
+);
+
+COMMIT;
+
+ALTER TABLE payment_form ADD CONSTRAINT payment_form_pk PRIMARY KEY ( payment_form_id );
+
+COMMIT;
+
+INSERT INTO payment_form VALUES
+	(1, 'cash', 45.5);
+INSERT INTO payment_form VALUES
+	(2, 'credit card', 47.5);
+INSERT INTO payment_form VALUES
+	(3, 'cash', 62.5);
+INSERT INTO payment_form VALUES
+	(4, 'credit card', 63.5);
+
+COMMIT;
+
+CREATE TABLE visit (
+    visit_id                      INTEGER NOT NULL,
+    patient_patient_id            INTEGER NOT NULL,
+    visit_date                    DATE,
+    doctor_doctor_id              INTEGER,
+    work_description              CLOB NOT NULL,
+    work_cost                     NUMBER NOT NULL,
+    null_set_generated_425        INTEGER NOT NULL,
+    payment_form_payment_form_id  INTEGER NOT NULL
+);
+
+COMMIT;
+
+ALTER TABLE visit ADD CONSTRAINT visit_pk PRIMARY KEY ( visit_id );
+
+ALTER TABLE patient
+    ADD CONSTRAINT patient_doctor_fk FOREIGN KEY ( doctor_doctor_id )
+        REFERENCES doctor ( doctor_id );
+
+ALTER TABLE payment_form
+    ADD CONSTRAINT payment_form_visit_fk FOREIGN KEY ( visit_visit_id )
+        REFERENCES visit ( visit_id );
+
+ALTER TABLE visit
+    ADD CONSTRAINT visit_doctor_fk FOREIGN KEY ( doctor_doctor_id )
+        REFERENCES doctor ( doctor_id );
+
+ALTER TABLE visit
+    ADD CONSTRAINT visit_patient_fk FOREIGN KEY ( patient_patient_id )
+        REFERENCES patient ( patient_id );
+
+ALTER TABLE visit
+    ADD CONSTRAINT visit_payment_form_fk FOREIGN KEY ( payment_form_payment_form_id )
+        REFERENCES payment_form ( payment_form_id );
+
+COMMIT;
+
+INSERT INTO visit VALUES
+	(1, 3, TO_DATE('2020/07/17', 'yyyy/mm/dd'), 4, 'teeth healing', 75.5, 1, 1);
+INSERT INTO visit VALUES
+	(2, 2, TO_DATE('2020/07/21', 'yyyy/mm/dd'), 5, 'heart massage', 82.5, 2, 2);
+INSERT INTO visit VALUES
+	(3, 4, TO_DATE('2020/07/26', 'yyyy/mm/dd'), 1, 'putting gypsum', 93.5, 3, 3);
+
+COMMIT;
+        
+CREATE SEQUENCE teeth_seq
+    START WITH     1
+    INCREMENT BY   1
+    NOCACHE
+    NOCYCLE;
+
+COMMIT;
+
+CREATE TABLE teeth (
+    tooth_id    INTEGER NOT NULL,
+    tooth_name  VARCHAR2(64) NOT NULL
+);
+
+COMMIT;
+
+ALTER TABLE teeth ADD CONSTRAINT teeth_pk PRIMARY KEY ( teeth_id );
+
+COMMIT;
+
+INSERT INTO teeth VALUES
+	(teeth_seq.NEXTVAL, 'upper jaw on the right - central incisor');
+INSERT INTO teeth VALUES
+	(teeth_seq.NEXTVAL, 'upper jaw on the right - second incisor');
+INSERT INTO teeth VALUES
+	(teeth_seq.NEXTVAL, 'upper jaw on the right - canine');
+INSERT INTO teeth VALUES
+	(teeth_seq.NEXTVAL, 'upper jaw on the right - first premolar');
+INSERT INTO teeth VALUES
+	(teeth_seq.NEXTVAL, 'upper jaw on the right - second premolar');
+INSERT INTO teeth VALUES
+	(teeth_seq.NEXTVAL, 'upper jaw on the right - first molar');
+INSERT INTO teeth VALUES
+	(teeth_seq.NEXTVAL, 'upper jaw on the right - second molar');
+INSERT INTO teeth VALUES
+	(teeth_seq.NEXTVAL, 'upper jaw on the right - wisdom tooth');
+INSERT INTO teeth VALUES
+	(teeth_seq.NEXTVAL, 'upper jaw on the left - central incisor');
+INSERT INTO teeth VALUES
+	(teeth_seq.NEXTVAL, 'upper jaw on the left - second incisor');
+INSERT INTO teeth VALUES
+	(teeth_seq.NEXTVAL, 'upper jaw on the left - canine');
+INSERT INTO teeth VALUES
+	(teeth_seq.NEXTVAL, 'upper jaw on the left - first premolar');
+INSERT INTO teeth VALUES
+	(teeth_seq.NEXTVAL, 'upper jaw on the left - second premolar');
+INSERT INTO teeth VALUES
+	(teeth_seq.NEXTVAL, 'upper jaw on the left - first molar');
+INSERT INTO teeth VALUES
+	(teeth_seq.NEXTVAL, 'upper jaw on the left - second molar');
+INSERT INTO teeth VALUES
+	(teeth_seq.NEXTVAL, 'upper jaw on the left - wisdom tooth');
+INSERT INTO teeth VALUES
+	(teeth_seq.NEXTVAL, 'lower jaw on the right - central incisor');
+INSERT INTO teeth VALUES
+	(teeth_seq.NEXTVAL, 'lower jaw on the right - second incisor');
+INSERT INTO teeth VALUES
+	(teeth_seq.NEXTVAL, 'lower jaw on the right - canine');
+INSERT INTO teeth VALUES
+	(teeth_seq.NEXTVAL, 'lower jaw on the right - first premolar');
+INSERT INTO teeth VALUES
+	(teeth_seq.NEXTVAL, 'lower jaw on the right - second premolar');
+INSERT INTO teeth VALUES
+	(teeth_seq.NEXTVAL, 'lower jaw on the right - first molar');
+INSERT INTO teeth VALUES
+	(teeth_seq.NEXTVAL, 'lower jaw on the right - second molar');
+INSERT INTO teeth VALUES
+	(teeth_seq.NEXTVAL, 'lower jaw on the right - wisdom tooth');
+INSERT INTO teeth VALUES
+	(teeth_seq.NEXTVAL, 'lower jaw on the left - central incisor');
+INSERT INTO teeth VALUES
+	(teeth_seq.NEXTVAL, 'lower jaw on the left - second incisor');
+INSERT INTO teeth VALUES
+	(teeth_seq.NEXTVAL, 'lower jaw on the left - canine');
+INSERT INTO teeth VALUES
+	(teeth_seq.NEXTVAL, 'lower jaw on the left - first premolar');
+INSERT INTO teeth VALUES
+	(teeth_seq.NEXTVAL, 'lower jaw on the left - second premolar');
+INSERT INTO teeth VALUES
+	(teeth_seq.NEXTVAL, 'lower jaw on the left - first molar');
+INSERT INTO teeth VALUES
+	(teeth_seq.NEXTVAL, 'lower jaw on the left - second molar');
+INSERT INTO teeth VALUES
+	(teeth_seq.NEXTVAL, 'lower jaw on the left - wisdom tooth');
+
+COMMIT;
+

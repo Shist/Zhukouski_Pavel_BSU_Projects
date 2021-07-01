@@ -1,0 +1,93 @@
+-- Запросы к лабработе 3.5
+
+-- Запрос 1
+-- Развернуть группу строк информирующую о количестве сотрудников на каждой 
+-- должности в настоящий момент времени, превращая их значения в столбцы.
+-- В этом подходе для подсчета количества служащих в отделе используется вложенный 
+-- запрос. Выражение CASE внешнего запроса преобразует строки в столбцы.
+select 
+max(case when jobname='PRESIDENT' then counter else null end) as PRESIDENT,
+max(case when jobname='FINANCIAL DIRECTOR' then counter else null end) as FINANCIAL_DIRECTOR,
+max(case when jobname='MANAGER' then counter else null end) as MANAGER,
+max(case when jobname='CLERK' then counter else null end) as CLERK,
+max(case when jobname='DRIVER' then counter else null end) as DRIVER
+from (
+select jobname, count(*) as counter
+from career join job using (jobno)
+where enddate is null
+group by jobname
+)
+
+
+-- Запрос 2
+-- Требуется преобразовать строки в столбцы, создавая для каждого значения 
+-- заданного столбца отдельный столбец. Чтобы решить данную задачу необходимо 
+-- сделать каждое сочетание JOBNAME+EMPNAME уникальным. С этой целью используем 
+-- ранжирующую функцию ROW_NUMBEROVER. Следующий шаг – использовать выражение 
+-- CASE для распределения значений EMPNAMEпо соответствующим столбцам JOBNAME.
+-- В результате строки транспонированы в столбцы, осталось удалить значения NULL. 
+-- Используем для этого агрегатную функцию MAXи группируем результаты по RN.
+select 
+max(case when deptname='ACCOUNTING' then empname else null end) as ACCOUNTING,
+max(case when deptname='OPERATIONS' then empname else null end) as OPERATIONS,
+max(case when deptname='RESEARCH' then empname else null end) as RESEARCH,
+max(case when deptname='SALES' then empname else null end) as SALES
+from (
+select deptname, empname, row_number()over(partition by deptname order by empname) results
+from emp join(career join dept using (deptno)) using (empno)
+)
+group by results
+
+
+-- Запрос 3
+-- Выполните обратное разворачивание для результирующего множества,
+-- полученного  в задании 1.
+SELECT 
+JOBNAME,
+CASE JOBNAME 
+ WHEN 'CLERK' THEN CLERK
+ WHEN 'FINANCIAL DIRECTOR' THEN FINANCIAL_DIRECTOR
+ WHEN 'PRESIDENT' THEN PRESIDENT
+ WHEN 'MANAGER' THEN MANAGER
+ WHEN 'DRIVER' THEN DRIVER
+ WHEN 'SALESMAN' THEN SALESMAN
+ WHEN 'EXECUTIVE DIRECTOR' THEN EXECUTIVE_DIRECTOR
+ END AS JOB_COUNT
+FROM (SELECT JOBNAME FROM JOB),(
+SELECT
+SUM(CASE WHEN JOB.JOBNAME = 'CLERK' THEN 1 ELSE 0 END) AS CLERK,
+SUM(CASE WHEN JOB.JOBNAME = 'FINANCIAL DIRECTOR' THEN 1 ELSE 0 END) AS FINANCIAL_DIRECTOR,
+SUM(CASE WHEN JOB.JOBNAME = 'PRESIDENT' THEN 1 ELSE 0 END) AS PRESIDENT,
+SUM(CASE WHEN JOB.JOBNAME = 'MANAGER' THEN 1 ELSE 0 END) AS MANAGER,
+SUM(CASE WHEN JOB.JOBNAME = 'DRIVER' THEN 1 ELSE 0 END) AS DRIVER,
+SUM(CASE WHEN JOB.JOBNAME = 'SALESMAN' THEN 1 ELSE 0 END) AS SALESMAN,
+SUM(CASE WHEN JOB.JOBNAME = 'EXECUTIVE DIRECTOR' THEN 1 ELSE 0 END) AS EXECUTIVE_DIRECTOR
+FROM CAREER
+INNER JOIN JOB
+ON(JOB.JOBNO = CAREER.JOBNO)
+WHERE CAREER.ENDDATE IS NULL
+);
+
+
+-- Запрос 4
+-- Составьте запрос, который будет выполнять обратное разворачивание
+-- результирующего множества в один столбец.
+SELECT 
+CASE RN
+WHEN 1 THEN TO_CHAR( EMPNO)
+WHEN 2 THEN EMPNAME
+WHEN 3 THEN TO_CHAR(BIRTHDATE)
+END AS EMPS_INFO
+FROM(
+SELECT EMPNO,EMPNAME,BIRTHDATE, ROW_NUMBER() OVER(PARTITION BY EMPNAME ORDER BY EMPNAME) rn
+FROM EMP, (SELECT LEVEL 
+FROM DUAL 
+CONNECT BY LEVEL <= 4)
+);
+
+
+-- Запрос 5
+-- Составьте запрос, который будет исключать повторяющиеся значения из
+-- результирующего множества.
+SELECT DECODE( LAG(MANAGER_ID) OVER(ORDER BY MANAGER_ID),MANAGER_ID, NULL, MANAGER_ID ) Manager_id,EMPNAME
+FROM EMP;

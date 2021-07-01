@@ -1,0 +1,137 @@
+-- Запросы к лабработе 3.2
+
+-- Запрос 1
+-- Найти имена сотрудников, получивших за годы начисления зарплаты минимальную зарплату.
+-- Min(...) - выбирает минимальное значение
+SELECT EMP.EMPNAME FROM (SALARY INNER JOIN EMP ON SALARY.EMPNO = EMP.EMPNO)
+    WHERE SALARY.SALVALUE = (SELECT MIN(SALVALUE) FROM SALARY);
+
+-- Запрос 2
+-- Найти имена сотрудников, работавших или работающих в тех же отделах, 
+-- в которых работал или работает сотрудник с именем RICHARD MARTIN.
+-- DISTINCT - позволяет нам взять отдельно какие-то данные из таблицы, так чтобы в выборку не шли другие лишние данные
+SELECT EMPNAME FROM EMP
+    WHERE EMPNO IN (SELECT DISTINCT EMPNO FROM CAREER
+        WHERE DEPTNO IN (SELECT DEPTNO FROM CAREER
+            WHERE EMPNO = (SELECT EMPNO FROM EMP
+                WHERE EMPNAME = 'RICHARD MARTIN')))
+    AND NOT EMPNAME = 'RICHARD MARTIN';
+
+-- Запрос 3
+-- Найти имена сотрудников, работавших или работающих в тех же отделах и
+-- должностях, что и сотрудник RICHARD MARTIN
+SELECT EMPNAME FROM EMP
+    WHERE EMPNO IN (SELECT DISTINCT EMPNO FROM CAREER
+        WHERE DEPTNO IN (SELECT DEPTNO FROM CAREER
+            WHERE EMPNO = (SELECT EMPNO FROM EMP
+                WHERE EMPNAME = 'RICHARD MARTIN'))
+        AND JOBNO IN (SELECT JOBNO FROM CAREER
+            WHERE EMPNO = (SELECT EMPNO FROM EMP
+                WHERE EMPNAME = 'RICHARD MARTIN')))
+    AND NOT EMPNAME = 'RICHARD MARTIN';
+
+-- Запрос 4
+-- Найти сведения о номерах сотрудников, получивших за какой-либо месяц зарплату
+-- большую, чем средняя зарплата за 2007 г. или большую чем средняя зарплата за 2008г.
+-- AVG(...) - определяет среднее значение из всех значений
+SELECT EMPNO FROM SALARY
+    WHERE (
+        SELECT AVG(SALVALUE) FROM SALARY
+            WHERE YEAR = 2007) < ANY(SALVALUE)
+            OR (
+                SELECT AVG(SALVALUE) FROM SALARY
+                    WHERE YEAR = 2008) < ANY(SALVALUE);
+
+-- Запрос 5
+-- Найти сведения о номерах сотрудников, получивших зарплату за какой-либо месяц
+-- большую, чем средние зарплаты за все годы начислений.
+-- ANY(...) - просматривается любой объект из всех имеющихся
+SELECT EMPNO FROM SALARY
+    WHERE (SELECT AVG(SALVALUE) FROM SALARY) < ANY(SALVALUE);
+
+-- Запрос 6
+-- Определить годы, в которые начисленная средняя зарплата была больше средней зарплаты за все годы начислений.
+-- GROUP BY YEAR - группировка в таблице будет по годам, HAVING - позволяет вложить наше условие во вложенный подзапрос
+SELECT YEAR FROM SALARY
+    GROUP BY YEAR
+    HAVING AVG(SALVALUE) > (SELECT AVG(SALVALUE) FROM SALARY);
+
+
+-- Запрос 7
+-- Определить номера отделов, в которых работали или работают сотрудники, имеющие начисления зарплаты.
+-- NATURAL JOIN - естественное определение, аналог USING, только при этом ещё идёт автоматическая проверка на равенство значений столбцов
+SELECT DISTINCT DEPTNO FROM DEPT
+    WHERE DEPTNO IN (
+    SELECT DEPTNO
+        FROM CAREER  NATURAL JOIN EMP NATURAL JOIN SALARY S
+        WHERE S.SALVALUE IS NOT NULL)
+    ORDER BY DEPTNO;
+
+-- Запрос 8
+-- Определить номера отделов, в которых работали или работают сотрудники, имеющие начисления зарплаты.
+-- EXISTS - оператор "существования", выполняет запрос, если возвращена хотя бы одна строка
+SELECT DEPTNO
+    FROM DEPT D
+    WHERE EXISTS (
+    SELECT SALVALUE
+        FROM CAREER C NATURAL JOIN EMP NATURAL JOIN SALARY
+        WHERE D.DEPTNO = C.DEPTNO)
+    ORDER BY DEPTNO;
+
+-- Запрос 9
+-- Определить номера отделов, для сотрудников которых не начислялась зарплата.
+-- NOT EXISTS - противоположность EXISTS, выполняет запрос только, если не возвращена ни одна строка
+SELECT DEPTNO
+    FROM DEPT D
+    WHERE NOT EXISTS (
+    SELECT SALVALUE
+        FROM CAREER C NATURAL JOIN EMP NATURAL JOIN SALARY
+        WHERE D.DEPTNO = C.DEPTNO)
+    ORDER BY DEPTNO;
+
+-- Запрос 10
+-- Определить целую часть средних зарплат, по годам начисления.
+-- CAST - преобразует один тип данных в другой тип данных
+-- Здесь AVG(...) as NUMBER(10) вернет среднюю зарплату с точностью в 10 знаков
+SELECT YEAR, CAST(AVG(SALVALUE) AS NUMBER(10)) AS TRUNCAVG
+    FROM SALARY
+    GROUP BY YEAR
+    ORDER BY YEAR;
+
+-- Запрос 11 (В условии написано, что это 12-ый запрос)
+-- Разделите сотрудников на возрастные группы: A) возраст 20-30 лет; B) 31-40 лет; C) 41-50; D) 51-60 или возраст не определён.
+-- CASE - делает примерно то же, что и операторы IF-THEN-ELSE, аналог switch в программировании
+SELECT EMPNO, EMPNAME,
+    CASE
+        WHEN MONTHS_BETWEEN (SYSDATE, BIRTHDATE) / 12 BETWEEN 20 AND 30
+            THEN 'A'
+        WHEN MONTHS_BETWEEN (SYSDATE, BIRTHDATE) / 12 BETWEEN 31 AND 40
+            THEN 'B'
+        WHEN MONTHS_BETWEEN (SYSDATE, BIRTHDATE) / 12 BETWEEN 41 AND 50
+            THEN 'C'
+        WHEN MONTHS_BETWEEN (SYSDATE, BIRTHDATE) / 12 BETWEEN 51 AND 60
+            THEN 'D'
+        ELSE NULL
+    END
+    AS AGE_GROUP
+    FROM EMP;
+
+-- Запрос 12 (В условии написано, что это 13-ый запрос)
+-- Перекодируйте номера отделов, добавив перед номером отдела буквы BI для номеров <=20, буквы LN для номеров >=30.
+-- CASE - аналог IF-THEN-ELSE
+-- CONCAT - соединяет 2 строки в одну строку
+-- AS VARCHAR(10) - сохраняет в виде строки, состоящей из 10 символов
+SELECT D.DEPTNO,
+    CASE
+        WHEN D.DEPTNO <= 20 THEN CONCAT('BI', CAST (D.DEPTNO AS VARCHAR(10)))
+        WHEN D.DEPTNO >= 30 THEN CONCAT('LN', CAST (D.DEPTNO AS VARCHAR(10)))
+    END
+    AS NEWDEPTNO, D.DEPTNAME, D.DEPTADDR
+    FROM DEPT D;
+
+-- Запрос 13 (В условии написано, что это 14-ый запрос)
+-- Выдать информацию о сотрудниках из таблицы EMP, заменив отсутствие данного о дате рождения датой 01-01-1000
+-- COALESCE - возвращает первое ненулевое выражение из списка. Если все выражения определены как Null, то функция COALESCE вернет Null.
+SELECT EMPNO, EMPNAME,
+    COALESCE(BIRTHDATE, to_date('01-01-1000', 'dd-mm-yyyy')) AS BIRTHDATE
+    FROM EMP;

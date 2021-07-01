@@ -1,0 +1,53 @@
+-- Запросы к лабработе 5
+
+-- Запрос 1
+-- Создайте представление, содержащее данные о сотрудниках пенсионного возраста.
+CREATE VIEW RETIREE AS
+SELECT * FROM EMP
+WHERE (MONTHS_BETWEEN(SYSDATE, BIRTHDATE) / 12) >= 60;
+
+
+-- Запрос 2
+-- Создайте представление, содержащее данные об уволенных сотрудниках: имя 
+-- сотрудника, дата увольнения, отдел, должность.
+CREATE VIEW FIREDS AS
+SELECT EMPNAME, ENDDATE, DEPTNAME, JOBNAME FROM EMP
+NATURAL JOIN CAREER
+NATURAL JOIN JOB
+NATURAL JOIN DEPT
+WHERE ENDDATE IS NOT NULL;
+
+
+-- Запрос 3
+-- Создайте представление, содержащее имя сотрудника, должность, занимаемую 
+-- сотрудником в данный момент, суммарную заработную плату сотрудника за третий 
+-- квартал 2010 года. Первый столбец назвать Sotrudnik, второй – Dolzhnost, третий – Itogo_3_kv.
+CREATE VIEW Sotrudnik_3_kv AS
+SELECT e.EMPNAME AS Sotrudnik, j.JOBNAME AS Dolzhnost, SUM(s.SALVALUE) AS Itogo_3_kv
+FROM EMP e
+NATURAL JOIN JOB j
+NATURAL JOIN CAREER c
+NATURAL JOIN SALARY s
+WHERE s.YEAR = 2010 AND s.MONTH BETWEEN 7 AND 9 AND c.ENDDATE IS NOT NULL
+GROUP BY E.EMPNAME, J.JOBNAME;
+
+
+--Запрос 4
+-- На основе представления из задания 2 и таблицы SALARY создайте представление, 
+-- содержащее данные об уволенных сотрудниках, которым зарплата начислялась более 
+-- 2 раз. В созданном представлении месяц начисления зарплаты и сумма зарплаты 
+-- вывести в одном столбце, в качестве разделителя использовать запятую.
+CREATE VIEW FIREDS_2  AS
+SELECT EMPNAME, ENDDATE, DEPTNAME, JOBNAME, (MONTH || ', ' || SALVALUE) AS MONTH_TO_SUM
+FROM FIREDS 
+NATURAL JOIN SALARY
+WHERE EMPNO in (SELECT EMPNO 
+                FROM FIREDS 
+                NATURAL JOIN SALARY 
+                GROUP BY EMPNO
+                HAVING COUNT(*)>2)
+UPDATE RETIREE
+SET BIRTHDATE = SYSDATE
+WHERE EMPNAME = 'WARD';
+INSERT INTO RETIREE 
+VALUES (7147, 'Test', TO_DATE('1940/05/03', 'yyyy/mm/dd'),7789)
