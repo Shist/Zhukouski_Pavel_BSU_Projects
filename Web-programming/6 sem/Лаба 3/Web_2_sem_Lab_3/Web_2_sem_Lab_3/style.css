@@ -1,0 +1,82 @@
+/*------------- MAIN PAGE -------------*/
+.main-page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+}
+
+.menu{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.menu button{
+    margin: 2px 0px;
+    width: 250px;
+}
+
+header{
+    border-radius: 10px;
+    background: burlywood;
+    box-shadow: 5px 5px 10px 0 gray;
+    padding: 10px;
+}
+/*------------- PAGEs -------------*/
+#page-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+}
+
+.page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 1000px;
+    height: 550px;
+    border: 0.7px solid black;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px 0 gray;
+    overflow:scroll;
+}
+
+h3{
+    margin: 20px;
+}
+
+table{
+    border-collapse: collapse;
+    width: 900px;
+    margin: 20px;
+}
+
+th, td{
+    border: 1px solid black;
+}
+
+th{
+    background: burlywood;
+}
+
+td{
+    text-align: center;
+}
+
+.form{
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+}
+
+input{
+    margin: 5px;
+}
+button{
+    margin: 5px;
+}

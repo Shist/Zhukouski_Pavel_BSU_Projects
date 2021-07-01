@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+    <title></title>
+</h:head>
+
+<h:body>
+    <div class="block">
+        <h2>Записи формуляра по ID запроса</h2>
+        <h:form>
+            <h:dataTable value="#{Formular.list}" var="formular">
+                <h:column>
+                    <f:facet name="header">Автор книги</f:facet>
+                    #{formular.book.BAuthor}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">ID запроса на книгу</f:facet>
+                    #{formular.request.requestId}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Возвращена ли книга (1 - да, 0 - нет)</f:facet>
+                    #{formular.isReturned}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Состояние книги</f:facet>
+                    #{formular.bookState}
+                </h:column>
+            </h:dataTable>
+            <h:commandButton value="Назад" action="/lab6/menu?faces-redirect=true"/>
+        </h:form>
+    </div>
+</h:body>
+</html>

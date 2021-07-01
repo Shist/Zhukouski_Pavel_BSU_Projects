@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+    <title></title>
+</h:head>
+
+<h:body>
+    <div class="block">
+        <h2>Добавить машину</h2>
+        <h:form>
+            <h:panelGrid columns="1" border="0">
+                <h:outputText value="Вместительность"/>
+                <h:inputText id = "capability" value="#{Car.capability}">
+                    <f:converter converterId="DecimalConverter"/>
+                </h:inputText>
+                <h:message for="capability" style="color:red" />
+
+                <h:outputText value="Стоимость поездки"/>
+                <h:inputText id = "cost" value="#{Car.cost}">
+                    <f:converter converterId="DecimalConverter"/>
+                </h:inputText>
+                <h:message for="cost" style="color:magenta" />
+
+                <h:outputText value="Рег номер машины"/>
+                <h:inputText id = "regNum" value="#{Car.regNum}">
+                    <f:validator validatorId="RegNumValidator"/>
+                </h:inputText>
+                <h:message for="regNum" style="color:red" />
+            </h:panelGrid>
+            <h:commandButton value="Добавить" action="#{Car.save}" />
+        </h:form>
+    </div>
+</h:body>
+</html>

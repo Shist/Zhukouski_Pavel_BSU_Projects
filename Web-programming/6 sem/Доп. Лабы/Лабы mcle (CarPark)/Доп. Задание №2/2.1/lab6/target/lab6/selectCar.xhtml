@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+    <title></title>
+</h:head>
+
+<h:body>
+    <div class="block">
+        <h2>Выбрать водителя</h2>
+        <h:form>
+            <h:panelGrid columns="1" border="0">
+                <h:outputText value="Рег номер водителя"/>
+                <h:inputText id = "regNum" value="#{Journey.regNum}">
+                    <f:validator validatorId="RegNumValidator"/>
+                </h:inputText>
+                <h:message for="regNum" style="color:red" />
+            </h:panelGrid>
+            <h:commandButton value="Ввод" action="driverJourneyList?faces-redirect=true" />
+        </h:form>
+    </div>
+</h:body>
+</html>

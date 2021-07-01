@@ -1,0 +1,4 @@
+Если не видит базу данных, то скорее всего, у пользователя нету разрешения, нужно прописать в MySQL WorkBench вот это:
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '2051868';
+Подробнее тут:
+https://stackoverflow.com/questions/50093144/mysql-8-0-client-does-not-support-authentication-protocol-requested-by-server

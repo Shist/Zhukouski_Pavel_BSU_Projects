@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+    <title>Страница регистрации</title>
+</h:head>
+
+<h:body>
+    <div class="block">
+        <h2 align="center" style="padding-bottom: 20px">Регистрация</h2>
+        <h:form>
+            <h:panelGrid columns="3" border="0">
+                <h:outputText value="Логин"/>
+                <h:inputText value="#{Register.login}" />
+                <br/>
+                <h:outputText value="Пароль"/>
+                <h:inputSecret value="#{Register.password}" />
+                <br/>
+                <h:outputText value="Роль"/>
+                <h:selectOneMenu value="#{Register.role}">
+                    <f:selectItem itemValue="1" itemLabel="Админ" />
+                    <f:selectItem itemValue="2" itemLabel="Оператор" />
+                    <f:selectItem itemValue="3" itemLabel="Пользователь" />
+                </h:selectOneMenu>
+                <br/>
+            </h:panelGrid>
+            <h:commandButton value="Регистрация" action="#{Register.regUser}" />
+        </h:form>
+    </div>
+</h:body>
+</html>

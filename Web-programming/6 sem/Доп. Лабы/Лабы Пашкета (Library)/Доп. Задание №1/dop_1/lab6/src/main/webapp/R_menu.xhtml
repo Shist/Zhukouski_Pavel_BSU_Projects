@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+    <title>Страница авторизации</title>
+</h:head>
+
+<h:body>
+    <div class="block">
+        <h2 align="center" style="padding-bottom: 20px">Библиотека - Раздел для читателей</h2>
+        <h:form>
+
+            <h:commandButton value="Запросить книгу" action="addRequest?faces-redirect=true"/>
+            <br/>
+
+            <h:commandButton value="Доступные книги" action="bookOnDistribList?faces-redirect=true"/>
+
+        </h:form>
+    </div>
+</h:body>
+</html>

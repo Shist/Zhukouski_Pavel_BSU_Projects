@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+    <title></title>
+</h:head>
+
+<h:body>
+    <div class="block">
+        <h2>Добавить информацию о читателе</h2>
+        <h:form>
+            <h:panelGrid columns="1" border="0">
+                <h:outputText value="Имя читателя"/>
+                <h:inputText value="#{Reader.name}"/>
+                <h:outputText value="ID книги, которую взял читатель"/>
+                <h:inputText value="#{Reader.bookID}"/>
+                <h:outputText value="Имя автора книги, которую взял читатель"/>
+                <h:inputText value="#{Reader.BAuthor}"/>
+            </h:panelGrid>
+            <h:commandButton value="Добавить в базу данных" action="#{Reader.save}" />
+        </h:form>
+    </div>
+</h:body>
+</html>
