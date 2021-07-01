@@ -1,0 +1,7 @@
+reset;
+model C:\Users\user\Downloads\AMPL_Tasks\Task_1\model.mod;
+data C:\Users\user\Downloads\AMPL_Tasks\Task_1\data.dat;
+option solver cplex;
+solve;
+display Cost;
+display amount;
