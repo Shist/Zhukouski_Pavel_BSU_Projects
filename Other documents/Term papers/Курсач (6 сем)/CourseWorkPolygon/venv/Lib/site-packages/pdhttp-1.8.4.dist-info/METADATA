@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: pdhttp
+Version: 1.8.4
+Summary: Swagger-generated API Client for Pulse Robotic Arm
+Home-page: https://rozum.com
+Author: Rozum Robotics
+Author-email: dev@rozum.com
+License: Apache License 2.0
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Requires-Dist: certifi (>=2017.4.17)
+Requires-Dist: python-dateutil (>=2.1)
+Requires-Dist: six (>=1.10)
+Requires-Dist: urllib3 (>=1.23)
+
+UNKNOWN
+
+
