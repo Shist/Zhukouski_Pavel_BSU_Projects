@@ -1,0 +1,10 @@
+«ВОПРОС 4:Перевести на русский язык слово «Handle»»
+ 
+Ответ:
+Информация с https://docs.microsoft.com/en-us/sysinternals/downloads/handle:
+«Handle is a utility that displays information about open handles for any process in the system.»
+Перевод:
+Handle (таблица дескрипторов) - это утилита, которая отображает информацию об открытых дескрипторах для любого процесса в системе.
+ 
+--
+Жуковский Павел, 4 курс, 12 группа

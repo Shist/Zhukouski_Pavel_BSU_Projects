@@ -1,0 +1,5 @@
+Crack (in field of "Software") -  is a Unix password cracking program designed to allow system administrators to locate users who may have weak passwords vulnerable to a dictionary attack. Crack was the first standalone password cracker for Unix systems and the first to introduce programmable dictionary generation as well.
+Safe-cracking - is the process of opening a safe without either the combination or the key.
+ 
+--
+Жуковский Павел, 4 курс, 12 группа

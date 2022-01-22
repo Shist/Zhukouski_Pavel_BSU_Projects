@@ -1,0 +1,88 @@
+.MODEL SMALL
+.STACK 400h
+
+.DATA
+	TargetPswd DB 255, ?, 255 DUP (0)
+	PswdRepository DW 06568h, 06553h, 06868h, 06548h, 06565h, 06849h, 06868h, 06553h
+	DW 06565h, 06854h ; Password: S, H, I, S, T
+	PswdRepositorySize = $ - PswdRepository
+	HackReport DB "The password has been confirmed", 0Dh, 0Ah, "$"
+	ErrorReport DB "Entered password is incorrect, try more", 0Dh, 0Ah, "$"
+
+.CODE
+
+DEFINE_SYMB:
+	PUSH CX
+	PUSH DX
+	XOR AL, BH
+	MOV CL, 80h
+	XOR DL, DL
+.DS_LP:
+	TEST AL, CL
+	JZ .DS_LP_MOVE
+	INC DL
+.DS_LP_MOVE:
+	SHR CL, 1
+	TEST CL, CL
+	JNZ .DS_LP
+	TEST DL, 1
+	JNZ .DS_USE_BL
+	XOR AL, AH
+	JMP .DS_FINISH
+.DS_USE_BL:
+	XOR AL, BL	
+.DS_FINISH:	
+	POP DX
+	POP CX
+	RET
+
+PSWD_MATCHING:
+	PUSH BX
+	MOV SI, DX
+	LEA DI, PswdRepository
+	MOV CX, PswdRepositorySize
+	SHR CX, 2
+.MTCH_LOOP:
+	LODSB
+	MOV BL, AL
+	PUSH BX
+	XCHG DI, SI
+	LODSW
+	MOV BX, AX
+	LODSW
+	CALL DEFINE_SYMB
+	POP BX
+	XCHG DI, SI
+	CMP BL, AL
+	JNE .MTCH_ERROR		
+	LOOP .MTCH_LOOP
+	CMP BYTE PTR [SI], 0Dh
+	JNE .MTCH_ERROR	
+	POP BX
+	CLC
+	RET
+.MTCH_ERROR:	
+	POP BX
+	STC
+	RET	
+
+START:
+	MOV AX, @DATA
+	MOV DS, AX
+	MOV AH, 0Ah
+  	LEA DX, TargetPswd
+  	INT 21h
+	ADD DX, 2  	
+  	CALL PSWD_MATCHING
+  	JC .MATCHING_ERROR
+  	LEA DX, HackReport
+	JMP .OUTPUT
+.MATCHING_ERROR:
+	LEA DX, ErrorReport
+.OUTPUT:	
+	MOV AH, 09h
+	INT 21h	  	
+	MOV AX, 4C00h
+	INT 21h
+END START		
+

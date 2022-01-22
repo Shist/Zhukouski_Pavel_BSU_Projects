@@ -1,0 +1,12 @@
+Переписанный пример из книги про ассемблер:
+    cs:
+    pushf
+    pop    ax
+    pushf
+    pop    bx
+    sub    ax, bx
+    mov    bx, OFFSET BeingDebugged
+    mov    [bx], ax
+ 
+--
+Жуковский Павел, 4 курс, 12 группа

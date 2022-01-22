@@ -1,0 +1,9 @@
+Предполагаю, что информация взята из следующих источников:
+ 
+«Касперски К. Техника отладки программ без исходных текстов — СПб.: БХВ-Петербург, 2005.»
+«Microsoft Portable Executable and Common Object File Format Specification [Electronic resource] / Microsoft Corporation — Mode of access: http://www. microsoft.com/ whdc/system/platform/firmware/PECOFF.mspx.»
+«​​​​​​​Структура исполняемых файлов Win32 и Win64 [Электрон. ресурс] / Лукач Ю. С. — Режим доступа: http://cs.usu.edu.ru/docs/pe/. — Дата доступа: 15.03.2017.»
+Я не нашёл прямым текстом информацию, что была написана в лекции, в этих источниках, поэтому предположу, что автор дипломной работы её перефразировал.
+ 
+--
+Жуковский Павел, 4 курс, 12 группа

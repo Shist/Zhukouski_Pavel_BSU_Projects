@@ -1,0 +1,18 @@
+Упражнение №0
+Задача: «Используя дедуктивный метод и метод ассоциаций определить, существуют ли (и если существуют, то какая) в контексте читаемых лекций по БИС связь между Владимиром Маяковским, Deep Purple и Зубович К. А.»
+Ответ:
+Мне кажется, такой человек, как Владимир Маяковский, и такая группа, как Deep Purple, были достаточно выдающимися, особенными и необычными в своё время. Это можно сказать и про лекции Зубовича К. А., ведь его лекции такие же выдающиеся, особенные и необычные.
+ 
+Упражнение №1
+Задача: «Как вы думаете, какая самая программистская песня у группы Beatles и объяснить почему.»
+Ответ:
+На мой взгляд достаточно интересной является песня «All Together Now», т. к. в ней группа перечисляет абсолютно все цифры, а цифры, как мы знаем, напрямую связаны с программированием.
+ 
+Упражнение №2
+Задача: «Найти (желательно не на помойке) толкование №3, которое начинается со слов The noun INFORMATION has some senses: (найти три смысла на английском языке и прислать на почту).»
+Ответ:
+Information — something perceived by a person and (or) special devices as a reflection of the facts of the material or spiritual world in the process of communication (GOST 7.0-99) 
+Information — knowledge about objects, facts, ideas, etc., that people can exchange within a specific context (ISO / IEC 10746-2: 1996)
+Information — Data processed by methods «Data Mining» (VALVACHEV ALEXANDER NIKOLAEVICH)
+--
+Жуковский Павел, 4 курс, 12 группа

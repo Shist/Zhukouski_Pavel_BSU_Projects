@@ -1,0 +1,7 @@
+.MODEL SMALL
+.CODE
+START:
+    MOV CX, -128
+    MOV AX, 4C00h
+    INT 21h
+END START
