@@ -1,0 +1,251 @@
+{
+	"info": {
+		"_postman_id": "f04658ef-0572-46af-bd8b-bd2a9ea29764",
+		"name": "Weather API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "5 days Minsk",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						},
+						{
+							"key": "value",
+							"value": "640fda95913bf7ec164c3f61ffb69471",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "appid",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "api.openweathermap.org/data/2.5/forecast?lat=53.6884&lon=23.8258",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"forecast"
+					],
+					"query": [
+						{
+							"key": "lat",
+							"value": "53.6884"
+						},
+						{
+							"key": "lon",
+							"value": "23.8258"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "5 days Minsk",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "api.openweathermap.org/data/2.5/forecast?lat=53.6884&lon=23.8258",
+							"host": [
+								"api",
+								"openweathermap",
+								"org"
+							],
+							"path": [
+								"data",
+								"2.5",
+								"forecast"
+							],
+							"query": [
+								{
+									"key": "lat",
+									"value": "53.6884"
+								},
+								{
+									"key": "lon",
+									"value": "23.8258"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "openresty"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 16 Nov 2021 10:19:42 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "16302"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Cache-Key",
+							"value": "/data/2.5/forecast?lat=53.69&lon=23.83"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"cod\": \"200\",\n    \"message\": 0,\n    \"cnt\": 40,\n    \"list\": [\n        {\n            \"dt\": 1637064000,\n            \"main\": {\n                \"temp\": 277.54,\n                \"feels_like\": 274.19,\n                \"temp_min\": 277.54,\n                \"temp_max\": 278.66,\n                \"pressure\": 1030,\n                \"sea_level\": 1030,\n                \"grnd_level\": 1012,\n                \"humidity\": 81,\n                \"temp_kf\": -1.12\n            },\n            \"weather\": [\n                {\n                    \"id\": 802,\n                    \"main\": \"Clouds\",\n                    \"description\": \"scattered clouds\",\n                    \"icon\": \"03d\"\n                }\n            ],\n            \"clouds\": {\n                \"all\": 50\n            },\n            \"wind\": {\n                \"speed\": 4.12,\n                \"deg\": 159,\n                \"gust\": 6.37\n            },\n            \"visibility\": 10000,\n            \"pop\": 0,\n            \"sys\": {\n                \"pod\": \"d\"\n            },\n            \"dt_txt\": \"2021-11-16 12:00:00\"\n        },\n        {\n            \"dt\": 1637074800,\n            \"main\": {\n                \"temp\": 276.12,\n                \"feels_like\": 272.92,\n                \"temp_min\": 275.69,\n                \"temp_max\": 276.12,\n                \"pressure\": 1028,\n                \"sea_level\": 1028,\n                \"grnd_level\": 1010,\n                \"humidity\": 86,\n                \"temp_kf\": 0.43\n            },\n            \"weather\": [\n                {\n                    \"id\": 802,\n                    \"main\": \"Clouds\",\n                    \"description\": \"scattered clouds\",\n                    \"icon\": \"03n\"\n                }\n            ],\n            \"clouds\": {\n                \"all\": 25\n            },\n            \"wind\": {\n                \"speed\": 3.39,\n                \"deg\": 152,\n                \"gust\": 7.92\n            },\n            \"visibility\": 10000,\n            \"pop\": 0,\n            \"sys\": {\n                \"pod\": \"n\"\n            },\n            \"dt_txt\": \"2021-11-16 15:00:00\"\n        },\n        {\n            \"dt\": 1637085600,\n            \"main\": {\n                \"temp\": 274.63,\n                \"feels_like\": 271.3,\n                \"temp_min\": 274.63,\n                \"temp_max\": 274.63,\n                \"pressure\": 1026,\n                \"sea_level\": 1026,\n                \"grnd_level\": 1009,\n                \"humidity\": 88,\n                \"temp_kf\": 0\n            },\n            \"weather\": [\n                {\n                    \"id\": 800,\n                    \"main\": \"Clear\",\n                    \"description\": \"clear sky\",\n                    \"icon\": \"01n\"\n                }\n            ],\n            \"clouds\": {\n                \"all\": 9\n            },\n            \"wind\": {\n                \"speed\": 3.15,\n                \"deg\": 152,\n                \"gust\": 6.62\n            },\n            \"visibility\": 10000,\n            \"pop\": 0,\n            \"sys\": {\n                \"pod\": \"n\"\n            },\n            \"dt_txt\": \"2021-11-16 18:00:00\"\n        },\n        {\n            \"dt\": 1637096400,\n            \"main\": {\n                \"temp\": 274.16,\n                \"feels_like\": 270.62,\n                \"temp_min\": 274.16,\n                \"temp_max\": 274.16,\n                \"pressure\": 1025,\n                \"sea_level\": 1025,\n                \"grnd_level\": 1007,\n                \"humidity\": 88,\n                \"temp_kf\": 0\n            },\n            \"weather\": [\n                {\n                    \"id\": 801,\n                    \"main\": \"Clouds\",\n                    \"description\": \"few clouds\",\n                    \"icon\": \"02n\"\n                }\n            ],\n            \"clouds\": {\n                \"all\": 11\n            },\n            \"wind\": {\n                \"speed\": 3.29,\n                \"deg\": 163,\n                \"gust\": 7.02\n            },\n            \"visibility\": 10000,\n            \"pop\": 0,\n            \"sys\": {\n                \"pod\": \"n\"\n            },\n            \"dt_txt\": \"2021-11-16 21:00:00\"\n        },\n        {\n            \"dt\": 1637107200,\n            \"main\": {\n                \"temp\": 273.86,\n                \"feels_like\": 270.36,\n                \"temp_min\": 273.86,\n                \"temp_max\": 273.86,\n                \"pressure\": 1023,\n                \"sea_level\": 1023,\n                \"grnd_level\": 1006,\n                \"humidity\": 89,\n                \"temp_kf\": 0\n            },\n            \"weather\": [\n                {\n                    \"id\": 800,\n                    \"main\": \"Clear\",\n                    \"description\": \"clear sky\",\n                    \"icon\": \"01n\"\n                }\n            ],\n            \"clouds\": {\n                \"all\": 8\n            },\n            \"wind\": {\n                \"speed\": 3.17,\n                \"deg\": 171,\n                \"gust\": 6.09\n            },\n            \"visibility\": 10000,\n            \"pop\": 0,\n            \"sys\": {\n                \"pod\": \"n\"\n            },\n            \"dt_txt\": \"2021-11-17 00:00:00\"\n        },\n        {\n            \"dt\": 1637118000,\n            \"main\": {\n                \"temp\": 273.66,\n                \"feels_like\": 270,\n                \"temp_min\": 273.66,\n                \"temp_max\": 273.66,\n                \"pressure\": 1022,\n                \"sea_level\": 1022,\n                \"grnd_level\": 1005,\n                \"humidity\": 89,\n                \"temp_kf\": 0\n            },\n            \"weather\": [\n                {\n                    \"id\": 802,\n                    \"main\": \"Clouds\",\n                    \"description\": \"scattered clouds\",\n                    \"icon\": \"03n\"\n                }\n            ],\n            \"clouds\": {\n                \"all\": 36\n            },\n            \"wind\": {\n                \"speed\": 3.32,\n                \"deg\": 175,\n                \"gust\": 6.89\n            },\n            \"visibility\": 10000,\n            \"pop\": 0,\n            \"sys\": {\n                \"pod\": \"n\"\n            },\n            \"dt_txt\": \"2021-11-17 03:00:00\"\n        },\n        {\n            \"dt\": 1637128800,\n            \"main\": {\n                \"temp\": 273.58,\n                \"feels_like\": 270.12,\n                \"temp_min\": 273.58,\n                \"temp_max\": 273.58,\n                \"pressure\": 1021,\n                \"sea_level\": 1021,\n                \"grnd_level\": 1004,\n                \"humidity\": 89,\n                \"temp_kf\": 0\n            },\n            \"weather\": [\n                {\n                    \"id\": 803,\n                    \"main\": \"Clouds\",\n                    \"description\": \"broken clouds\",\n                    \"icon\": \"04d\"\n                }\n            ],\n            \"clouds\": {\n                \"all\": 64\n            },\n            \"wind\": {\n                \"speed\": 3.05,\n                \"deg\": 180,\n                \"gust\": 5.73\n            },\n            \"visibility\": 10000,\n            \"pop\": 0,\n            \"sys\": {\n                \"pod\": \"d\"\n            },\n            \"dt_txt\": \"2021-11-17 06:00:00\"\n        },\n        {\n            \"dt\": 1637139600,\n            \"main\": {\n                \"temp\": 276.63,\n                \"feels_like\": 273.4,\n                \"temp_min\": 276.63,\n                \"temp_max\": 276.63,\n                \"pressure\": 1021,\n                \"sea_level\": 1021,\n                \"grnd_level\": 1004,\n                \"humidity\": 75,\n                \"temp_kf\": 0\n            },\n            \"weather\": [\n                {\n                    \"id\": 804,\n                    \"main\": \"Clouds\",\n                    \"description\": \"overcast clouds\",\n                    \"icon\": \"04d\"\n                }\n            ],\n            \"clouds\": {\n                \"all\": 97\n            },\n            \"wind\": {\n                \"speed\": 3.6,\n                \"deg\": 176,\n                \"gust\": 6.1\n            },\n            \"visibility\": 10000,\n            \"pop\": 0,\n            \"sys\": {\n                \"pod\": \"d\"\n            },\n            \"dt_txt\": \"2021-11-17 09:00:00\"\n        },\n        {\n            \"dt\": 1637150400,\n            \"main\": {\n                \"temp\": 278.43,\n                \"feels_like\": 275.34,\n                \"temp_min\": 278.43,\n                \"temp_max\": 278.43,\n                \"pressure\": 1019,\n                \"sea_level\": 1019,\n                \"grnd_level\": 1002,\n                \"humidity\": 71,\n                \"temp_kf\": 0\n            },\n            \"weather\": [\n                {\n                    \"id\": 804,\n                    \"main\": \"Clouds\",\n                    \"description\": \"overcast clouds\",\n                    \"icon\": \"04d\"\n                }\n            ],\n            \"clouds\": {\n                \"all\": 99\n            },\n            \"wind\": {\n                \"speed\": 4.03,\n                \"deg\": 174,\n                \"gust\": 8.08\n            },\n            \"visibility\": 10000,\n            \"pop\": 0,\n            \"sys\": {\n                \"pod\": \"d\"\n            },\n            \"dt_txt\": \"2021-11-17 12:00:00\"\n        },\n        {\n            \"dt\": 1637161200,\n            \"main\": {\n                \"temp\": 276.87,\n                \"feels_like\": 273.36,\n                \"temp_min\": 276.87,\n                \"temp_max\": 276.87,\n                \"pressure\": 1018,\n                \"sea_level\": 1018,\n                \"grnd_level\": 1001,\n                \"humidity\": 82,\n                \"temp_kf\": 0\n            },\n            \"weather\": [\n                {\n                    \"id\": 804,\n                    \"main\": \"Clouds\",\n                    \"description\": \"overcast clouds\",\n                    \"icon\": \"04n\"\n                }\n            ],\n            \"clouds\": {\n                \"all\": 100\n            },\n            \"wind\": {\n                \"speed\": 4.13,\n                \"deg\": 182,\n                \"gust\": 9.77\n            },\n            \"visibility\": 10000,\n            \"pop\": 0,\n            \"sys\": {\n                \"pod\": \"n\"\n            },\n            \"dt_txt\": \"2021-11-17 15:00:00\"\n        },\n        {\n            \"dt\": 1637172000,\n            \"main\": {\n                \"temp\": 277.45,\n                \"feels_like\": 273.38,\n                \"temp_min\": 277.45,\n                \"temp_max\": 277.45,\n                \"pressure\": 1017,\n                \"sea_level\": 1017,\n                \"grnd_level\": 1000,\n                \"humidity\": 81,\n                \"temp_kf\": 0\n            },\n            \"weather\": [\n                {\n                    \"id\": 804,\n                    \"main\": \"Clouds\",\n                    \"description\": \"overcast clouds\",\n                    \"icon\": \"04n\"\n                }\n            ],\n            \"clouds\": {\n                \"all\": 100\n            },\n            \"wind\": {\n                \"speed\": 5.48,\n                \"deg\": 207,\n                \"gust\": 12.85\n            },\n            \"visibility\": 10000,\n            \"pop\": 0,\n            \"sys\": {\n                \"pod\": \"n\"\n            },\n            \"dt_txt\": \"2021-11-17 18:00:00\"\n        },\n        {\n            \"dt\": 1637182800,\n            \"main\": {\n                \"temp\": 277.54,\n                \"feels_like\": 273.28,\n                \"temp_min\": 277.54,\n                \"temp_max\": 277.54,\n                \"pressure\": 1016,\n                \"sea_level\": 1016,\n                \"grnd_level\": 999,\n                \"humidity\": 82,\n                \"temp_kf\": 0\n            },\n            \"weather\": [\n                {\n                    \"id\": 804,\n                    \"main\": \"Clouds\",\n                    \"description\": \"overcast clouds\",\n                    \"icon\": \"04n\"\n                }\n            ],\n            \"clouds\": {\n                \"all\": 100\n            },\n            \"wind\": {\n                \"speed\": 5.97,\n                \"deg\": 225,\n                \"gust\": 12.69\n            },\n            \"visibility\": 10000,\n            \"pop\": 0,\n            \"sys\": {\n                \"pod\": \"n\"\n            },\n            \"dt_txt\": \"2021-11-17 21:00:00\"\n        },\n        {\n            \"dt\": 1637193600,\n            \"main\": {\n                \"temp\": 277.91,\n                \"feels_like\": 273.78,\n                \"temp_min\": 277.91,\n                \"temp_max\": 277.91,\n                \"pressure\": 1016,\n                \"sea_level\": 1016,\n                \"grnd_level\": 999,\n                \"humidity\": 83,\n                \"temp_kf\": 0\n            },\n            \"weather\": [\n                {\n                    \"id\": 804,\n                    \"main\": \"Clouds\",\n                    \"description\": \"overcast clouds\",\n                    \"icon\": \"04n\"\n                }\n            ],\n            \"clouds\": {\n                \"all\": 100\n            },\n            \"wind\": {\n                \"speed\": 5.91,\n                \"deg\": 241,\n                \"gust\": 11.37\n            },\n            \"visibility\": 10000,\n            \"pop\": 0,\n            \"sys\": {\n                \"pod\": \"n\"\n            },\n            \"dt_txt\": \"2021-11-18 00:00:00\"\n        },\n        {\n            \"dt\": 1637204400,\n            \"main\": {\n                \"temp\": 278.07,\n                \"feels_like\": 273.95,\n                \"temp_min\": 278.07,\n                \"temp_max\": 278.07,\n                \"pressure\": 1016,\n                \"sea_level\": 1016,\n                \"grnd_level\": 999,\n                \"humidity\": 85,\n                \"temp_kf\": 0\n            },\n            \"weather\": [\n                {\n                    \"id\": 804,\n                    \"main\": \"Clouds\",\n                    \"description\": \"overcast clouds\",\n                    \"icon\": \"04n\"\n                }\n            ],\n            \"clouds\": {\n                \"all\": 100\n            },\n            \"wind\": {\n                \"speed\": 5.98,\n                \"deg\": 247,\n                \"gust\": 11.56\n            },\n            \"visibility\": 10000,\n            \"pop\": 0,\n            \"sys\": {\n                \"pod\": \"n\"\n            },\n            \"dt_txt\": \"2021-11-18 03:00:00\"\n        },\n        {\n            \"dt\": 1637215200,\n            \"main\": {\n                \"temp\": 278.12,\n                \"feels_like\": 274.01,\n                \"temp_min\": 278.12,\n                \"temp_max\": 278.12,\n                \"pressure\": 1016,\n                \"sea_level\": 1016,\n                \"grnd_level\": 999,\n                \"humidity\": 85,\n                \"temp_kf\": 0\n            },\n            \"weather\": [\n                {\n                    \"id\": 804,\n                    \"main\": \"Clouds\",\n                    \"description\": \"overcast clouds\",\n                    \"icon\": \"04d\"\n                }\n            ],\n            \"clouds\": {\n                \"all\": 100\n            },\n            \"wind\": {\n                \"speed\": 6,\n                \"deg\": 244,\n                \"gust\": 10.88\n            },\n            \"visibility\": 10000,\n            \"pop\": 0,\n            \"sys\": {\n                \"pod\": \"d\"\n            },\n            \"dt_txt\": \"2021-11-18 06:00:00\"\n        },\n        {\n            \"dt\": 1637226000,\n            \"main\": {\n                \"temp\": 278.96,\n                \"feels_like\": 274.83,\n                \"temp_min\": 278.96,\n                \"temp_max\": 278.96,\n                \"pressure\": 1016,\n                \"sea_level\": 1016,\n                \"grnd_level\": 999,\n                \"humidity\": 77,\n                \"temp_kf\": 0\n            },\n            \"weather\": [\n                {\n                    \"id\": 804,\n                    \"main\": \"Clouds\",\n                    \"description\": \"overcast clouds\",\n                    \"icon\": \"04d\"\n                }\n            ],\n            \"clouds\": {\n                \"all\": 100\n            },\n            \"wind\": {\n                \"speed\": 6.65,\n                \"deg\": 247,\n                \"gust\": 11.12\n            },\n            \"visibility\": 10000,\n            \"pop\": 0,\n            \"sys\": {\n                \"pod\": \"d\"\n            },\n            \"dt_txt\": \"2021-11-18 09:00:00\"\n        },\n        {\n            \"dt\": 1637236800,\n            \"main\": {\n                \"temp\": 278.74,\n                \"feels_like\": 274.64,\n                \"temp_min\": 278.74,\n                \"temp_max\": 278.74,\n                \"pressure\": 1016,\n                \"sea_level\": 1016,\n                \"grnd_level\": 999,\n                \"humidity\": 75,\n                \"temp_kf\": 0\n            },\n            \"weather\": [\n                {\n                    \"id\": 804,\n                    \"main\": \"Clouds\",\n                    \"description\": \"overcast clouds\",\n                    \"icon\": \"04d\"\n                }\n            ],\n            \"clouds\": {\n                \"all\": 100\n            },\n            \"wind\": {\n                \"speed\": 6.39,\n                \"deg\": 261,\n                \"gust\": 10.5\n            },\n            \"visibility\": 10000,\n            \"pop\": 0,\n            \"sys\": {\n                \"pod\": \"d\"\n            },\n            \"dt_txt\": \"2021-11-18 12:00:00\"\n        },\n        {\n            \"dt\": 1637247600,\n            \"main\": {\n                \"temp\": 278.48,\n                \"feels_like\": 274.44,\n                \"temp_min\": 278.48,\n                \"temp_max\": 278.48,\n                \"pressure\": 1016,\n                \"sea_level\": 1016,\n                \"grnd_level\": 999,\n                \"humidity\": 73,\n                \"temp_kf\": 0\n            },\n            \"weather\": [\n                {\n                    \"id\": 804,\n                    \"main\": \"Clouds\",\n                    \"description\": \"overcast clouds\",\n                    \"icon\": \"04n\"\n                }\n            ],\n            \"clouds\": {\n                \"all\": 100\n            },\n            \"wind\": {\n                \"speed\": 6.07,\n                \"deg\": 252,\n                \"gust\": 10.86\n            },\n            \"visibility\": 10000,\n            \"pop\": 0,\n            \"sys\": {\n                \"pod\": \"n\"\n            },\n            \"dt_txt\": \"2021-11-18 15:00:00\"\n        },\n        {\n            \"dt\": 1637258400,\n            \"main\": {\n                \"temp\": 278.85,\n                \"feels_like\": 274.71,\n                \"temp_min\": 278.85,\n                \"temp_max\": 278.85,\n                \"pressure\": 1016,\n                \"sea_level\": 1016,\n                \"grnd_level\": 999,\n                \"humidity\": 69,\n                \"temp_kf\": 0\n            },\n            \"weather\": [\n                {\n                    \"id\": 804,\n                    \"main\": \"Clouds\",\n                    \"description\": \"overcast clouds\",\n                    \"icon\": \"04n\"\n                }\n            ],\n            \"clouds\": {\n                \"all\": 98\n            },\n            \"wind\": {\n                \"speed\": 6.6,\n                \"deg\": 259,\n                \"gust\": 10.8\n            },\n            \"visibility\": 10000,\n            \"pop\": 0,\n            \"sys\": {\n                \"pod\": \"n\"\n            },\n            \"dt_txt\": \"2021-11-18 18:00:00\"\n        },\n        {\n            \"dt\": 1637269200,\n            \"main\": {\n                \"temp\": 277.81,\n                \"feels_like\": 273.5,\n                \"temp_min\": 277.81,\n                \"temp_max\": 277.81,\n                \"pressure\": 1015,\n                \"sea_level\": 1015,\n                \"grnd_level\": 998,\n                \"humidity\": 74,\n                \"temp_kf\": 0\n            },\n            \"weather\": [\n                {\n                    \"id\": 804,\n                    \"main\": \"Clouds\",\n                    \"description\": \"overcast clouds\",\n                    \"icon\": \"04n\"\n                }\n            ],\n            \"clouds\": {\n                \"all\": 100\n            },\n            \"wind\": {\n                \"speed\": 6.27,\n                \"deg\": 244,\n                \"gust\": 12.47\n            },\n            \"visibility\": 10000,\n            \"pop\": 0,\n            \"sys\": {\n                \"pod\": \"n\"\n            },\n            \"dt_txt\": \"2021-11-18 21:00:00\"\n        },\n        {\n            \"dt\": 1637280000,\n            \"main\": {\n                \"temp\": 277.53,\n                \"feels_like\": 273.33,\n                \"temp_min\": 277.53,\n                \"temp_max\": 277.53,\n                \"pressure\": 1012,\n                \"sea_level\": 1012,\n                \"grnd_level\": 995,\n                \"humidity\": 91,\n                \"temp_kf\": 0\n            },\n            \"weather\": [\n                {\n                    \"id\": 500,\n                    \"main\": \"Rain\",\n                    \"description\": \"light rain\",\n                    \"icon\": \"10n\"\n                }\n            ],\n            \"clouds\": {\n                \"all\": 100\n            },\n            \"wind\": {\n                \"speed\": 5.84,\n                \"deg\": 216,\n                \"gust\": 11.67\n            },\n            \"visibility\": 9511,\n            \"pop\": 0.59,\n            \"rain\": {\n                \"3h\": 1.27\n            },\n            \"sys\": {\n                \"pod\": \"n\"\n            },\n            \"dt_txt\": \"2021-11-19 00:00:00\"\n        },\n        {\n            \"dt\": 1637290800,\n            \"main\": {\n                \"temp\": 279.21,\n                \"feels_like\": 274.73,\n                \"temp_min\": 279.21,\n                \"temp_max\": 279.21,\n                \"pressure\": 1007,\n                \"sea_level\": 1007,\n                \"grnd_level\": 990,\n                \"humidity\": 92,\n                \"temp_kf\": 0\n            },\n            \"weather\": [\n                {\n                    \"id\": 501,\n                    \"main\": \"Rain\",\n                    \"description\": \"moderate rain\",\n                    \"icon\": \"10n\"\n                }\n            ],\n            \"clouds\": {\n                \"all\": 100\n            },\n            \"wind\": {\n                \"speed\": 7.92,\n                \"deg\": 246,\n                \"gust\": 16.23\n            },\n            \"visibility\": 10000,\n            \"pop\": 1,\n            \"rain\": {\n                \"3h\": 8.98\n            },\n            \"sys\": {\n                \"pod\": \"n\"\n            },\n            \"dt_txt\": \"2021-11-19 03:00:00\"\n        },\n        {\n            \"dt\": 1637301600,\n            \"main\": {\n                \"temp\": 281.72,\n                \"feels_like\": 277.92,\n                \"temp_min\": 281.72,\n                \"temp_max\": 281.72,\n                \"pressure\": 1005,\n                \"sea_level\": 1005,\n                \"grnd_level\": 989,\n                \"humidity\": 88,\n                \"temp_kf\": 0\n            },\n            \"weather\": [\n                {\n                    \"id\": 500,\n                    \"main\": \"Rain\",\n                    \"description\": \"light rain\",\n                    \"icon\": \"10d\"\n                }\n            ],\n            \"clouds\": {\n                \"all\": 100\n            },\n            \"wind\": {\n                \"speed\": 8.17,\n                \"deg\": 282,\n                \"gust\": 16.09\n            },\n            \"visibility\": 10000,\n            \"pop\": 1,\n            \"rain\": {\n                \"3h\": 0.88\n            },\n            \"sys\": {\n                \"pod\": \"d\"\n            },\n            \"dt_txt\": \"2021-11-19 06:00:00\"\n        },\n        {\n            \"dt\": 1637312400,\n            \"main\": {\n                \"temp\": 282.19,\n                \"feels_like\": 278.78,\n                \"temp_min\": 282.19,\n                \"temp_max\": 282.19,\n                \"pressure\": 1008,\n                \"sea_level\": 1008,\n                \"grnd_level\": 991,\n                \"humidity\": 82,\n                \"temp_kf\": 0\n            },\n            \"weather\": [\n                {\n                    \"id\": 500,\n                    \"main\": \"Rain\",\n                    \"description\": \"light rain\",\n                    \"icon\": \"10d\"\n                }\n            ],\n            \"clouds\": {\n                \"all\": 90\n            },\n            \"wind\": {\n                \"speed\": 7.25,\n                \"deg\": 307,\n                \"gust\": 12.42\n            },\n            \"visibility\": 10000,\n            \"pop\": 0.35,\n            \"rain\": {\n                \"3h\": 0.21\n            },\n            \"sys\": {\n                \"pod\": \"d\"\n            },\n            \"dt_txt\": \"2021-11-19 09:00:00\"\n        },\n        {\n            \"dt\": 1637323200,\n            \"main\": {\n                \"temp\": 281.14,\n                \"feels_like\": 278.26,\n                \"temp_min\": 281.14,\n                \"temp_max\": 281.14,\n                \"pressure\": 1009,\n                \"sea_level\": 1009,\n                \"grnd_level\": 992,\n                \"humidity\": 78,\n                \"temp_kf\": 0\n            },\n            \"weather\": [\n                {\n                    \"id\": 804,\n                    \"main\": \"Clouds\",\n                    \"description\": \"overcast clouds\",\n                    \"icon\": \"04d\"\n                }\n            ],\n            \"clouds\": {\n                \"all\": 90\n            },\n            \"wind\": {\n                \"speed\": 4.93,\n                \"deg\": 309,\n                \"gust\": 9.81\n            },\n            \"visibility\": 10000,\n            \"pop\": 0.01,\n            \"sys\": {\n                \"pod\": \"d\"\n            },\n            \"dt_txt\": \"2021-11-19 12:00:00\"\n        },\n        {\n            \"dt\": 1637334000,\n            \"main\": {\n                \"temp\": 280.7,\n                \"feels_like\": 279.29,\n                \"temp_min\": 280.7,\n                \"temp_max\": 280.7,\n                \"pressure\": 1009,\n                \"sea_level\": 1009,\n                \"grnd_level\": 993,\n                \"humidity\": 88,\n                \"temp_kf\": 0\n            },\n            \"weather\": [\n                {\n                    \"id\": 804,\n                    \"main\": \"Clouds\",\n                    \"description\": \"overcast clouds\",\n                    \"icon\": \"04n\"\n                }\n            ],\n            \"clouds\": {\n                \"all\": 100\n            },\n            \"wind\": {\n                \"speed\": 2.23,\n                \"deg\": 264,\n                \"gust\": 4.81\n            },\n            \"visibility\": 10000,\n            \"pop\": 0,\n            \"sys\": {\n                \"pod\": \"n\"\n            },\n            \"dt_txt\": \"2021-11-19 15:00:00\"\n        },\n        {\n            \"dt\": 1637344800,\n            \"main\": {\n                \"temp\": 281.24,\n                \"feels_like\": 278.04,\n                \"temp_min\": 281.24,\n                \"temp_max\": 281.24,\n                \"pressure\": 1008,\n                \"sea_level\": 1008,\n                \"grnd_level\": 991,\n                \"humidity\": 92,\n                \"temp_kf\": 0\n            },\n            \"weather\": [\n                {\n                    \"id\": 500,\n                    \"main\": \"Rain\",\n                    \"description\": \"light rain\",\n                    \"icon\": \"10n\"\n                }\n            ],\n            \"clouds\": {\n                \"all\": 100\n            },\n            \"wind\": {\n                \"speed\": 5.79,\n                \"deg\": 246,\n                \"gust\": 13.13\n            },\n            \"visibility\": 10000,\n            \"pop\": 0.21,\n            \"rain\": {\n                \"3h\": 0.14\n            },\n            \"sys\": {\n                \"pod\": \"n\"\n            },\n            \"dt_txt\": \"2021-11-19 18:00:00\"\n        },\n        {\n            \"dt\": 1637355600,\n            \"main\": {\n                \"temp\": 283.2,\n                \"feels_like\": 282.74,\n                \"temp_min\": 283.2,\n                \"temp_max\": 283.2,\n                \"pressure\": 1005,\n                \"sea_level\": 1005,\n                \"grnd_level\": 989,\n                \"humidity\": 95,\n                \"temp_kf\": 0\n            },\n            \"weather\": [\n                {\n                    \"id\": 500,\n                    \"main\": \"Rain\",\n                    \"description\": \"light rain\",\n                    \"icon\": \"10n\"\n                }\n            ],\n            \"clouds\": {\n                \"all\": 100\n            },\n            \"wind\": {\n                \"speed\": 8.55,\n                \"deg\": 276,\n                \"gust\": 16.97\n            },\n            \"visibility\": 10000,\n            \"pop\": 0.76,\n            \"rain\": {\n                \"3h\": 0.51\n            },\n            \"sys\": {\n                \"pod\": \"n\"\n            },\n            \"dt_txt\": \"2021-11-19 21:00:00\"\n        },\n        {\n            \"dt\": 1637366400,\n            \"main\": {\n                \"temp\": 282.89,\n                \"feels_like\": 279.01,\n                \"temp_min\": 282.89,\n                \"temp_max\": 282.89,\n                \"pressure\": 1005,\n                \"sea_level\": 1005,\n                \"grnd_level\": 988,\n                \"humidity\": 77,\n                \"temp_kf\": 0\n            },\n            \"weather\": [\n                {\n                    \"id\": 500,\n                    \"main\": \"Rain\",\n                    \"description\": \"light rain\",\n                    \"icon\": \"10n\"\n                }\n            ],\n            \"clouds\": {\n                \"all\": 98\n            },\n            \"wind\": {\n                \"speed\": 10.03,\n                \"deg\": 285,\n                \"gust\": 18.62\n            },\n            \"visibility\": 10000,\n            \"pop\": 0.63,\n            \"rain\": {\n                \"3h\": 0.32\n            },\n            \"sys\": {\n                \"pod\": \"n\"\n            },\n            \"dt_txt\": \"2021-11-20 00:00:00\"\n        },\n        {\n            \"dt\": 1637377200,\n            \"main\": {\n                \"temp\": 282.55,\n                \"feels_like\": 278.33,\n                \"temp_min\": 282.55,\n                \"temp_max\": 282.55,\n                \"pressure\": 1004,\n                \"sea_level\": 1004,\n                \"grnd_level\": 987,\n                \"humidity\": 73,\n                \"temp_kf\": 0\n            },\n            \"weather\": [\n                {\n                    \"id\": 804,\n                    \"main\": \"Clouds\",\n                    \"description\": \"overcast clouds\",\n                    \"icon\": \"04n\"\n                }\n            ],\n            \"clouds\": {\n                \"all\": 100\n            },\n            \"wind\": {\n                \"speed\": 11.13,\n                \"deg\": 288,\n                \"gust\": 18.68\n            },\n            \"visibility\": 10000,\n            \"pop\": 0,\n            \"sys\": {\n                \"pod\": \"n\"\n            },\n            \"dt_txt\": \"2021-11-20 03:00:00\"\n        },\n        {\n            \"dt\": 1637388000,\n            \"main\": {\n                \"temp\": 281.68,\n                \"feels_like\": 277.16,\n                \"temp_min\": 281.68,\n                \"temp_max\": 281.68,\n                \"pressure\": 1006,\n                \"sea_level\": 1006,\n                \"grnd_level\": 989,\n                \"humidity\": 64,\n                \"temp_kf\": 0\n            },\n            \"weather\": [\n                {\n                    \"id\": 804,\n                    \"main\": \"Clouds\",\n                    \"description\": \"overcast clouds\",\n                    \"icon\": \"04n\"\n                }\n            ],\n            \"clouds\": {\n                \"all\": 98\n            },\n            \"wind\": {\n                \"speed\": 11.17,\n                \"deg\": 304,\n                \"gust\": 18.83\n            },\n            \"visibility\": 10000,\n            \"pop\": 0,\n            \"sys\": {\n                \"pod\": \"n\"\n            },\n            \"dt_txt\": \"2021-11-20 06:00:00\"\n        },\n        {\n            \"dt\": 1637398800,\n            \"main\": {\n                \"temp\": 281.33,\n                \"feels_like\": 277.18,\n                \"temp_min\": 281.33,\n                \"temp_max\": 281.33,\n                \"pressure\": 1008,\n                \"sea_level\": 1008,\n                \"grnd_level\": 991,\n                \"humidity\": 65,\n                \"temp_kf\": 0\n            },\n            \"weather\": [\n                {\n                    \"id\": 804,\n                    \"main\": \"Clouds\",\n                    \"description\": \"overcast clouds\",\n                    \"icon\": \"04d\"\n                }\n            ],\n            \"clouds\": {\n                \"all\": 100\n            },\n            \"wind\": {\n                \"speed\": 9.04,\n                \"deg\": 301,\n                \"gust\": 15.63\n            },\n            \"visibility\": 10000,\n            \"pop\": 0,\n            \"sys\": {\n                \"pod\": \"d\"\n            },\n            \"dt_txt\": \"2021-11-20 09:00:00\"\n        },\n        {\n            \"dt\": 1637409600,\n            \"main\": {\n                \"temp\": 281.51,\n                \"feels_like\": 277.66,\n                \"temp_min\": 281.51,\n                \"temp_max\": 281.51,\n                \"pressure\": 1008,\n                \"sea_level\": 1008,\n                \"grnd_level\": 992,\n                \"humidity\": 67,\n                \"temp_kf\": 0\n            },\n            \"weather\": [\n                {\n                    \"id\": 804,\n                    \"main\": \"Clouds\",\n                    \"description\": \"overcast clouds\",\n                    \"icon\": \"04d\"\n                }\n            ],\n            \"clouds\": {\n                \"all\": 99\n            },\n            \"wind\": {\n                \"speed\": 8.1,\n                \"deg\": 296,\n                \"gust\": 16.11\n            },\n            \"visibility\": 10000,\n            \"pop\": 0,\n            \"sys\": {\n                \"pod\": \"d\"\n            },\n            \"dt_txt\": \"2021-11-20 12:00:00\"\n        },\n        {\n            \"dt\": 1637420400,\n            \"main\": {\n                \"temp\": 279.88,\n                \"feels_like\": 276.17,\n                \"temp_min\": 279.88,\n                \"temp_max\": 279.88,\n                \"pressure\": 1008,\n                \"sea_level\": 1008,\n                \"grnd_level\": 992,\n                \"humidity\": 77,\n                \"temp_kf\": 0\n            },\n            \"weather\": [\n                {\n                    \"id\": 803,\n                    \"main\": \"Clouds\",\n                    \"description\": \"broken clouds\",\n                    \"icon\": \"04n\"\n                }\n            ],\n            \"clouds\": {\n                \"all\": 82\n            },\n            \"wind\": {\n                \"speed\": 6.18,\n                \"deg\": 285,\n                \"gust\": 12.19\n            },\n            \"visibility\": 10000,\n            \"pop\": 0,\n            \"sys\": {\n                \"pod\": \"n\"\n            },\n            \"dt_txt\": \"2021-11-20 15:00:00\"\n        },\n        {\n            \"dt\": 1637431200,\n            \"main\": {\n                \"temp\": 279.8,\n                \"feels_like\": 276.3,\n                \"temp_min\": 279.8,\n                \"temp_max\": 279.8,\n                \"pressure\": 1007,\n                \"sea_level\": 1007,\n                \"grnd_level\": 990,\n                \"humidity\": 80,\n                \"temp_kf\": 0\n            },\n            \"weather\": [\n                {\n                    \"id\": 500,\n                    \"main\": \"Rain\",\n                    \"description\": \"light rain\",\n                    \"icon\": \"10n\"\n                }\n            ],\n            \"clouds\": {\n                \"all\": 91\n            },\n            \"wind\": {\n                \"speed\": 5.58,\n                \"deg\": 280,\n                \"gust\": 8.85\n            },\n            \"visibility\": 10000,\n            \"pop\": 0.23,\n            \"rain\": {\n                \"3h\": 0.23\n            },\n            \"sys\": {\n                \"pod\": \"n\"\n            },\n            \"dt_txt\": \"2021-11-20 18:00:00\"\n        },\n        {\n            \"dt\": 1637442000,\n            \"main\": {\n                \"temp\": 278.4,\n                \"feels_like\": 278.4,\n                \"temp_min\": 278.4,\n                \"temp_max\": 278.4,\n                \"pressure\": 1005,\n                \"sea_level\": 1005,\n                \"grnd_level\": 988,\n                \"humidity\": 94,\n                \"temp_kf\": 0\n            },\n            \"weather\": [\n                {\n                    \"id\": 501,\n                    \"main\": \"Rain\",\n                    \"description\": \"moderate rain\",\n                    \"icon\": \"10n\"\n                }\n            ],\n            \"clouds\": {\n                \"all\": 100\n            },\n            \"wind\": {\n                \"speed\": 1.04,\n                \"deg\": 133,\n                \"gust\": 1.82\n            },\n            \"visibility\": 10000,\n            \"pop\": 1,\n            \"rain\": {\n                \"3h\": 3.52\n            },\n            \"sys\": {\n                \"pod\": \"n\"\n            },\n            \"dt_txt\": \"2021-11-20 21:00:00\"\n        },\n        {\n            \"dt\": 1637452800,\n            \"main\": {\n                \"temp\": 281.34,\n                \"feels_like\": 277.78,\n                \"temp_min\": 281.34,\n                \"temp_max\": 281.34,\n                \"pressure\": 1002,\n                \"sea_level\": 1002,\n                \"grnd_level\": 985,\n                \"humidity\": 85,\n                \"temp_kf\": 0\n            },\n            \"weather\": [\n                {\n                    \"id\": 501,\n                    \"main\": \"Rain\",\n                    \"description\": \"moderate rain\",\n                    \"icon\": \"10n\"\n                }\n            ],\n            \"clouds\": {\n                \"all\": 100\n            },\n            \"wind\": {\n                \"speed\": 6.95,\n                \"deg\": 261,\n                \"gust\": 14.53\n            },\n            \"visibility\": 10000,\n            \"pop\": 1,\n            \"rain\": {\n                \"3h\": 3.07\n            },\n            \"sys\": {\n                \"pod\": \"n\"\n            },\n            \"dt_txt\": \"2021-11-21 00:00:00\"\n        },\n        {\n            \"dt\": 1637463600,\n            \"main\": {\n                \"temp\": 281.45,\n                \"feels_like\": 277.14,\n                \"temp_min\": 281.45,\n                \"temp_max\": 281.45,\n                \"pressure\": 1000,\n                \"sea_level\": 1000,\n                \"grnd_level\": 983,\n                \"humidity\": 83,\n                \"temp_kf\": 0\n            },\n            \"weather\": [\n                {\n                    \"id\": 500,\n                    \"main\": \"Rain\",\n                    \"description\": \"light rain\",\n                    \"icon\": \"10n\"\n                }\n            ],\n            \"clouds\": {\n                \"all\": 100\n            },\n            \"wind\": {\n                \"speed\": 9.85,\n                \"deg\": 261,\n                \"gust\": 18.14\n            },\n            \"visibility\": 10000,\n            \"pop\": 0.72,\n            \"rain\": {\n                \"3h\": 0.97\n            },\n            \"sys\": {\n                \"pod\": \"n\"\n            },\n            \"dt_txt\": \"2021-11-21 03:00:00\"\n        },\n        {\n            \"dt\": 1637474400,\n            \"main\": {\n                \"temp\": 281.64,\n                \"feels_like\": 277.5,\n                \"temp_min\": 281.64,\n                \"temp_max\": 281.64,\n                \"pressure\": 1000,\n                \"sea_level\": 1000,\n                \"grnd_level\": 983,\n                \"humidity\": 83,\n                \"temp_kf\": 0\n            },\n            \"weather\": [\n                {\n                    \"id\": 500,\n                    \"main\": \"Rain\",\n                    \"description\": \"light rain\",\n                    \"icon\": \"10n\"\n                }\n            ],\n            \"clouds\": {\n                \"all\": 100\n            },\n            \"wind\": {\n                \"speed\": 9.42,\n                \"deg\": 268,\n                \"gust\": 17.71\n            },\n            \"visibility\": 10000,\n            \"pop\": 0.6,\n            \"rain\": {\n                \"3h\": 0.24\n            },\n            \"sys\": {\n                \"pod\": \"n\"\n            },\n            \"dt_txt\": \"2021-11-21 06:00:00\"\n        },\n        {\n            \"dt\": 1637485200,\n            \"main\": {\n                \"temp\": 281.13,\n                \"feels_like\": 277.24,\n                \"temp_min\": 281.13,\n                \"temp_max\": 281.13,\n                \"pressure\": 1001,\n                \"sea_level\": 1001,\n                \"grnd_level\": 985,\n                \"humidity\": 78,\n                \"temp_kf\": 0\n            },\n            \"weather\": [\n                {\n                    \"id\": 500,\n                    \"main\": \"Rain\",\n                    \"description\": \"light rain\",\n                    \"icon\": \"10d\"\n                }\n            ],\n            \"clouds\": {\n                \"all\": 100\n            },\n            \"wind\": {\n                \"speed\": 7.83,\n                \"deg\": 293,\n                \"gust\": 12.89\n            },\n            \"visibility\": 10000,\n            \"pop\": 0.37,\n            \"rain\": {\n                \"3h\": 0.15\n            },\n            \"sys\": {\n                \"pod\": \"d\"\n            },\n            \"dt_txt\": \"2021-11-21 09:00:00\"\n        }\n    ],\n    \"city\": {\n        \"id\": 627904,\n        \"name\": \"Hrodna\",\n        \"coord\": {\n            \"lat\": 53.6884,\n            \"lon\": 23.8258\n        },\n        \"country\": \"BY\",\n        \"population\": 317365,\n        \"timezone\": 10800,\n        \"sunrise\": 1637041988,\n        \"sunset\": 1637072764\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Minsk",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						},
+						{
+							"key": "value",
+							"value": "640fda95913bf7ec164c3f61ffb69471",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "appid",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "api.openweathermap.org/data/2.5/weather?q=Minsk",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "Minsk"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Minsk",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "api.openweathermap.org/data/2.5/weather?q=Minsk",
+							"host": [
+								"api",
+								"openweathermap",
+								"org"
+							],
+							"path": [
+								"data",
+								"2.5",
+								"weather"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "Minsk"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "openresty"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 16 Nov 2021 10:19:47 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "472"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Cache-Key",
+							"value": "/data/2.5/weather?q=grodno"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"coord\": {\n        \"lon\": 23.8258,\n        \"lat\": 53.6884\n    },\n    \"weather\": [\n        {\n            \"id\": 803,\n            \"main\": \"Clouds\",\n            \"description\": \"broken clouds\",\n            \"icon\": \"04d\"\n        }\n    ],\n    \"base\": \"stations\",\n    \"main\": {\n        \"temp\": 276.98,\n        \"feels_like\": 273.57,\n        \"temp_min\": 276.98,\n        \"temp_max\": 277.07,\n        \"pressure\": 1031,\n        \"humidity\": 86\n    },\n    \"visibility\": 7000,\n    \"wind\": {\n        \"speed\": 4,\n        \"deg\": 170\n    },\n    \"clouds\": {\n        \"all\": 75\n    },\n    \"dt\": 1637057987,\n    \"sys\": {\n        \"type\": 2,\n        \"id\": 2023991,\n        \"country\": \"BY\",\n        \"sunrise\": 1637041988,\n        \"sunset\": 1637072764\n    },\n    \"timezone\": 10800,\n    \"id\": 627904,\n    \"name\": \"Hrodna\",\n    \"cod\": 200\n}"
+				}
+			]
+		}
+	]
+}
