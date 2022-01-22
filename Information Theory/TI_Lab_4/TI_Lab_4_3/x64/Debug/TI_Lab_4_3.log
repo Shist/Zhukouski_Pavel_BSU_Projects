@@ -1,0 +1,5 @@
+﻿  lab-4.cpp
+C:\Users\shist\Documents\repos\TI_Lab_4\TI_Lab_4\lab-4.cpp(103,62): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\shist\Documents\repos\TI_Lab_4\TI_Lab_4\lab-4.cpp(105,85): warning C4267: +=: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\shist\Documents\repos\TI_Lab_4\TI_Lab_4\lab-4.cpp(130,74): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+  TI_Lab_4_3.vcxproj -> C:\Users\shist\Documents\repos\TI_Lab_4\x64\Debug\TI_Lab_4_3.exe

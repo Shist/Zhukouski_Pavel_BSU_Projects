@@ -1,0 +1,3 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(513,5): warning MSB8028: промежуточный каталог (x64\Debug\) содержит файлы, которые используются совместно с другим проектом (TI_Lab_4.vcxproj).  Это может привести к ошибкам очистки и перестроения.
+  relative-entropy.cpp
+  TI_Lab_4.vcxproj -> C:\Users\shist\Documents\repos\TI_Lab_4\x64\Debug\TI_Lab_4_1.exe
