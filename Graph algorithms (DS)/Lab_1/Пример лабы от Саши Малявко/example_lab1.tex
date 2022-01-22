@@ -1,0 +1,209 @@
+
+\documentclass[a4paper,14pt,usenames,dvipsnames]{extreport}
+\usepackage[left=20mm, top=20mm, right=10mm, bottom=10mm, nohead, nofoot]{geometry}
+\pagestyle{empty}
+\usepackage[english,russian]{babel}
+\usepackage{cmap}
+% AMS пакеты для отображения и форматирования математических формул.
+\usepackage{amssymb,amsthm,amsmath,amscd,setspace}
+
+\newcommand{\mathsym}[1]{{}}
+\newcommand{\unicode}[1]{{}}
+
+\newcounter{mathematicapage}
+
+% Пакет для вставки отбражений
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[T1,T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+
+\usepackage{csquotes}
+
+\usepackage{kbordermatrix}
+
+%\renewcommand{\rmdefault}{ftm} % Times New Roman
+\usetikzlibrary{arrows.meta}
+\usepackage{fancyref}
+
+\begin{document}
+
+На рисунке \ref{pic:3type} изображен поток в сети. Множество вершин $I^3 = \{2, 3, 4, 6, 7\}$, входящих в данный поток, выделено пунктирными линиями. На рисунке пунктиром изображены только те дуги, через которые проходит поток --- дуги множества $U^3 = \{ (2, 3)^3, (4, 2)^3, (6, 2)^3, (6, 4)^3, (7,4)^3, (7, 6)^3\}$.  
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale = 0.9]
+
+\def \n {7}
+\def \radius {3cm}
+\def \margin {8} % margin in angles, depends on the radius
+
+\foreach \s in {1,...,\n}
+{
+  \node[draw, circle, minimum size=1cm] at ({360/\n * (\s - 1)}:\radius) (\s){$\s$};
+}
+
+\foreach \s in {2, 3, 4, 6, 7}
+{
+  \node[draw, circle, minimum size=1.3cm,  dashed] at ({360/\n * (\s - 1)}:\radius) (\s){$\s$};
+}
+
+\draw [-{Latex[length=2mm]}, dashed] (7) to (6);
+\draw [-{Latex[length=2mm]}, dashed] (7) to (4);
+\draw [-{Latex[length=2mm]}, dashed] (6) to (4);
+\draw [-{Latex[length=2mm]}, dashed] (6) to (2);
+\draw [-{Latex[length=2mm]}, dashed] (4) to (2);
+\draw [-{Latex[length=2mm]}, dashed] (2) to (3);
+
+\end{tikzpicture}
+\caption{Третий тип потока}\label{pic:3type}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale = 0.9]
+
+
+\def \n {7}
+\def \radius {3cm}
+\def \margin {8} % margin in angles, depends on the radius
+
+\foreach \s in {1,...,\n}
+{
+  \node[draw, circle, minimum size=1cm] at ({360/\n * (\s - 1)}:\radius) (\s){$\s$};
+}
+
+\draw [-{Latex[length=4mm]}, dashed, line width=0.5mm] (7) to (6);
+\draw [-{Latex[length=4mm]}, dashed, line width=0.5mm] (6) to (4);
+%\draw [-{Latex[length=2mm]}, dashed] (6) to (2);
+\draw [-{Latex[length=4mm]}, dashed, line width=0.5mm] (4) to (2);
+\draw [-{Latex[length=4mm]}, dashed, line width=0.5mm] (2) to (3);
+
+\end{tikzpicture}
+\caption{Остовное дерево для третьего типа потока}\label{pic:3typeostov}
+\end{figure}
+
+\subsection*{Базисные циклы}
+
+Построим множество $\left\{\delta^{k}(\tau, \rho),(\tau, \rho)^{k} \in U^{k} \backslash U_{T}^{k}\right\}$ характеристических векторов относительно выбранного покрывающего дерева.
+
+Соответствующая матрица базисных циклов будет иметь следующий вид:
+\begin{equation}  \label{mat:3}
+F_3 = \kbordermatrix{\mbox{}
+ 	  & (2,3) & (4,2) & (6,2) & (6,4) & (7,4) & (7,6) \\
+C^3(6, 2) & 0 & -1 & 1 & -1 & 0 & 0 \\
+C^3(7, 4) & 0 & 0 & 0 & -1 & 1 & -1
+}.
+\end{equation}
+
+Пусть $C^3 = \{(7,6)^3, (6, 2)^3, -(4, 2)^3, -(7, 4)^1\}$ --- некоторый цикл в сети $S^3$.  Тогда он может быть представлен в виде линейной комбинации базисных векторов. 
+\begin{table}[H]
+\renewcommand{\arraystretch}{1.3}
+\caption{Характеристические векторы базисных циклов относительно $U_{T}^{3}$ и характеристический вектор цикла $C^3$ }
+\label{tab:u3}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline $(i, j)^{3}$ & 
+$(2,3)^{3}$&$(4,2)^{3}$&$(6,2)^{3}$&$(6,4)^{3}$&$(7,4)^{3}$&$(7,6)^{3}$ \\
+\hline $\delta_{i j}^{k}(\tau, \rho)=\delta_{i j}^{3}(6,2)$ 
+& $0$ & $-1$ & $1$ & $-1$ & $0$ & $0$ \\
+\hline $\delta_{i j}^{k}(\tau, \rho)=\delta_{i j}^{3}(7,4)$ 
+& $0$ & $0$ & $0$ & $-1$ & $1$ & $-1$ \\
+\hline
+$\delta_{i j}(C^3)$ 
+& $0$ & $-1$ & $1$ & $0$ & $-1$ & $1$ \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+$$\delta(C^3) = \delta_{62}(C^3) \delta^{3}(6,2) + \delta_{74}(C^3) \delta^{3}(7,4) = \begin{pmatrix}
+0 \\ 
+-1 \\ 
+1 \\ 
+-1 \\ 
+0 \\ 
+0
+\end{pmatrix} -
+\begin{pmatrix}
+0 \\ 
+0 \\ 
+0 \\ 
+-1 \\ 
+1 \\ 
+-1
+\end{pmatrix} = \begin{pmatrix}
+0 \\ 
+-1 \\ 
+1 \\ 
+0 \\ 
+-1 \\ 
+1
+\end{pmatrix}.$$
+
+\subsection*{Базисные разрезы}
+
+Построим характеристические векторы базисных разрезов, а также найдем характеристический вектор разреза   $CC(I_3')$, где $I_3' = \{2, 3, 7\}$: $CC^+(I_3') = \{(7, 4), (7, 6)\}$, $CC^-(I_3') = \{(6,2), (4,2)\}$, $CC(I_3') = \{(7, 4), (7, 6), -(6,2), -(4,2)\}$.
+\begin{table}[H]
+\renewcommand{\arraystretch}{1.3}
+\caption{Характеристические векторы относительно $U_{T}^{3}$}
+\label{tab:u3}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline $(i, j)^{3}$ & 
+$(2,3)^{3}$&$(4,2)^{3}$&$(6,2)^{3}$&$(6,4)^{3}$&$(7,4)^{3}$&$(7,6)^{3}$ \\ \hline 
+$\tilde{\delta}_{i j}^{3}(2,3)$ 
+& $1$ & $0$ & $0$ & $0$ & $0$ & $0$ \\ \hline 
+$\tilde{\delta}_{i j}^{3}(4,2)$ 
+& $0$ & $1$ & $1$ & $0$ & $0$ & $0$ \\ \hline
+$\tilde{\delta}_{i j}^{3}(6,4)$ 
+& $0$ & $0$ & $1$ & $1$ & $1$ & $0$ \\ \hline
+$\tilde{\delta}_{i j}^{3}(7,6)$ 
+& $0$ & $0$ & $0$ & $0$ & $1$ & $1$ \\ \hline
+$\tilde{\delta}_{i j}(CC(I_3'))$
+& $0$ & $-1$ & $-1$ & $0$ & $1$ & $1$ \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\begin{gather*}
+\tilde{\delta}(CC(I_3')) = 
+\tilde{\delta}_{23}(CC(I_3')) \tilde{\delta}^{3}(2,3) +\tilde{\delta}_{42}(CC(I_3')) \tilde{\delta}^{3}(4,2) + \\ + 
+\tilde{\delta}_{64}(CC(I_3')) \tilde{\delta}^{3}(6,4) + \tilde{\delta}_{76}(CC(I_3')) \tilde{\delta}^{3}(7,6)  = \\ = -\begin{pmatrix}
+0 \\ 
+1 \\ 
+1 \\ 
+0 \\ 
+0 \\ 
+0
+\end{pmatrix} +
+\begin{pmatrix}
+0 \\ 
+0 \\ 
+0 \\ 
+0 \\ 
+1 \\ 
+1
+\end{pmatrix} = \begin{pmatrix}
+0 \\ 
+-1 \\ 
+-1 \\ 
+0 \\ 
+1 \\ 
+1
+\end{pmatrix}.
+\end{gather*}
+
+\subsection*{Поток в сети}
+Математическая модель потока будет иметь вид:
+
+\begin{gather*}
+c_{74}x_{74} + c_{76}x_{76} = \nu,\\
+c_{64}x_{64} + c_{62}x_{62} - c_{76}x_{76} = 0,\\
+c_{42}x_{42} - c_{64}x_{64} - c_{74}x_{74} = 0, \\
+c_{23}x_{23} - c_{42}x_{42} - c_{62}x_{62} = 0,\\
+-c_{23}x{23} = -\nu,\\
+\end{gather*}
+
+\end{document}

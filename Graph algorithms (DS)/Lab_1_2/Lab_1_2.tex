@@ -1,0 +1,357 @@
+\title{Lab_1}
+\author{Pavel Zhukouski}
+\date{September 2021}
+
+\documentclass[a4paper,14pt,usenames,dvipsnames]{extreport}
+\usepackage[left=20mm, top=20mm, right=10mm, bottom=10mm, nohead, nofoot]{geometry}
+\pagestyle{empty}
+\usepackage[english,russian]{babel}
+\usepackage{cmap}
+% AMS пакеты для отображения и форматирования математических формул.
+\usepackage{amssymb,amsthm,amsmath,amscd,setspace}
+
+\newcommand{\mathsym}[1]{{}}
+\newcommand{\unicode}[1]{{}}
+
+\newcounter{mathematicapage}
+
+% Пакет для вставки отбражений
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[T1,T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+
+\usepackage{csquotes}
+
+\usepackage{kbordermatrix}
+
+%\renewcommand{\rmdefault}{ftm} % Times New Roman
+\usetikzlibrary{arrows.meta}
+\usepackage{fancyref}
+
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\floatname{algorithm}{Алгоритм}
+
+\usepackage{caption2}[2008/03/29]
+\renewcommand{\captionlabeldelim}{.~}
+
+\begin{document}
+
+На рисунке \ref{pic:3type} изображен исходный граф №3  
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale = 0.9]
+
+\def \n {7}
+\def \radius {3cm}
+\def \margin {8} % margin in angles, depends on the radius
+
+\foreach \s in {1,...,\n}
+{
+  \node[draw, circle, minimum size=1cm] at ({360/\n * (\s + 2)}:\radius) (\s){$\s$};
+}
+
+\draw [-{Latex[length=2mm]}, line width=0.5mm] (1) to (7);
+\draw [-{Latex[length=2mm]}, line width=0.5mm] (2) to (3);
+\draw [-{Latex[length=2mm]}, line width=0.5mm] (2) to (6);
+\draw [-{Latex[length=2mm]}, line width=0.5mm] (3) to (1);
+\draw [-{Latex[length=2mm]}, line width=0.5mm] (3) to (6);
+\draw [-{Latex[length=2mm]}, line width=0.5mm] (4) to (2);
+\draw [-{Latex[length=2mm]}, line width=0.5mm] (4) to (7);
+\draw [-{Latex[length=2mm]}, line width=0.5mm] (5) to (2);
+\draw [-{Latex[length=2mm]}, line width=0.5mm] (5) to (3);
+\draw [-{Latex[length=2mm]}, line width=0.5mm] (6) to (1);
+\draw [-{Latex[length=2mm]}, line width=0.5mm] (6) to (4);
+\draw [-{Latex[length=2mm]}, line width=0.5mm] (7) to (5);
+
+\end{tikzpicture}
+\caption{Исходный граф №3}\label{pic:3type}
+\end{figure}
+
+На рисунке \ref{pic:3typeostov} выбрано произвольное остовное дерево графа №3.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale = 0.9]
+
+\def \n {7}
+\def \radius {3cm}
+\def \margin {8} % margin in angles, depends on the radius
+
+\foreach \s in {1,...,\n}
+{
+  \node[draw, circle, minimum size=1cm] at ({360/\n * (\s + 2)}:\radius) (\s){$\s$};
+}
+
+\draw [-{Latex[length=2mm]}, line width=0.5mm] (2) to (3);
+\draw [-{Latex[length=2mm]}, line width=0.5mm] (2) to (6);
+\draw [-{Latex[length=2mm]}, line width=0.5mm] (3) to (1);
+\draw [-{Latex[length=2mm]}, line width=0.5mm] (4) to (2);
+\draw [-{Latex[length=2mm]}, line width=0.5mm] (5) to (2);
+\draw [-{Latex[length=2mm]}, line width=0.5mm] (7) to (5);
+
+\end{tikzpicture}
+\caption{Произвольное остовное дерево графа №3}\label{pic:3typeostov}
+\end{figure}
+
+\subsection*{Система фундаментальных циклов}
+
+Теперь, для всех фундаментальных циклов, порождаемых данным деревом, найдём характеристические векторы.
+
+Всего в графе существует 12 - 7 + 1 = 6 фундаментальных (базисных) циклов, т.к. мы имеем всего 12 дуг и 7 вершин в исходном графе.
+
+Построим множество $\left\{\delta^{k}(\tau, \rho),(\tau, \rho)^{k} \in U^{k} \backslash U_{T}^{k}\right\}$ характеристических векторов относительно выбранного покрывающего дерева.
+
+Соответствующая матрица базисных циклов будет иметь следующий вид:
+\begin{equation}  \label{mat:3}
+F = \kbordermatrix{\mbox{}
+ 	  & (1, 7) & (2, 3) & (2, 6) & (3, 1) & (3, 6) & (4, 2) & (4, 7) & (5, 2) & (5, 3) & (6, 1) & (6, 4) & (7, 5) \\
+C(1, 7) & 1 & 1 & 0 & 1 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 1 \\
+C(3, 6) & 0 & 1 & -1 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+C(4, 7) & 0 & 0 & 0 & 0 & 0 & -1 & 1 & 1 & 0 & 0 & 0 & 1 \\
+C(5, 3) & 0 & -1 & 0 & 0 & 0 & 0 & 0 & -1 & 1 & 0 & 0 & 0 \\
+C(6, 1) & 0 & -1 & 1 & -1 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\
+C(6, 4) & 0 & 0 & 1 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 1 & 0
+}.
+\end{equation}
+
+Вышеуказанная таблица может быть использована для определения базисных векторов (т.е. характеристических векторов базисных циклов) графа №3.
+
+Пусть $C = \{(1,7), (7, 5), (5, 3), (3, 1)\}$ --- некоторый цикл в нашем графе №3. Тогда он может быть представлен в виде линейной комбинации базисных векторов. 
+\begin{table}[H]
+\renewcommand{\arraystretch}{1.3}
+\caption{Характеристические векторы базисных циклов относительно $U_{T}$ и характеристический вектор цикла $C$ }
+\label{tab:u3}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline 
+$(i, j)$&$\delta_{i j}(1,7)$&$\delta_{i j}(3,6)$&$\delta_{i j}(4,7)$&$\delta_{i j}(5,3)$&$\delta_{i j}(6,1)$&$\delta_{i j}(6,4)$&$\delta_{i j}(C)$\\
+\hline $(1, 7)$ & 1 & 0 & 0 & 0 & 0 & 0 & 1\\
+\hline $(2, 3)$ & 1 & 1 & 0 & -1 & -1 & 0 & 0\\
+\hline $(2, 6)$ & 0 & -1 & 0 & 0 & 1 & 1 & 0\\
+\hline $(3, 1)$ & 1 & 0 & 0 & 0 & -1 & 0 & 1\\
+\hline $(3, 6)$ & 0 & 1 & 0 & 0 & 0 & 0 & 0\\
+\hline $(4, 2)$ & 0 & 0 & -1 & 0 & 0 & 1 & 0\\
+\hline $(4, 7)$ & 0 & 0 & 1 & 0 & 0 & 0 & 0\\
+\hline $(5, 2)$ & 1 & 0 & 1 & -1 & 0 & 0 & 0\\
+\hline $(5, 3)$ & 0 & 0 & 0 & 1 & 0 & 0 & 1\\
+\hline $(6, 1)$ & 0 & 0 & 0 & 0 & 1 & 0 & 0\\
+\hline $(6, 4)$ & 0 & 0 & 0 & 0 & 0 & 1 & 0\\
+\hline $(7, 5)$ & 1 & 0 & 0 & 0 & 0 & 0 & 1\\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+$\delta(C) = \delta_{1,7}(C) \delta(1,7)  +  \delta_{3,6}(C) \delta(3,6) + \delta_{4,7}(C) \delta(4,7)  +  \delta_{5,3}(C) \delta(5,3) + 
+\delta_{6,1}(C) \delta(6,1)  +$  \\ $+ \delta_{6,4}(C) \delta(6,4) =
+\begin{pmatrix}
+1 \\ 
+1 \\ 
+0 \\ 
+1 \\ 
+0 \\ 
+0 \\
+0 \\ 
+1 \\ 
+0 \\ 
+0 \\ 
+0 \\ 
+1
+\end{pmatrix} +
+\begin{pmatrix}
+0 \\ 
+-1 \\ 
+0 \\ 
+0 \\ 
+0 \\ 
+0 \\
+0 \\ 
+-1 \\ 
+1 \\ 
+0 \\ 
+0 \\ 
+0
+\end{pmatrix} = \begin{pmatrix}
+1 \\ 
+0 \\ 
+0 \\ 
+1 \\ 
+0 \\ 
+0 \\
+0 \\ 
+0 \\ 
+1 \\ 
+0 \\ 
+0 \\ 
+1
+\end{pmatrix}.$
+
+\subsection*{Фундаментальные или базисные разрезы}
+
+Построим характеристические векторы базисных разрезов. Характеристический вектор произвольного разреза $CC(I')$ может быть представлен в виде линейной комбинации базисных разрезов, где $I' = \{1, 5, 6, 7\}$:
+\begin{gather*}
+CC^+(I') = \{(5,2), (5,3), (6,4)\},\\
+CC^-(I') = \{(2,6), (3,1), (3, 6), (4, 7)\},\\
+CC(I') = \{(5,2), (5,3), (6,4), -(2,6), -(3,1), -(3, 6), -(4, 7)\}.
+\end{gather*}
+\begin{table}[H]
+\renewcommand{\arraystretch}{1.3}
+\caption{Характеристические векторы относительно $U_{T}$}
+\label{tab:u3}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline $(i, j)$ & $\tilde{\delta}_{i j}(2,3)$ & $\tilde{\delta}_{i j}(2,6)$ & $\tilde{\delta}_{i j}(3,1)$ & $\tilde{\delta}_{i j}(4,2)$ & $\tilde{\delta}_{i j}(5,2)$ & $\tilde{\delta}_{i j}(7,5)$ & $\tilde{\delta}_{i j}(CC(I'))$\\
+\hline $(1,7)$ & -1 & 0 & -1 & 0 & -1 & -1 & 0 \\
+\hline $(2,3)$ & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\
+\hline $(2,6)$ & 0 & 1 & 0 & 0 & 0 & 0 & -1 \\
+\hline $(3,1)$ & 0 & 0 & 1 & 0 & 0 & 0 & -1 \\
+\hline $(3,6)$ & -1 & 1 & 0 & 0 & 0 & 0 & -1 \\
+\hline $(4,2)$ & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\
+\hline $(4,7)$ & 0 & 0 & 0 & 1 & -1 & -1 & -1 \\
+\hline $(5,2)$ & 0 & 0 & 0 & 0 & 1 & 0 & 1 \\
+\hline $(5,3)$ & 1 & 0 & 0 & 0 & 1 & 0 & 1 \\
+\hline $(6,1)$ & 1 & -1 & 1 & 0 & 0 & 0 & 0 \\
+\hline $(6,4)$ & 0 & -1 & 0 & -1 & 0 & 0 & 1 \\
+\hline $(7,5)$ & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+Тогда вектор разреза:
+
+\begin{gather*}
+\tilde{\delta}(CC(I')) = 
+\tilde{\delta}_{2,3}(CC(I')) \tilde{\delta}(2,3) + \tilde{\delta}_{2,6}(CC(I')) \tilde{\delta}(2,6) + \\ + 
+\tilde{\delta}_{3,1}(CC(I')) \tilde{\delta}(3,1) + \tilde{\delta}_{4,2}(CC(I')) \tilde{\delta}(4,2) + \\ +
+\tilde{\delta}_{5,2}(CC(I')) \tilde{\delta}(5,2) +
+\tilde{\delta}_{7,5}(CC(I')) \tilde{\delta}(7,5) = \\
+= -\begin{pmatrix}
+0 \\ 
+0 \\ 
+1 \\ 
+0 \\ 
+1 \\ 
+0 \\
+0 \\
+0 \\
+0 \\
+-1 \\
+-1 \\
+0
+\end{pmatrix} -
+\begin{pmatrix}
+-1 \\ 
+0 \\ 
+0 \\ 
+1 \\ 
+0 \\ 
+0 \\
+0 \\
+0 \\
+0 \\
+1 \\
+0 \\
+0
+\end{pmatrix} +
+\begin{pmatrix}
+-1 \\ 
+0 \\ 
+0 \\ 
+0 \\ 
+0 \\ 
+0 \\
+-1 \\
+1 \\
+1 \\
+0 \\
+0 \\
+0
+\end{pmatrix} = \begin{pmatrix}
+0 \\ 
+0 \\ 
+-1 \\ 
+-1 \\ 
+-1 \\ 
+0 \\
+-1 \\
+1 \\
+1 \\
+0 \\
+1 \\
+0
+\end{pmatrix}.
+\end{gather*}
+
+\subsection*{Поток в сети}
+В качестве источника возьмём вершину 1, а в качестве стока возьмём вершину 7. Тогда математическая модель потока будет иметь вид:
+
+\begin{gather*}
+x_{1,7} - x_{3,1} - x_{6,1} = -1,\\
+x_{2,3} + x_{2,6} - x_{4,2} - x_{5,2}= 2,\\
+x_{3,1} + x_{3,6} - x_{2,3} - x_{5,3} = 3, \\
+x_{4,2} + x_{4,7} - x_{6,4} = 4,\\
+x_{5,2} + x_{5,3} - x_{7,5} = 5,\\
+x_{6,1} + x_{6,4} - x_{2,6} - x_{3,6} = -6, \\
+x_{7,5} - x_{1,7} - x_{4,7} = -7.\\
+\end{gather*}
+
+\subsection*{Корневое дерево}
+
+\begin{algorithm} [H]
+\caption{Процедура нахождения узлов поддерева с корнем в узле $i$}\label{alg:Example}
+\begin{algorithmic}
+\State $k \gets \operatorname{depth}[i]$
+\State $j \gets \operatorname{thread}[i]$
+\While {$\operatorname{depth}[j] > k$}
+    \State $j \gets \operatorname{thread}[j]$
+\EndWhile
+\end{algorithmic}
+\end{algorithm}
+
+На рисунке \ref{pic:3typekornder} изображено корневое дерево графа №3 с корнем в узле 1.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale = 0.9]
+
+\def \n {7}
+\def \radius {3cm}
+\def \margin {8} % margin in angles, depends on the radius
+
+\foreach \s in {1,...,\n}
+{
+  \node[draw, circle, minimum size=1cm] at ({360/\n * (\s + 2)}:\radius) (\s){$\s$};
+}
+
+\draw [-{Latex[length=2mm]}, line width=0.5mm] (3) to (2);
+\draw [-{Latex[length=2mm]}, line width=0.5mm] (2) to (6);
+\draw [-{Latex[length=2mm]}, line width=0.5mm] (1) to (3);
+\draw [-{Latex[length=2mm]}, line width=0.5mm] (2) to (4);
+\draw [-{Latex[length=2mm]}, line width=0.5mm] (2) to (5);
+\draw [-{Latex[length=2mm]}, line width=0.5mm] (5) to (7);
+
+\end{tikzpicture}
+\caption{Корневое дерево $G_0$ графа №3 с корнем в узле 1}\label{pic:3typekornder}
+\end{figure}
+
+\begin{table}[H]
+\renewcommand{\arraystretch}{1.3}
+\caption{- списковые структуры для дерева $G_0$ }
+\label{tab:u3}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline 
+Структура / Узел i & 1 & 2 & 3 & 4 & 5 & 6 & 7\\
+\hline $pred = \{pred[i], i=\overline{1,|V_0|}\ \}$ & -1 & 3 & 1 & 2 & 2 & 2 & 5\\
+\hline $depth = \{depth[i], i=\overline{1,|V_0|}\ \}$ & 0 & 2 & 1 & 3 & 3 & 3 & 4\\
+\hline $thread = \{thread[i], i=\overline{1,|V_0|}\ \}$ & 3 & 4 & 2 & 5 & 7 & 1 & 6\\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\end{document}
