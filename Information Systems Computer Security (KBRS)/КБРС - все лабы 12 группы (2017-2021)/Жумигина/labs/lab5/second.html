@@ -1,0 +1,1443 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ZAP Scanning Report</title>
+<style>
+body{
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  color: #000;
+  font-size: 13px;
+}
+h1{
+  text-align: center;
+  font-weight: bold;
+  font-size: 32px
+}
+h3{
+  font-size: 16px;
+}
+table{
+  border: none;
+  font-size: 13px;
+}
+td, th {
+  padding: 3px 4px;
+  word-break: break-word;
+}
+th{
+  font-weight: bold;
+}
+.results th{
+  text-align: left;
+}
+.spacer{
+  margin: 10px;
+}
+.spacer-lg{
+  margin: 40px;
+}
+.indent1{
+  padding: 4px 20px;
+}
+.indent2{
+  padding: 4px 40px;
+}
+.risk-high{
+  background-color: red;
+  color: #FFF;
+}
+.risk-medium{
+  background-color: orange;
+  color: #FFF;
+}
+.risk-low{
+  background-color: yellow;
+  color: #000;
+}
+.risk-info{
+  background-color: blue;
+  color: #FFF;
+}
+.summary th{
+  color: #FFF;
+}
+.alerts th{
+  color: #FFF;
+}
+.left-header{
+  display: inline-block;
+}
+.time-stamp{
+  float: right;
+}
+</style>
+</head>
+<body>
+<h1>
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAABqbAAAamwHdbkbTAAAAB3RJTUUH4QsKDDQPKy6k8AAABxpJREFUWMO9l31sVWcdxz+/55xzbwt9QddJExClvIzNxTKJDZi22oJSbFZpmRb4g8sfhpEIwXQNTKh0NYgiMKIwo5AsdIxdQldGNBN5W2OTFRVcIZE1YwExcXOdc1DK+nLvOc/PP87tC9CWsj98bp6ck3Ofc57v7+37/T3wYGMucBR4F/gK/8exAugAdPXq1bpx40YFekZdHYuP+8PuGP+lAc8CmzIyMtLq6uqora3FcRwAzp49m/7Wv5O95tsNEfyEKvwH9B1V2hT7GnB+PABkhGePAvVA9dy5c6mvr2fp0qX3LOru7iYrK4toSQ1OXhGKohpOiyVQe0NVn9PGFb8iFofGFSMCMMPulwEXgbdXrlxZ3dHRQXt7+4ibA2RmZtLc3Ex/y/O4fg8RMUSMS8RxiRiPqPE+4xrnl07syA3Q+aN5wADlwO1oNPpqQ0NDfl9fH4cPH2bOnDn3dV9VVRWVlVV88vsteNF0XCO4xuA6Bs9xiBgPz/EmueKcIxavHyk/BPjnli1bpm3btu1TZ2hmxkTk8aeYMK8aay1WFVWwqgSqBDYgqQFJGxygccWa4e86IhJpbW39Zk5ODgUFBZ8KwOLFZeyr/wHZs0vw0jMxIqFpAuFt+EOYZ/OrAi41t96dhF8HThcWFnpnzpwhGo0+MIhnamvZs+8AM55uIhn4+Cnrkza8Wqv4NiBhfXwNCgxy3jauuKMKPOCPrpHSU2fOUlJS8sAg8qZP50bGY0xeuIFk4JO0SnIYiMAqSRuQDPyPgsbqh++ugqSsPXGC+WsoLS1lzZqnHxhA40svcfPvfyDNjRARwTOCJ+E0IjgiOGIwRnIkFl97NwBMX9dPvEfLSC+t5cCB/eTk5Ix78ylTplBcXMxDjy3EweIZISKSqoxwcyOCYwRXHETkuSEAsTjE4kVGTLrjpdP7p33U1NTQ2dk5bgCbN28Ow7BoA8YmcVOWR1KWuyKIgEEwYjBiJhN75Ushr15qRp747g9dcRZ4RtCuf3HhdBMlpQuZNm3auAAUFBRw+fJlWl/dy9SCaqwGIBIyJGBTUwemWqzy/mAIRPmaEUGsJeNbz+IVfJ+ioiI2bNgwbi80NTUxJWciV47/GM9Lwwg4CA6CSblbBqYYRPjqEACRR8JaVcRPkPHlJ5m66kX27W8kL2/6uMPR3t7Ox+++yQcXjmLEIEYQA8YIkuIHSYVDkBnDk3DSEDwAi5c5mUfWNtGVPovc3FwOHTp0XwDZ2dm0nTvH9Td+zSedVxDVkIQAEQ1BoIgKCpnmflqpQcAXyjYxo6KeVatWUVZWRiKRGPO1+fPns2vXLjoOr7uvFA8HcHMoQ8IHmkqOINnH1d81kJeXR0VFRcqKkUcQBLS0tHD79u2QXHq7UmkIqgKqoIKKAnQPNiSqXFG0QFVCXbcGK4pVIdnTBcDOnTupqqoa06q2tjZKS0uZ8LmZzKiox5nwWXzfx9qBfmGgCkDRa4MeUNE3repg2QSEiwMFk5nDF8vrWLZsGTNnzqS9vX1UAEVFRezYsYOeD68y8fNPEFifAL2rDAfBnJdhGv0NzzgtoYYbHGOICkSMIWKEqBE8x+X91v18cKGJyspKDh48SFZW1ohAlixZQstfLzM99iK9iQQJqySsxVfFDyz9Nolv/fw7gumsPtIbMZE0zxhcR3DFEDVCZIDTjeA5Drb3Jv84sYOu639j69atNDQ0jAgiN3cyPQ/NJXvhM/QnEwRW8dWSDAL6bbLTHlyee0cVWNWfBhpgVbEWfFUSqiSGqVoyCCCaxayndjKn+nm2736BzIyJHDt27B4AFy9eovvtU3R3nA5DkFJEXwNUtWHEptSsPtIXNW7UMy4mJSLeMA+4IrhCKC6A46XR+VYz772xj/z8fJqampg1a9bg906ePElZWRlZy3+DZuSGPUGQ/G/QuDznHjVMeaEyaS2+WqxVbMryxMDVKv0W+qzSr0pPoo/Mx8uZs/51rgdTmD17NrFYbJArFi9ezKZNm7h1dD1B4JO0PgG23KR6QxnlYLHXM846z7i4oX4P6vmA9Q6ENMsQZyiGxK1OPjr5M5Kd77B7925qamoAWLBgAX+59jFU7tmivy3fPvq5INXDSyx+3DXOd1xx8YzBiGBMKCIDwmKMDLEWEnoMUDdK37U2bp/6BQ9PSueV+BEWLVpEdnYW3be6f67wo7EOJoMgiMX3uuKs84zBEQcjghjBMCAmhF1niskGCMaiqFWs8ehrj+Off5nCwkK2b99OcXExwFTgvdEB3AmizIi85oqTNgDCSKrPFWV4DFRD/beqWLX4YUXdst0ffk+b168CVqZWpwN9YwO4Wzhi8c1GpM6ISTcYREJPMOSAQYZLHc1upY5meyjfBq/XAUwGbgL9Y4dgrBGLFwtSITAPkekCk1L73wS9qsoFxR6nceWfx/O5/wGLCSMJ+zJrfwAAAABJRU5ErkJggg==">
+ZAP Scanning Report
+</h1>
+<p>
+
+</p>
+<h3 class="left-header">Summary of Alerts</h3>
+<h3 class="time-stamp">Generated on Вт, 29 дек 2020 09:08:50</h3>
+<table width="45%" class="summary">
+<tr bgcolor="#666666">
+<th width="45%" height="24">Risk 
+      Level</th><th width="55%" align="center">Number 
+      of Alerts</th>
+</tr>
+<tr bgcolor="#e8e8e8">
+<td><a href="#high">High</a></td><td align="center">0</td>
+</tr>
+<tr bgcolor="#e8e8e8">
+<td><a href="#medium">Medium</a></td><td align="center">0</td>
+</tr>
+<tr bgcolor="#e8e8e8">
+<td><a href="#low">Low</a></td><td align="center">0</td>
+</tr>
+<tr bgcolor="#e8e8e8">
+<td><a href="#info">Informational</a></td><td align="center">6</td>
+</tr>
+</table>
+<div class="spacer-lg"></div>
+<h3>Alerts</h3>
+<table width="75%" class="alerts">
+<tr bgcolor="#666666">
+<th width="60%" height="24">Name</th><th width="20%" align="center">Risk Level</th><th width="20%" align="center">Number of Instances</th>
+</tr>
+<tr bgcolor="#e8e8e8">
+<td>Content-Type Header Missing</td><td align="center">Informational</td><td align="center">1</td>
+</tr>
+<tr bgcolor="#e8e8e8">
+<td>Information Disclosure - Suspicious Comments</td><td align="center">Informational</td><td align="center">2285</td>
+</tr>
+<tr bgcolor="#e8e8e8">
+<td>Loosely Scoped Cookie</td><td align="center">Informational</td><td align="center">3</td>
+</tr>
+<tr bgcolor="#e8e8e8">
+<td>Timestamp Disclosure - Unix</td><td align="center">Informational</td><td align="center">18616</td>
+</tr>
+</table>
+<div class="spacer-lg"></div>
+<h3>Alert Detail</h3>
+<div class="spacer"></div>
+<table width="100%" class="results">
+  
+  
+  
+  
+<tr height="24" class="risk-info">
+<th width="20%"><a name="info"></a>Informational (Medium)</th><th width="80%">Content-Type Header Missing</th>
+</tr>
+  
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Description</td><td width="80%"><p>The Content-Type header was either missing or empty.</p></td>
+</tr>
+<TR vAlign="top">
+<TD colspan="2"></TD>
+</TR>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://www.codewars.com/users/auth/github?auth_intent=signin</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Instances</td><td width="80%">1</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Solution</td><td width="80%"><p>Ensure each page is setting the specific and appropriate content-type value for the content being delivered.</p></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Reference</td><td width="80%"><p>http://msdn.microsoft.com/en-us/library/ie/gg622941%28v=vs.85%29.aspx</p></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">CWE Id</td><td width="80%">345</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">WASC Id</td><td width="80%">12</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Source ID</td><td width="80%">3</td>
+</tr>
+
+</table>
+<div class="spacer"></div>
+<table width="100%" class="results">
+  
+  
+  
+  
+<tr height="24" class="risk-info">
+<th width="20%"><a name="info"></a>Informational (Low)</th><th width="80%">Information Disclosure - Suspicious Comments</th>
+</tr>
+  
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Description</td><td width="80%"><p>The response appears to contain suspicious comments which may help an attacker. Note: Matches made within script blocks or files are against the entire content not only comments.</p></td>
+</tr>
+<TR vAlign="top">
+<TD colspan="2"></TD>
+</TR>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://edufpmi.bsu.by/login/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://edufpmi.bsu.by/pluginfile.php/1</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://edufpmi.bsu.by/pluginfile.php/1/theme_moove/favicon</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://edufpmi.bsu.by/login/index.php</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://edufpmi.bsu.by/pluginfile.php/1/theme_moove</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://edufpmi.bsu.by/pluginfile.php/1/theme_moove/favicon/1604991493</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://edufpmi.bsu.by/pluginfile.php/1/theme_moove/favicon</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://edufpmi.bsu.by/pluginfile.php/1/theme_moove/favicon/1604991493</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://edufpmi.bsu.by/pluginfile.php/1/theme_moove/favicon/1604991493</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://edufpmi.bsu.by/login/index.php</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://edufpmi.bsu.by</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://edufpmi.bsu.by/pluginfile.php/1/theme_moove/logo/1604991493</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://edufpmi.bsu.by/login/index.php</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">POST</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://edufpmi.bsu.by/pluginfile.php</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://edufpmi.bsu.by/pluginfile.php</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://edufpmi.bsu.by/pluginfile.php/1/theme_moove</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://edufpmi.bsu.by</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://edufpmi.bsu.by/pluginfile.php/1/theme_moove</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://edufpmi.bsu.by/pluginfile.php/1/theme_moove/logo</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://edufpmi.bsu.by/theme/yui_combo.php?rollup/3.17.2/yui-moodlesimple-min.js</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Instances</td><td width="80%">39</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Solution</td><td width="80%"><p>Remove all comments that return information that may help an attacker and fix any underlying problems they refer to.</p></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Other information</td><td width="80%"><p>The following comment/snippet was identified via the pattern: \bADMIN\b</p><p>&lt;script type="text/javascript"&gt;</p><p>//&lt;![CDATA[</p><p>var M = {}; M.yui = {};</p><p>M.pageloadstarttime = new Date();</p><p>M.cfg = {"wwwroot":"https:\/\/edufpmi.bsu.by","sesskey":"BbVyKfyeYw","themerev":"1604991493","slasharguments":1,"theme":"moove","iconsystemmodule":"core\/icon_system_fontawesome","jsrev":"1604991493","admin":"admin","svgicons":true,"usertimezone":"\u0415\u0432\u0440\u043e\u043f\u0430\/\u041c\u0438\u043d\u0441\u043a","contextid":1};var yui1ConfigFn = function(me) {if(/-skin|reset|fonts|grids|base/.test(me.name)){me.type='css';me.path=me.path.replace(/\.js/,'.css');me.path=me.path.replace(/\/yui2-skin/,'/assets/skins/sam/yui2-skin')}};</p><p>var yui2ConfigFn = function(me) {var parts=me.name.replace(/^moodle-/,'').split('-'),component=parts.shift(),module=parts[0],min='-min';if(/-(skin|core)$/.test(me.name)){parts.pop();me.type='css';min=''}</p><p>if(module){var filename=parts.join('-');me.path=component+'/'+module+'/'+filename+min+'.'+me.type}else{me.path=component+'/'+component+'.'+me.type}};</p><p>YUI_config = {"debug":false,"base":"https:\/\/edufpmi.bsu.by\/lib\/yuilib\/3.17.2\/","comboBase":"https:\/\/edufpmi.bsu.by\/theme\/yui_combo.php?","combine":true,"filter":null,"insertBefore":"firstthemesheet","groups":{"yui2":{"base":"https:\/\/edufpmi.bsu.by\/lib\/yuilib\/2in3\/2.9.0\/build\/","comboBase":"https:\/\/edufpmi.bsu.by\/theme\/yui_combo.php?","combine":true,"ext":false,"root":"2in3\/2.9.0\/build\/","patterns":{"yui2-":{"group":"yui2","configFn":yui1ConfigFn}}},"moodle":{"name":"moodle","base":"https:\/\/edufpmi.bsu.by\/theme\/yui_combo.php?m\/1604991493\/","combine":true,"comboBase":"https:\/\/edufpmi.bsu.by\/theme\/yui_combo.php?","ext":false,"root":"m\/1604991493\/","patterns":{"moodle-":{"group":"moodle","configFn":yui2ConfigFn}},"filter":null,"modules":{"moodle-core-actionmenu":{"requires":["base","event","node-event-simulate"]},"moodle-core-languninstallconfirm":{"requires":["base","node","moodle-core-notification-confirm","moodle-core-notification-alert"]},"moodle-core-chooserdialogue":{"requires":["base","panel","moodle-core-notification"]},"moodle-core-maintenancemodetimer":{"requires":["base","node"]},"moodle-core-checknet":{"requires":["base-base","moodle-core-notification-alert","io-base"]},"moodle-core-tooltip":{"requires":["base","node","io-base","moodle-core-notification-dialogue","json-parse","widget-position","widget-position-align","event-outside","cache-base"]},"moodle-core-lockscroll":{"requires":["plugin","base-build"]},"moodle-core-popuphelp":{"requires":["moodle-core-tooltip"]},"moodle-core-notification":{"requires":["moodle-core-notification-dialogue","moodle-core-notification-alert","moodle-core-notification-confirm","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-core-notification-dialogue":{"requires":["base","node","panel","escape","event-key","dd-plugin","moodle-core-widget-focusafterclose","moodle-core-lockscroll"]},"moodle-core-notification-alert":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-confirm":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-exception":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-ajaxexception":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-dragdrop":{"requires":["base","node","io","dom","dd","event-key","event-focus","moodle-core-notification"]},"moodle-core-formchangechecker":{"requires":["base","event-focus","moodle-core-event"]},"moodle-core-event":{"requires":["event-custom"]},"moodle-core-blocks":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification"]},"moodle-core-handlebars":{"condition":{"trigger":"handlebars","when":"after"}},"moodle-core_availability-form":{"requires":["base","node","event","event-delegate","panel","moodle-core-notification-dialogue","json"]},"moodle-backup-backupselectall":{"requires":["node","event","node-event-simulate","anim"]},"moodle-backup-confirmcancel":{"requires":["node","node-event-simulate","moodle-core-notification-confirm"]},"moodle-course-modchooser":{"requires":["moodle-core-chooserdialogue","moodle-course-coursebase"]},"moodle-course-categoryexpander":{"requires":["node","event-key"]},"moodle-course-management":{"requires":["base","node","io-base","moodle-core-notification-exception","json-parse","dd-constrain","dd-proxy","dd-drop","dd-delegate","node-event-delegate"]},"moodle-course-dragdrop":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification","moodle-course-coursebase","moodle-course-util"]},"moodle-course-formatchooser":{"requires":["base","node","node-event-simulate"]},"moodle-course-util":{"requires":["node"],"use":["moodle-course-util-base"],"submodules":{"moodle-course-util-base":{},"moodle-course-util-section":{"requires":["node","moodle-course-util-base"]},"moodle-course-util-cm":{"requires":["node","moodle-course-util-base"]}}},"moodle-form-dateselector":{"requires":["base","node","overlay","calendar"]},"moodle-form-passwordunmask":{"requires":[]},"moodle-form-shortforms":{"requires":["node","base","selector-css3","moodle-core-event"]},"moodle-question-chooser":{"requires":["moodle-core-chooserdialogue"]},"moodle-question-searchform":{"requires":["base","node"]},"moodle-question-preview":{"requires":["base","dom","event-delegate","event-key","core_question_engine"]},"moodle-availability_completion-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_date-form":{"requires":["base","node","event","io","moodle-core_availability-form"]},"moodle-availability_grade-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_group-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_grouping-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_profile-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-mod_assign-history":{"requires":["node","transition"]},"moodle-mod_attendance-groupfilter":{"requires":["base","node"]},"moodle-mod_bigbluebuttonbn-rooms":{"requires":["base","node","datasource-get","datasource-jsonschema","datasource-polling","moodle-core-notification"]},"moodle-mod_bigbluebuttonbn-modform":{"requires":["base","node"]},"moodle-mod_bigbluebuttonbn-recordings":{"requires":["base","node","datasource-get","datasource-jsonschema","datasource-polling","moodle-core-notification"]},"moodle-mod_bigbluebuttonbn-imports":{"requires":["base","node"]},"moodle-mod_bigbluebuttonbn-broker":{"requires":["base","node","datasource-get","datasource-jsonschema","datasource-polling","moodle-core-notification"]},"moodle-mod_forum-subscriptiontoggle":{"requires":["base-base","io-base"]},"moodle-mod_quiz-quizbase":{"requires":["base","node"]},"moodle-mod_quiz-toolboxes":{"requires":["base","node","event","event-key","io","moodle-mod_quiz-quizbase","moodle-mod_quiz-util-slot","moodle-core-notification-ajaxexception"]},"moodle-mod_quiz-questionchooser":{"requires":["moodle-core-chooserdialogue","moodle-mod_quiz-util","querystring-parse"]},"moodle-mod_quiz-modform":{"requires":["base","node","event"]},"moodle-mod_quiz-autosave":{"requires":["base","node","event","event-valuechange","node-event-delegate","io-form"]},"moodle-mod_quiz-dragdrop":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification","moodle-mod_quiz-quizbase","moodle-mod_quiz-util-base","moodle-mod_quiz-util-page","moodle-mod_quiz-util-slot","moodle-course-util"]},"moodle-mod_quiz-util":{"requires":["node","moodle-core-actionmenu"],"use":["moodle-mod_quiz-util-base"],"submodules":{"moodle-mod_quiz-util-base":{},"moodle-mod_quiz-util-slot":{"requires":["node","moodle-mod_quiz-util-base"]},"moodle-mod_quiz-util-page":{"requires":["node","moodle-mod_quiz-util-base"]}}},"moodle-message_airnotifier-toolboxes":{"requires":["base","node","io"]},"moodle-filter_glossary-autolinker":{"requires":["base","node","io-base","json-parse","event-delegate","overlay","moodle-core-event","moodle-core-notification-alert","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-filter_mathjaxloader-loader":{"requires":["moodle-core-event"]},"moodle-editor_atto-editor":{"requires":["node","transition","io","overlay","escape","event","event-simulate","event-custom","node-event-html5","node-event-simulate","yui-throttle","moodle-core-notification-dialogue","moodle-core-notification-confirm","moodle-editor_atto-rangy","handlebars","timers","querystring-stringify"]},"moodle-editor_atto-plugin":{"requires":["node","base","escape","event","event-outside","handlebars","event-custom","timers","moodle-editor_atto-menu"]},"moodle-editor_atto-menu":{"requires":["moodle-core-notification-dialogue","node","event","event-custom"]},"moodle-editor_atto-rangy":{"requires":[]},"moodle-report_eventlist-eventfilter":{"requires":["base","event","node","node-event-delegate","datatable","autocomplete","autocomplete-filters"]},"moodle-report_loglive-fetchlogs":{"requires":["base","event","node","io","node-event-delegate"]},"moodle-gradereport_grader-gradereporttable":{"requires":["base","node","event","handlebars","overlay","event-hover"]},"moodle-gradereport_history-userselector":{"requires":["escape","event-delegate","event-key","handlebars","io-base","json-parse","moodle-core-notification-dialogue"]},"moodle-tool_capability-search":{"requires":["base","node"]},"moodle-tool_lp-dragdrop-reorder":{"requires":["moodle-core-dragdrop"]},"moodle-tool_monitor-dropdown":{"requires":["base","event","node"]},"moodle-assignfeedback_editpdf-editor":{"requires":["base","event","node","io","graphics","json","event-move","event-resize","transition","querystring-stringify-simple","moodle-core-notification-dialog","moodle-core-notification-alert","moodle-core-notification-warning","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-atto_accessibilitychecker-button":{"requires":["color-base","moodle-editor_atto-plugin"]},"moodle-atto_accessibilityhelper-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_align-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_bold-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_charmap-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_clear-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_collapse-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_emoticon-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_equation-button":{"requires":["moodle-editor_atto-plugin","moodle-core-event","io","event-valuechange","tabview","array-extras"]},"moodle-atto_html-button":{"requires":["promise","moodle-editor_atto-plugin","moodle-atto_html-beautify","moodle-atto_html-codemirror","event-valuechange"]},"moodle-atto_html-codemirror":{"requires":["moodle-atto_html-codemirror-skin"]},"moodle-atto_html-beautify":{},"moodle-atto_image-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_indent-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_italic-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_link-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_managefiles-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_managefiles-usedfiles":{"requires":["node","escape"]},"moodle-atto_media-button":{"requires":["moodle-editor_atto-plugin","moodle-form-shortforms"]},"moodle-atto_noautolink-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_orderedlist-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_recordrtc-recording":{"requires":["moodle-atto_recordrtc-button"]},"moodle-atto_recordrtc-button":{"requires":["moodle-editor_atto-plugin","moodle-atto_recordrtc-recording"]},"moodle-atto_rtl-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_strike-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_subscript-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_superscript-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_table-button":{"requires":["moodle-editor_atto-plugin","moodle-editor_atto-menu","event","event-valuechange"]},"moodle-atto_title-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_underline-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_undo-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_unorderedlist-button":{"requires":["moodle-editor_atto-plugin"]}}},"gallery":{"name":"gallery","base":"https:\/\/edufpmi.bsu.by\/lib\/yuilib\/gallery\/","combine":true,"comboBase":"https:\/\/edufpmi.bsu.by\/theme\/yui_combo.php?","ext":false,"root":"gallery\/1604991493\/","patterns":{"gallery-":{"group":"gallery"}}}},"modules":{"core_filepicker":{"name":"core_filepicker","fullpath":"https:\/\/edufpmi.bsu.by\/lib\/javascript.php\/1604991493\/repository\/filepicker.js","requires":["base","node","node-event-simulate","json","async-queue","io-base","io-upload-iframe","io-form","yui2-treeview","panel","cookie","datatable","datatable-sort","resize-plugin","dd-plugin","escape","moodle-core_filepicker","moodle-core-notification-dialogue"]},"core_comment":{"name":"core_comment","fullpath":"https:\/\/edufpmi.bsu.by\/lib\/javascript.php\/1604991493\/comment\/comment.js","requires":["base","io-base","node","json","yui2-animation","overlay","escape"]},"mathjax":{"name":"mathjax","fullpath":"https:\/\/cdnjs.cloudflare.com\/ajax\/libs\/mathjax\/2.7.2\/MathJax.js?delayStartupUntil=configured"}}};</p><p>M.yui.loader = {modules: {}};</p><p></p><p>//]]&gt;</p><p>&lt;/script&gt;</p><p>The following comment/snippet was identified via the pattern: \bBUG\b</p><p>&lt;script type="text/javascript"&gt;</p><p>//&lt;![CDATA[</p><p>var require = {</p><p>    baseUrl : 'https://edufpmi.bsu.by/lib/requirejs.php/1604991493/',</p><p>    // We only support AMD modules with an explicit define() statement.</p><p>    enforceDefine: true,</p><p>    skipDataMain: true,</p><p>    waitSeconds : 0,</p><p></p><p>    paths: {</p><p>        jquery: 'https://edufpmi.bsu.by/lib/javascript.php/1604991493/lib/jquery/jquery-3.2.1.min',</p><p>        jqueryui: 'https://edufpmi.bsu.by/lib/javascript.php/1604991493/lib/jquery/ui-1.12.1/jquery-ui.min',</p><p>        jqueryprivate: 'https://edufpmi.bsu.by/lib/javascript.php/1604991493/lib/requirejs/jquery-private'</p><p>    },</p><p></p><p>    // Custom jquery config map.</p><p>    map: {</p><p>      // '*' means all modules will get 'jqueryprivate'</p><p>      // for their 'jquery' dependency.</p><p>      '*': { jquery: 'jqueryprivate' },</p><p>      // Stub module for 'process'. This is a workaround for a bug in MathJax (see MDL-60458).</p><p>      '*': { process: 'core/first' },</p><p></p><p>      // 'jquery-private' wants the real jQuery module</p><p>      // though. If this line was not here, there would</p><p>      // be an unresolvable cyclic dependency.</p><p>      jqueryprivate: { jquery: 'jquery' }</p><p>    }</p><p>};</p><p></p><p>//]]&gt;</p><p>&lt;/script&gt;</p><p>The following comment/snippet was identified via the pattern: \bADMIN\b</p><p>&lt;script type="text/javascript"&gt;</p><p>//&lt;![CDATA[</p><p>M.str = {"moodle":{"lastmodified":"\u041f\u043e\u0441\u043b\u0435\u0434\u043d\u0435\u0435 \u0438\u0437\u043c\u0435\u043d\u0435\u043d\u0438\u0435","name":"\u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435","error":"\u041e\u0448\u0438\u0431\u043a\u0430","info":"\u0418\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u044f","yes":"\u0414\u0430","no":"\u041d\u0435\u0442","ok":"OK","cancel":"\u041e\u0442\u043c\u0435\u043d\u0430","confirm":"\u041f\u043e\u0434\u0442\u0432\u0435\u0440\u0434\u0438\u0442\u044c","areyousure":"\u0412\u044b \u0443\u0432\u0435\u0440\u0435\u043d\u044b?","closebuttontitle":"\u0417\u0430\u043a\u0440\u044b\u0442\u044c","unknownerror":"\u041d\u0435\u0438\u0437\u0432\u0435\u0441\u0442\u043d\u0430\u044f \u043e\u0448\u0438\u0431\u043a\u0430"},"repository":{"type":"\u0422\u0438\u043f","size":"\u0420\u0430\u0437\u043c\u0435\u0440:","invalidjson":"\u041d\u0435\u0432\u0435\u0440\u043d\u0430\u044f \u0441\u0442\u0440\u043e\u043a\u0430 JSON","nofilesattached":"\u041d\u0435 \u043f\u0440\u0438\u043a\u0440\u0435\u043f\u043b\u0435\u043d \u043d\u0438 \u043e\u0434\u0438\u043d \u0444\u0430\u0439\u043b","filepicker":"\u0412\u044b\u0431\u043e\u0440 \u0444\u0430\u0439\u043b\u0430","logout":"\u0412\u044b\u0445\u043e\u0434","nofilesavailable":"\u041d\u0435\u0442 \u043d\u0438 \u043e\u0434\u043d\u043e\u0433\u043e \u0444\u0430\u0439\u043b\u0430","norepositoriesavailable":"\u041a \u0441\u043e\u0436\u0430\u043b\u0435\u043d\u0438\u044e, \u043d\u0438 \u043e\u0434\u043d\u043e \u0438\u0437 \u0412\u0430\u0448\u0438\u0445 \u0442\u0435\u043a\u0443\u0449\u0438\u0445 \u0445\u0440\u0430\u043d\u0438\u043b\u0438\u0449 \u0444\u0430\u0439\u043b\u043e\u0432 \u043d\u0435 \u043c\u043e\u0436\u0435\u0442 \u0432\u0435\u0440\u043d\u0443\u0442\u044c \u0444\u0430\u0439\u043b\u044b \u0432 \u0437\u0430\u043f\u0440\u0430\u0448\u0438\u0432\u0430\u0435\u043c\u043e\u043c \u0444\u043e\u0440\u043c\u0430\u0442\u0435.","fileexistsdialogheader":"\u0424\u0430\u0439\u043b \u0441\u043e\u0437\u0434\u0430\u043d","fileexistsdialog_editor":"\u0424\u0430\u0439\u043b \u0441 \u044d\u0442\u0438\u043c \u0438\u043c\u0435\u043d\u0435\u043c \u0443\u0436\u0435 \u0431\u044b\u043b \u043f\u0440\u0438\u043a\u0440\u0435\u043f\u043b\u0435\u043d \u043a \u0440\u0435\u0434\u0430\u043a\u0442\u0438\u0440\u0443\u0435\u043c\u043e\u043c\u0443 \u0442\u0435\u043a\u0441\u0442\u0443","fileexistsdialog_filemanager":"\u0424\u0430\u0439\u043b \u0441 \u044d\u0442\u0438\u043c \u0438\u043c\u0435\u043d\u0435\u043c \u0443\u0436\u0435 \u0431\u044b\u043b \u043f\u0440\u0438\u043a\u0440\u0435\u043f\u043b\u0435\u043d","renameto":"\u041f\u0435\u0440\u0435\u0438\u043c\u0435\u043d\u043e\u0432\u0430\u0442\u044c \u0432 \u00ab{$a}\u00bb","referencesexist":"\u0415\u0441\u0442\u044c \u043f\u0441\u0435\u0432\u0434\u043e\u043d\u0438\u043c\u044b\/\u044f\u0440\u043b\u044b\u043a\u0438 \u0444\u0430\u0439\u043b\u043e\u0432 ({$a}), \u043a\u043e\u0442\u043e\u0440\u044b\u0435 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u044e\u0442 \u044d\u0442\u043e\u0442 \u0444\u0430\u0439\u043b \u0432 \u043a\u0430\u0447\u0435\u0441\u0442\u0432\u0435 \u0438\u0441\u0442\u043e\u0447\u043d\u0438\u043a\u0430","select":"\u0412\u044b\u0431\u0440\u0430\u0442\u044c"},"admin":{"confirmdeletecomments":"\u0412\u044b \u0443\u0432\u0435\u0440\u0435\u043d\u044b \u0432 \u0442\u043e\u043c, \u0447\u0442\u043e \u0441\u043e\u0431\u0438\u0440\u0430\u0435\u0442\u0435\u0441\u044c \u0443\u0434\u0430\u043b\u0438\u0442\u044c \u043a\u043e\u043c\u043c\u0435\u043d\u0442\u0430\u0440\u0438\u0438?","confirmation":"\u041f\u043e\u0434\u0442\u0432\u0435\u0440\u0436\u0434\u0435\u043d\u0438\u0435"}};</p><p>//]]&gt;</p><p>&lt;/script&gt;</p><p></p></td>
+</tr>
+<TR vAlign="top">
+<TD colspan="2"></TD>
+</TR>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Reference</td><td width="80%"><p></p></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">CWE Id</td><td width="80%">200</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">WASC Id</td><td width="80%">13</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Source ID</td><td width="80%">3</td>
+</tr>
+
+</table>
+<div class="spacer"></div>
+<table width="100%" class="results">
+  
+  
+  
+  
+<tr height="24" class="risk-info">
+<th width="20%"><a name="info"></a>Informational (Low)</th><th width="80%">Information Disclosure - Suspicious Comments</th>
+</tr>
+  
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Description</td><td width="80%"><p>The response appears to contain suspicious comments which may help an attacker. Note: Matches made within script blocks or files are against the entire content not only comments.</p></td>
+</tr>
+<TR vAlign="top">
+<TD colspan="2"></TD>
+</TR>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://www.codewars.com/kata/5f0ed36164f2bc00283aed07/train/kotlin</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://www.codewars.com/kata/58fa273ca6d84c158e000052/train/rust</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://www.codewars.com/users/fa%C5%82co</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://www.codewars.com/users/Ikcelaks</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://www.codewars.com/kata/515de9ae9dcfc28eb6000001/train/javascript</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://www.codewars.com/kata/571d42206414b103dc0006a1/train/cpp</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://www.codewars.com/kata/5fde1ea66ba4060008ea5bd9</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://www.codewars.com/collections/beginning-batch0</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://www.codewars.com/join</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://www.codewars.com/users/sign_in</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://www.codewars.com/kata/571d42206414b103dc0006a1/discuss</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://www.codewars.com/users/colbydauph/authored_collections</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://www.codewars.com/kata/5544c7a5cb454edb3c000047/train/julia</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://www.codewars.com/kata/latest/my-languages?tags=Strings</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://www.codewars.com/kata/latest/my-languages?tags=Data%20Types%2CSequences</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://www.codewars.com/kata/latest/my-languages?tags=Numbers</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://www.codewars.com/collections/sql-149</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://www.codewars.com/kata/5966e33c4e686b508700002d</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://www.codewars.com/kata/55b4d87a3766d9873a0000d4/train/swift</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://www.codewars.com/users/xcthulhu/completed</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Instances</td><td width="80%">2246</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Solution</td><td width="80%"><p>Remove all comments that return information that may help an attacker and fix any underlying problems they refer to.</p></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Other information</td><td width="80%"><p>The following comment/snippet was identified via the pattern: \bUSER\b</p><p>&lt;script type="template"&gt;&lt;div class="w-full game-title"&gt;&lt;div class="panel p-0 mb-0"&gt;&lt;div class="flex flex-col md:flex-row"&gt;&lt;div class="w-full md:w-5/12"&gt;&lt;div class="flex items-center"&gt;&lt;div class="small-hex is-extra-wide is-white-rank"&gt;&lt;div class="inner-small-hex is-extra-wide "&gt;&lt;span&gt;7 kyu&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;h4 class="ml-4 mb-3"&gt;Over The Road&lt;/h4&gt;&lt;/div&gt;&lt;div class="mt-1 mb-3" data-id="5f0ed36164f2bc00283aed07"&gt;&lt;a class="mr-0 js-remove-code-challenge-star is-hidden has-tip" title="Total times this kata has been bookmarked. Click to remove your bookmark"&gt;&lt;i class="icon-moon-star text-sm opacity-75" rt="5f0ed36164f2bc00283aed07:total_stars"&gt;&lt;/i&gt;&lt;span data-rt='5f0ed36164f2bc00283aed07:total_stars'&gt;76&lt;/span&gt;&lt;/a&gt;&lt;a class="mr-0 js-add-code-challenge-star has-tip" title="Total times this kata has been bookmarked. Click to bookmark"&gt;&lt;i class="icon-moon-star-empty text-sm opacity-75" rt="5f0ed36164f2bc00283aed07:total_stars"&gt;&lt;/i&gt;&lt;span data-rt='5f0ed36164f2bc00283aed07:total_stars'&gt;76&lt;/span&gt;&lt;/a&gt;&lt;a class="mr-0 has-tip js-add-to-collection ml-2" data-challenge="{&amp;quot;id&amp;quot;:&amp;quot;5f0ed36164f2bc00283aed07&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;Over The Road&amp;quot;}" title="Total collections this kata is a part of. Click to view and add collections."&gt;&lt;i class="icon-moon-collection text-sm opacity-75" rt="5f0ed36164f2bc00283aed07:total_collections"&gt;&lt;/i&gt;&lt;span data-rt='5f0ed36164f2bc00283aed07:total_collections'&gt;12&lt;/span&gt;&lt;/a&gt;&lt;span class="ml-4 mr-0 text-ui-text-lc has-tip" title="Satisfaction Rating: 87% of users gave a positive rating out of 433 votes. Ranked kata must be completed before they can be voted on."&gt;&lt;i class="icon-moon-guage text-xs opacity-75 top-0"&gt;&lt;/i&gt;&lt;span class="mr-0"&gt;87% &lt;span class='opacity-75'&gt;of&lt;/span&gt; 433&lt;/span&gt;&lt;/span&gt;&lt;span class="ml-4 mr-0 text-ui-text-lc has-tip" title="Total times Kotlin has been completed out of all kata completions"&gt;&lt;i class="icon-moon-bullseye text-sm opacity-75"&gt;&lt;/i&gt;91 &lt;span class='opacity-75'&gt;of&lt;/span&gt; 2,718&lt;/span&gt;&lt;a class="ml-4 mr-0 has-tip" href="/users/rge123" title="This kata&amp;#39;s Sensei"&gt;&lt;i class="icon-moon-user text-sm opacity-75"&gt;&lt;/i&gt;rge123&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="w-full md:w-7/12 pt-4 md:pl-4"&gt;&lt;ul class="is-inline float-left"&gt;&lt;li&gt;&lt;div class="language-selector"&gt;&lt;div class="dropdown is-scrolled is-big shadow-sm" id="language_dd"&gt;&lt;i class="icon-moon-chevron-sign-down"&gt;&lt;/i&gt;&lt;span class="mr-15px"&gt;&lt;i data-bind-class="icon-moon-{{$languageInfo.icon}}"&gt;&lt;/i&gt;&lt;span data-bind-text="$languageInfo.label"&gt;&lt;/span&gt;&lt;div class="placeholder"&gt;Choose language...&lt;/div&gt;&lt;/span&gt;&lt;dl&gt;&lt;dd data-href="/kata/5f0ed36164f2bc00283aed07/train/c" data-value="c"&gt;&lt;i class="icon-moon-c-lang "&gt;&lt;/i&gt;C&lt;/dd&gt;&lt;dd data-href="/kata/5f0ed36164f2bc00283aed07/train/cfml" data-value="cfml"&gt;&lt;i class="icon-moon-cfml "&gt;&lt;/i&gt;CFML (Beta)&lt;/dd&gt;&lt;dd data-href="/kata/5f0ed36164f2bc00283aed07/train/coffeescript" data-value="coffeescript"&gt;&lt;i class="icon-moon-coffeescript "&gt;&lt;/i&gt;CoffeeScript&lt;/dd&gt;&lt;dd data-href="/kata/5f0ed36164f2bc00283aed07/train/csharp" data-value="csharp"&gt;&lt;i class="icon-moon-csharp "&gt;&lt;/i&gt;C#&lt;/dd&gt;&lt;dd data-href="/kata/5f0ed36164f2bc00283aed07/train/dart" data-value="dart"&gt;&lt;i class="icon-moon-dart "&gt;&lt;/i&gt;Dart&lt;/dd&gt;&lt;dd data-href="/kata/5f0ed36164f2bc00283aed07/train/java" data-value="java"&gt;&lt;i class="icon-moon-java "&gt;&lt;/i&gt;Java&lt;/dd&gt;&lt;dd data-href="/kata/5f0ed36164f2bc00283aed07/train/javascript" data-value="javascript"&gt;&lt;i class="icon-moon-javascript "&gt;&lt;/i&gt;JavaScript&lt;/dd&gt;&lt;dd data-href="/kata/5f0ed36164f2bc00283aed07/train/julia" data-value="julia"&gt;&lt;i class="icon-moon-julia "&gt;&lt;/i&gt;Julia (Beta)&lt;/dd&gt;&lt;dd data-href="/kata/5f0ed36164f2bc00283aed07/train/kotlin" data-value="kotlin"&gt;&lt;i class="icon-moon-kotlin "&gt;&lt;/i&gt;Kotlin&lt;/dd&gt;&lt;dd data-href="/kata/5f0ed36164f2bc00283aed07/train/php" data-value="php"&gt;&lt;i class="icon-moon-php "&gt;&lt;/i&gt;PHP&lt;/dd&gt;&lt;dd data-href="/kata/5f0ed36164f2bc00283aed07/train/powershell" data-value="powershell"&gt;&lt;i class="icon-moon-powershell "&gt;&lt;/i&gt;PowerShell (Beta)&lt;/dd&gt;&lt;dd data-href="/kata/5f0ed36164f2bc00283aed07/train/prolog" data-value="prolog"&gt;&lt;i class="icon-moon-prolog "&gt;&lt;/i&gt;Prolog (Beta)&lt;/dd&gt;&lt;dd data-href="/kata/5f0ed36164f2bc00283aed07/train/python" data-value="python"&gt;&lt;i class="icon-moon-python "&gt;&lt;/i&gt;Python&lt;/dd&gt;&lt;dd data-href="/kata/5f0ed36164f2bc00283aed07/train/ruby" data-value="ruby"&gt;&lt;i class="icon-moon-ruby "&gt;&lt;/i&gt;Ruby&lt;/dd&gt;&lt;dd data-href="/kata/5f0ed36164f2bc00283aed07/train/shell" data-value="shell"&gt;&lt;i class="icon-moon-bash "&gt;&lt;/i&gt;Shell&lt;/dd&gt;&lt;dd data-href="/kata/5f0ed36164f2bc00283aed07/train/typescript" data-value="typescript"&gt;&lt;i class="icon-moon-typescript "&gt;&lt;/i&gt;TypeScript&lt;/dd&gt;&lt;dd data-href="/kata/5f0ed36164f2bc00283aed07/train/vb" data-value="vb"&gt;&lt;i class="icon-moon-vb "&gt;&lt;/i&gt;VB (Beta)&lt;/dd&gt;&lt;/dl&gt;&lt;/div&gt;&lt;/div&gt;&lt;/li&gt;&lt;li class="mr-0"&gt;&lt;div class="dropdown is-big has-tip tip-top shadow-sm" id="language_version" title="Select the language version you wish to use."&gt;&lt;i class="icon-moon-chevron-sign-down" data-bind-if="$languageInfo.languageVersions | many?"&gt;&lt;/i&gt;&lt;span data-bind-text="active_label"&gt;&lt;/span&gt;&lt;div class="placeholder"&gt;Choose language version...&lt;/div&gt;&lt;dl class="pt-10px"&gt;&lt;dd data-bind-class="@ | version_class" data-bind-data-version="@id" data-bind-each="$languageInfo.languageVersions" data-bind-title="@ | version_title"&gt;&lt;span data-bind-text="@label"&gt;&lt;/span&gt;&lt;/dd&gt;&lt;/dl&gt;&lt;/div&gt;&lt;/li&gt;&lt;/ul&gt;&lt;ul class="is-inline float-right ide-options"&gt;&lt;li class="mr-0 mode-options"&gt;&lt;ul class="icon-list is-text"&gt;&lt;li class="mr-0" id="vim_mode"&gt;&lt;a&gt;&lt;div class="icon-container"&gt;VIM&lt;/div&gt;&lt;/a&gt;&lt;/li&gt;&lt;li class="mr-0" id="emacs_mode"&gt;&lt;a&gt;&lt;div class="icon-container"&gt;EMACS&lt;/div&gt;&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li class="mr-0 hidden md:block"&gt;&lt;ul class="icon-list"&gt;&lt;li class="mr-0" id="maximize_layout"&gt;&lt;a title="Maximize editor space"&gt;&lt;div class="icon-container"&gt;&lt;i class="icon-moon-expand "&gt;&lt;/i&gt;&lt;/div&gt;&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="md:flex md:flex-row" data-vertical-fill="{&amp;quot;min&amp;quot;:250,&amp;quot;offset&amp;quot;:-15,&amp;quot;fitWithinView&amp;quot;:true}" id="play"&gt;&lt;div class="w-full md:w-5/12 is-full-height pr-0 bg-ui-section" id="description_area"&gt;&lt;div class="tabs is-full-height"&gt;&lt;dl class="tabs is-contained"&gt;&lt;dd class="is-active"&gt;&lt;a class="has-tip" data-tab="description" title="Tip: You can press Cmd + I to toggle between Instructions and Output tabs."&gt;Instructions&lt;/a&gt;&lt;/dd&gt;&lt;dd&gt;&lt;a data-tab="output"&gt;Output&lt;/a&gt;&lt;/dd&gt;&lt;dd data-bind-if="$previousSolutions"&gt;&lt;a data-tab="solutions"&gt;Past Solutions&lt;/a&gt;&lt;/dd&gt;&lt;div class="float-right pr-10px pt-5px"&gt;&lt;a class="is-hidden" id="minimize_layout"&gt;&lt;i class="icon-moon-collapse text-2xl"&gt;&lt;/i&gt;&lt;span&gt;Restore&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;&lt;/dl&gt;&lt;ul class="tabs-content mb-0" data-vertical-fill="{&amp;quot;min&amp;quot;:200,&amp;quot;offset&amp;quot;:-15,&amp;quot;fitWithinView&amp;quot;:true}"&gt;&lt;li class="is-active md:h-full" data-tab="description"&gt;&lt;div class="description is-full-height has-auto-scrolling mb-15px p-15px"&gt;&lt;div class="markdown prose max-w-none" id="description"&gt;Loading description...&lt;/div&gt;&lt;hr /&gt;&lt;div class="mt-15px"&gt;&lt;span&gt;&lt;i class="icon-moon-tag "&gt;&lt;/i&gt;&lt;/span&gt;&lt;div class="keyword-tag"&gt;Fundamentals&lt;/div&gt;&lt;div class="keyword-tag"&gt;Numbers&lt;/div&gt;&lt;div class="keyword-tag"&gt;Mathematics&lt;/div&gt;&lt;div class="keyword-tag"&gt;Algorithms&lt;/div&gt;&lt;div class="keyword-tag"&gt;Performance&lt;/div&gt;&lt;/div&gt;&lt;hr /&gt;&lt;br /&gt;&lt;div class="text-center"&gt;&lt;a aria-label="Supercharge your technical hiring with developer assessments." class="hover:text-current" data-microtip-position="top" href="https://www.qualified.io?utm_source=codewars&amp;amp;utm_medium=web" role="tooltip" target="_blank"&gt;&lt;div class="flex items-baseline justify-center"&gt;&lt;span class="pl-1 text-xs inline-block"&gt;powered by&lt;/span&gt;&lt;img class="h-4 inline-block dark:hidden pl-1" src="/assets/logos/qualified-black-b052752a4beaf94810c9d982f495680e2a9eb207824764ef98240ccef15cfbb1.svg" /&gt;&lt;img class="h-4 hidden dark:inline-block pl-1" src="/assets/logos/qualified-white-7cba1bde874154ee4f39d50aebd5b7e435f5b21af9884b236a60d9015039e7f0.svg" /&gt;&lt;/div&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/li&gt;&lt;li class="md:h-full is-overflow-hidden" data-tab="output"&gt;&lt;div class="console-output is-full-height p-0"&gt;&lt;div class="is-full-height" id="code_results"&gt;&lt;div class="alert-box no-border is-square mb-0 is-full-height"&gt;&lt;div class="message"&gt;&lt;i class="icon-moon-info "&gt;&lt;/i&gt;Your output will be shown here&lt;/div&gt;&lt;iframe data-src="https://cr.codewars.com?api=v2&amp;amp;utm_campaign=kata_trainer&amp;amp;utm_medium=web&amp;amp;utm_source=codewars#congrats=true&amp;amp;pro=false&amp;amp;theme=dark" id="runner_frame" sandbox="allow-scripts allow-same-origin allow-pointer-lock"&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/li&gt;&lt;li class="md:h-full is-overflow-auto" data-tab="solutions"&gt;&lt;div class="is-full-height mb-15px p-15px"&gt;&lt;div data-bind-each="$previousSolutions"&gt;&lt;p class="m-0 text-base" data-bind-text="@language"&gt;</p>&lt;div data-bind-each="@solutions"&gt;&lt;pre class="p-2 my-2 border overflow-x-auto" data-bind-lang="@@sym"&gt;&lt;code data-bind-text="@"&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="w-full md:w-7/12 pt-4 md:pt-0 md:pl-4 is-full-height" id="editors_area"&gt;&lt;div class="ide-editors" id="editors"&gt;&lt;div class="pb-5" id="code_container"&gt;&lt;div class="bg-ui-section p-10px js-theme"&gt;&lt;h6 class="my-0"&gt;&lt;span&gt;Solution:&lt;/span&gt;&lt;/h6&gt;&lt;/div&gt;&lt;div class="code-editor-wrapper is-full-height pb-5"&gt;&lt;div id="code"&gt;&lt;div class="text-editor js-editor has-shadow"&gt;&lt;/div&gt;&lt;div class="commands-container"&gt;&lt;ul class="is-unstyled"&gt;&lt;li class="expand" title="Maximize Editor (esc key)"&gt;&lt;a&gt;&lt;i class="icon-moon-expand "&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;&lt;li class="shrink is-hidden" title="Shrink Editor (esc key)"&gt;&lt;a&gt;&lt;i class="icon-moon-collapse "&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;div class="editor-msg-container is-hidden"&gt;&lt;div class="alert-box"&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="pb-5 mt-15px" id="fixture_container"&gt;&lt;div class="bg-ui-section p-10px js-theme"&gt;&lt;h6 class="my-0"&gt;Sample Tests:&lt;/h6&gt;&lt;/div&gt;&lt;div class="code-editor-wrapper is-full-height pb-5"&gt;&lt;div id="fixture"&gt;&lt;div class="text-editor js-editor has-shadow"&gt;&lt;/div&gt;&lt;div class="commands-container"&gt;&lt;ul class="is-unstyled"&gt;&lt;li&gt;&lt;a id="fixture_help"&gt;&lt;i class="icon-moon-help is-normal"&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;&lt;li class="expand" title="Maximize Editor (esc key)"&gt;&lt;a&gt;&lt;i class="icon-moon-expand "&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;&lt;li class="shrink is-hidden" title="Shrink Editor (esc key)"&gt;&lt;a&gt;&lt;i class="icon-moon-collapse "&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;div class="editor-msg-container is-hidden"&gt;&lt;div class="alert-box"&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="w-full mt-4 flex flex-row flex-nowrap items-center justify-between"&gt;&lt;div class="flex flex-row flex-nowrap"&gt;&lt;a aria-label="Reset to the initial state" class="btn is-dark no-border whitespace-nowrap ml-1" data-microtip-position="top-right" id="reset_btn" role="tooltip"&gt;Reset&lt;/a&gt;&lt;/div&gt;&lt;div class="flex flex-row flex-nowrap justify-end"&gt;&lt;a aria-label="Test against the sample tests (Cmd/Ctrl + &amp;#39;)" class="btn js-run is-dark whitespace-nowrap lg:w-20" data-microtip-position="top-left" id="validate_btn" role="tooltip"&gt;Test&lt;/a&gt;&lt;a aria-label="Attempt to pass the full test suite (Cmd/Ctrl + Enter)" class="btn js-run ml-1 whitespace-nowrap lg:w-20" data-microtip-position="top-left" id="attempt_btn" role="tooltip"&gt;Attempt&lt;/a&gt;&lt;a aria-label="Submit your solution and view solutions (Cmd/Ctrl + Enter)" class="btn is-hidden is-green ml-1 whitespace-nowrap lg:w-20" data-microtip-position="top-left" id="submit_btn" role="tooltip"&gt;Submit&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/script&gt;</p><p>The following comment/snippet was identified via the pattern: \bUSER\b</p><p>&lt;script&gt;document.addEventListener("turbolinks:load", (event) =&gt; {</p><p>  if (typeof ga === "function") {</p><p>    ga("set", "location", event.data.url);</p><p>    ga("send", "pageview");</p><p>  }</p><p>  App.setup({</p><p>    env: "production",</p><p>    currentUser: JSON.parse("{\"username\":\"guest_i7axmzz7x4s\",\"email\":null,\"role\":\"standard\",\"guest\":true,\"honor\":0,\"rank\":-8,\"current_language\":\"kotlin\",\"blocked_user_ids\":[],\"blocked_by_user_ids\":[],\"jwt\":\"eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjVmZWExZTEyYzEwM2M3MDAxZGE2NjRjZSIsImV4cCI6MTYxMDA0MjcxMX0.9by3dGMkRPuuZbW0vjx4O7Lxl38L_XUWG8pRIdm4RG4\",\"subscriber\":false,\"hideAds\":false,\"id\":\"5fea1e12c103c7001da664ce\",\"starred_code_challenge_ids\":[],\"can_resolve_comments\":false,\"avatar_tag\":\"\\u003cimg title=\\\"guest_i7axmzz7x4s\\\" class=\\\" has-tip\\\" src=\\\"/assets/profile-pic-f3a90acafe5c6158424ce6f242a17499e2b65fb6ba2ba27d7b775ed62e2ee949.png\\\" /\\u003e\"}"),</p><p>    data: JSON.parse("{\"routes\":{},\"controllerName\":\"code_challenges\",\"id\":\"5f0ed36164f2bc00283aed07\",\"challengeName\":\"Over The Road\",\"authorUsername\":\"rge123\",\"now\":\"2020-12-28T18:05:10.980+00:00\",\"activeLanguage\":\"kotlin\",\"description\":\"### Task\\nYou've just moved into a perfectly straight street with exactly ```n``` identical houses on either side of the road. Naturally, you would like to find out the house number of the people on the other side of the street. The street looks something like this:\\n\\n\\n--------------------\\n### Street\\n```\\n1|   |6\\n3|   |4\\n5|   |2\\n```\\n\\nEvens increase on the right; odds decrease on the left. House numbers start at ```1``` and increase without gaps.\\nWhen ```n = 3```, ```1``` is opposite ```6```, ```3``` opposite ```4```, and ```5``` opposite ```2```. \\n\\n-----------------\\n### Example\\nGiven your house number ```address``` and length of street ```n```, give the house number on the opposite side of the street.\\n\\n```javascript\\noverTheRoad(address, n)\\noverTheRoad(1, 3) = 6\\noverTheRoad(3, 3) = 4\\noverTheRoad(2, 3) = 5\\noverTheRoad(3, 5) = 8\\n```\\n\\n```CoffeeScript\\noverTheRoad(address, n)\\noverTheRoad(1, 3) = 6\\noverTheRoad(3, 3) = 4\\noverTheRoad(2, 3) = 5\\noverTheRoad(3, 5) = 8\\n```\\n\\n```TypeScript\\noverTheRoad(address, n)\\noverTheRoad(1, 3) = 6\\noverTheRoad(3, 3) = 4\\noverTheRoad(2, 3) = 5\\noverTheRoad(3, 5) = 8\\n```\\n\\n```c\\nsize_t over_the_road(size_t address, size_t n);\\nover_the_road(1, 3) == 6\\nover_the_road(3, 3) == 4\\nover_the_road(2, 3) == 5\\nover_the_road(3, 5) == 8\\n```\\n\\n```python\\nover_the_road(address, n)\\nover_the_road(1, 3) = 6\\nover_the_road(3, 3) = 4\\nover_the_road(2, 3) = 5\\nover_the_road(3, 5) = 8\\n```\\n\\n```julia\\nover_the_road(address, n)\\nover_the_road(1, 3) = 6\\nover_the_road(3, 3) = 4\\nover_the_road(2, 3) = 5\\nover_the_road(3, 5) = 8\\n```\\n\\n```ruby\\nover_the_road(address, n)\\nover_the_road(1, 3) = 6\\nover_the_road(3, 3) = 4\\nover_the_road(2, 3) = 5\\nover_the_road(3, 5) = 8\\n```\\n\\n\\n```php\\noverTheRoad(address, n)\\noverTheRoad(1, 3) = 6\\noverTheRoad(3, 3) = 4\\noverTheRoad(2, 3) = 5\\noverTheRoad(3, 5) = 8\\n```\\n\\n```prolog\\nover_the_road(Address, N, HouseNo)\\nover_the_road(1, 3, 6).\\nover_the_road(3, 3, 4).\\nover_the_road(2, 3, 5).\\nover_the_road(3, 5, 8).\\n```\\n\\n```cfml\\noverTheRoad(address, n)\\noverTheRoad( 1, 3 ) = 6\\noverTheRoad( 3, 3 ) = 4\\noverTheRoad( 2, 3 ) = 5\\noverTheRoad( 3, 5 ) = 8\\n```\\n\\n```java\\nCodeWars.overTheRoad(long address, long n)\\nCodeWars.overTheRoad(1, 3) = 6\\nCodeWars.overTheRoad(3, 3) = 4\\nCodeWars.overTheRoad(2, 3) = 5\\nCodeWars.overTheRoad(3, 5) = 8\\n```\\n\\n```PowerShell\\noverTheRoad $address $n\\noverTheRoad 1 3 = 6\\noverTheRoad 3 3 = 4\\noverTheRoad 2 3 = 5\\noverTheRoad 3 5 = 8\\n```\\n\\n```shell\\nover_the_road args: [ address, street ]\\nover_the_road: [ 1, 3 ] = 6\\nover_the_road: [ 3, 3 ] = 4\\nover_the_road: [ 2, 3 ] = 5\\nover_the_road: [ 3, 5 ] = 8\\n```\\n\\n```dart\\nint overTheRoad(int address, int n)\\noverTheRoad(1, 3) = 6\\noverTheRoad(3, 3) = 4\\noverTheRoad(2, 3) = 5\\noverTheRoad(3, 5) = 8\\n```\\n\\n```vb\\nOverTheRoad(ByVal address as Long, ByVal n as Long) as Long\\nOverTheRoad(1, 3) = 6\\nOverTheRoad(3, 3) = 4\\nOverTheRoad(2, 3) = 5\\nOverTheRoad(3, 5) = 8\\n```\\n\\n```csharp\\nCodeWars.overTheRoad(long address, long n)\\nCodeWars.overTheRoad(1, 3) = 6\\nCodeWars.overTheRoad(3, 3) = 4\\nCodeWars.overTheRoad(2, 3) = 5\\nCodeWars.overTheRoad(3, 5) = 8\\n```\\n## Note about errors\\nIf you are timing out, running out of memory, or get any kind of \\\"error\\\", read on.\\nBoth n and address could get upto 500 billion with over 200 random tests. If you try to store the addresses of 500 billion houses in a list then you will run out of memory and the tests will crash. This is not a kata problem so please don't post an issue. Similarly if the tests don't complete within 12 seconds then you also fail. \\n\\nTo solve this, you need to think of a way to do the kata without making massive lists or huge for loops. Read the discourse for some inspiration :)\\n\\n\\n\",\"category\":\"reference\",\"published\":true,\"previousSolutions\":null}"),</p><p>    routes: {"user_profile":"/users/guest_i7axmzz7x4s","user_stars":"/user/stars","star_code_challenge":"/users/stars/%7Bid%7D","mark_notifications_read":"/users/notifications/mark_read","unread_popup_notifications":"/users/notifications/unread_popups","collections":"/api/v1/collections","collection_code_challenge":"/api/v1/collections/%7BcollectionId%7D/code_challenges/%7Bid%7D","session":"/kata/projects/5fea1e5480a18c002b00a00a/%7Blanguage%7D/session","notify":"/api/v1/code-challenges/projects/5fea1e5480a18c002b00a00a/solutions/%7BsolutionId%7D/notify","finalize":"/api/v1/code-challenges/projects/5fea1e5480a18c002b00a00a/solutions/%7BsolutionId%7D/finalize","skip":"/kata/projects/5fea1e5480a18c002b00a00a/skip","report":"/kata/5f0ed36164f2bc00283aed07","comments":"/kata/5f0ed36164f2bc00283aed07/discuss/kotlin","solutions":"/kata/5f0ed36164f2bc00283aed07/solutions/%7Blanguage%7D","editor":"/kata/5f0ed36164f2bc00283aed07/edit/%7Blanguage%7D","forfeit":"/kata/5f0ed36164f2bc00283aed07/solutions?show-solutions=1"},</p><p>    pageControllerName: 'CodeChallenges.PlayController',</p><p>    ablyKey: "scNMAQ.WPB3NQ:wcqqMD8xujGV8lHt",</p><p>    privateChannelName: "XV2qsg",</p><p>  });</p><p>}, { once: true });&lt;/script&gt;</p><p></p></td>
+</tr>
+<TR vAlign="top">
+<TD colspan="2"></TD>
+</TR>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Reference</td><td width="80%"><p></p></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">CWE Id</td><td width="80%">200</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">WASC Id</td><td width="80%">13</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Source ID</td><td width="80%">3</td>
+</tr>
+
+</table>
+<div class="spacer"></div>
+<table width="100%" class="results">
+  
+  
+  
+  
+<tr height="24" class="risk-info">
+<th width="20%"><a name="info"></a>Informational (Low)</th><th width="80%">Loosely Scoped Cookie</th>
+</tr>
+  
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Description</td><td width="80%"><p>Cookies can be scoped by domain or path. This check is only concerned with domain scope.The domain scope applied to a cookie determines which domains can access it. For example, a cookie can be scoped strictly to a subdomain e.g. www.nottrusted.com, or loosely scoped to a parent domain e.g. nottrusted.com. In the latter case, any subdomain of nottrusted.com can access the cookie. Loosely scoped cookies are common in mega-applications like google.com and live.com. Cookies set from a subdomain like app.foo.bar are transmitted only to that domain by the browser. However, cookies scoped to a parent-level domain may be transmitted to the parent, or any subdomain of the parent.</p></td>
+</tr>
+<TR vAlign="top">
+<TD colspan="2"></TD>
+</TR>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://www.codewars.com/robots.txt</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://www.codewars.com</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://www.codewars.com</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Instances</td><td width="80%">3</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Solution</td><td width="80%"><p>Always scope cookies to a FQDN (Fully Qualified Domain Name).</p></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Other information</td><td width="80%"><p>The origin domain used for comparison was: </p><p>www.codewars.com</p><p>__cfduid=d53dc6d7b17ad664fc7c2aa8c4b813e0b1609178641</p><p></p></td>
+</tr>
+<TR vAlign="top">
+<TD colspan="2"></TD>
+</TR>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Reference</td><td width="80%"><p>https://tools.ietf.org/html/rfc6265#section-4.1</p><p>https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/06-Session_Management_Testing/02-Testing_for_Cookies_Attributes.html</p><p>http://code.google.com/p/browsersec/wiki/Part2#Same-origin_policy_for_cookies</p></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">CWE Id</td><td width="80%">565</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">WASC Id</td><td width="80%">15</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Source ID</td><td width="80%">3</td>
+</tr>
+
+</table>
+<div class="spacer"></div>
+<table width="100%" class="results">
+  
+  
+  
+  
+<tr height="24" class="risk-info">
+<th width="20%"><a name="info"></a>Informational (Low)</th><th width="80%">Timestamp Disclosure - Unix</th>
+</tr>
+  
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Description</td><td width="80%"><p>A timestamp was disclosed by the application/web server - Unix</p></td>
+</tr>
+<TR vAlign="top">
+<TD colspan="2"></TD>
+</TR>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://edufpmi.bsu.by/pluginfile.php</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">158530591</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://edufpmi.bsu.by</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">2019052002</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://edufpmi.bsu.by/pluginfile.php/1/theme_moove/logo/1604991493</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">633359593</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://edufpmi.bsu.by/login/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">2019052002</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://edufpmi.bsu.by/login/index.php</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">2019052002</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://edufpmi.bsu.by/pluginfile.php/1</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">2019052002</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://edufpmi.bsu.by/pluginfile.php/1/theme_moove/logo</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">158530591</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://edufpmi.bsu.by/login/</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">158530591</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://edufpmi.bsu.by/pluginfile.php/1/theme_moove</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">1604991493</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://edufpmi.bsu.by/pluginfile.php/1/theme_moove</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">2019052002</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://edufpmi.bsu.by/login/index.php</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">POST</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">2019052002</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://edufpmi.bsu.by/pluginfile.php/1/theme_moove/logo</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">633359593</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://edufpmi.bsu.by/pluginfile.php/1/theme_moove/favicon</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">158530591</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://edufpmi.bsu.by/pluginfile.php/1/theme_moove/logo/1604991493</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">158530591</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://edufpmi.bsu.by/pluginfile.php/1/theme_moove/favicon</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">633359593</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://edufpmi.bsu.by/pluginfile.php/1</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">158530591</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://edufpmi.bsu.by/pluginfile.php/1/theme_moove/logo/1604991493</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">2019052002</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://edufpmi.bsu.by/login/index.php</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">158530591</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://edufpmi.bsu.by/pluginfile.php/1/theme_moove/favicon</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">2019052002</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://edufpmi.bsu.by/login/index.php</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">POST</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">158530591</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Instances</td><td width="80%">45</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Solution</td><td width="80%"><p>Manually confirm that the timestamp data is not sensitive, and that the data cannot be aggregated to disclose exploitable patterns.</p></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Other information</td><td width="80%"><p>158530591, which evaluates to: 1975-01-09 23:16:31</p></td>
+</tr>
+<TR vAlign="top">
+<TD colspan="2"></TD>
+</TR>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Reference</td><td width="80%"><p>http://projects.webappsec.org/w/page/13246936/Information%20Leakage</p></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">CWE Id</td><td width="80%">200</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">WASC Id</td><td width="80%">13</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Source ID</td><td width="80%">3</td>
+</tr>
+
+</table>
+<div class="spacer"></div>
+<table width="100%" class="results">
+  
+  
+  
+  
+<tr height="24" class="risk-info">
+<th width="20%"><a name="info"></a>Informational (Low)</th><th width="80%">Timestamp Disclosure - Unix</th>
+</tr>
+  
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Description</td><td width="80%"><p>A timestamp was disclosed by the application/web server - Unix</p></td>
+</tr>
+<TR vAlign="top">
+<TD colspan="2"></TD>
+</TR>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://www.codewars.com/users/jgv</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">12154634</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://www.codewars.com/kata/latest/my-languages?beta=false&amp;q&amp;tags=Data%20Types%2CTheoretical%20Computer%20Science</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">33566223</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://www.codewars.com/topics/kata-beta-process</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">1460401365</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://www.codewars.com/kata/59fca81a5712f9fa4700159a/discuss</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">1567384690</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://www.codewars.com/kata/latest/my-languages?beta=false&amp;q&amp;tags=Fundamentals%2CArithmetic</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">15446117</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://www.codewars.com/kata/5b358a1e228d316283001892/discuss</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">30017707</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://www.codewars.com/kata/latest/my-languages?tags=Fundamentals%2CSearch</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">652826666</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://www.codewars.com/users/riyakayal</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">652826666</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://www.codewars.com/kata/559a28007caad2ac4e000083/discuss</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">1472882193</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://www.codewars.com/topics/kata-beta-process</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">1435491533</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://www.codewars.com/users/silentZaika</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">1609216851</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://www.codewars.com/kata/5592e3bd57b64d00f3000047/discuss</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">1508852346</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://www.codewars.com/kata/541c8630095125aba6000c00/discuss</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">1529879951</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://www.codewars.com/kata/559a28007caad2ac4e000083/train/reason</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">33566223</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://www.codewars.com/kata/5547cc7dcad755e480000004/discuss</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">1430917091</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://www.codewars.com/users/jacobb/following</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">33566223</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://www.codewars.com/kata/559a28007caad2ac4e000083/discuss</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">52792549</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://www.codewars.com/kata/550527b108b86f700000073f/discuss</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">11297844</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://www.codewars.com/kata/515de9ae9dcfc28eb6000001/train/groovy</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">15446117</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://www.codewars.com/users/Cgandhi1</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">652826666</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Instances</td><td width="80%">18571</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Solution</td><td width="80%"><p>Manually confirm that the timestamp data is not sensitive, and that the data cannot be aggregated to disclose exploitable patterns.</p></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Other information</td><td width="80%"><p>12154634, which evaluates to: 1970-05-21 19:17:14</p></td>
+</tr>
+<TR vAlign="top">
+<TD colspan="2"></TD>
+</TR>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Reference</td><td width="80%"><p>http://projects.webappsec.org/w/page/13246936/Information%20Leakage</p></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">CWE Id</td><td width="80%">200</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">WASC Id</td><td width="80%">13</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Source ID</td><td width="80%">3</td>
+</tr>
+
+</table>
+</body>
+</html>
