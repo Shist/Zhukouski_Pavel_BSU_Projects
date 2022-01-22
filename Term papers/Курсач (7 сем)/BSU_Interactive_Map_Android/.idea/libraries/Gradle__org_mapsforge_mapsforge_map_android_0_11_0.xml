@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: org.mapsforge:mapsforge-map-android:0.11.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mapsforge/mapsforge-map-android/0.11.0/62c9b563d984b27a7a5467cf3d8eacc02018cc37/mapsforge-map-android-0.11.0.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mapsforge/mapsforge-map-android/0.11.0/2ae18902af311dd22f4059c6226df5ae25286f5f/mapsforge-map-android-0.11.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mapsforge/mapsforge-map-android/0.11.0/e8c3112ea61ce41cd3a443021634288240e98a7b/mapsforge-map-android-0.11.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

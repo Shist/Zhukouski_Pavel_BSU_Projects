@@ -1,0 +1,55 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+}
+
+android {
+    compileSdk 30
+
+    defaultConfig {
+        applicationId "com.example.bsuinteractivemap"
+        minSdk 26
+        targetSdk 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    // for View Binding
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+    implementation project(':domain')
+    implementation project(':data')
+    implementation project(':ui')
+
+    // UnitTest
+    testImplementation "junit:junit:$unit_test_version"
+
+    // Work Manager
+    implementation "androidx.work:work-runtime-ktx:$work_version"
+
+    // Koin for Dependency Injection
+    implementation "io.insert-koin:koin-core:$koin_version"
+    // Koin main features for Android (Scope,ViewModel ...)
+    implementation "io.insert-koin:koin-android:$koin_version"
+}

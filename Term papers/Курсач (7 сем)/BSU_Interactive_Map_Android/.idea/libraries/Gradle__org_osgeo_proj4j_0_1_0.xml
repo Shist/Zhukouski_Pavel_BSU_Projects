@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: org.osgeo:proj4j:0.1.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.osgeo/proj4j/0.1.0/19482c4b13722a3047fb7c3bea1ce962a4800e59/proj4j-0.1.0.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.osgeo/proj4j/0.1.0/c5230ddf6081d25cbb8881f2b7032f13be55ba22/proj4j-0.1.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.osgeo/proj4j/0.1.0/117e646ecf07cff41578e346a26a43c2cd497742/proj4j-0.1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
