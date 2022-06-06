@@ -1,0 +1,22 @@
+<resources>
+    <string name="mapbox_access_token" translatable="false">pk.eyJ1Ijoic2hpc3QiLCJhIjoiY2wwenBzcmU3MXF5MTNjcGU5YjYycGxobiJ9.UK4wxOu1HNOcFOcjCMXqiw</string>
+    <string name="app_name">BSU Interactive Map</string>
+    <string name="loading">Loading new data</string>
+    <string name="loadingSuccess">New map data has been loaded successfully</string>
+    <string name="errorNetwork">Can\'t load new data from the Internet. Check your network connection.</string>
+    <string name="errorUnknownNoData">Unknown error while loading data from local database</string>
+    <string name="errorNoNewsOnAPI">There is no any news at http://map.bsu.by:51107/api/buildings/all</string>
+    <string name="launching">Launching the application</string>
+    <string name="reload">Reload</string>
+    <string name="more">More</string>
+    <string name="building_blank">Building</string>
+    <string name="departments_label_blank">Departments:</string>
+    <string name="no_data_at_db_label_blank">No information at database</string>
+    <string name="btn_see_details">Details</string>
+    <string name="btn_route">Route</string>
+    <string name="btn_3d_model">3D Model</string>
+    <string name="btn_see_historical_information">Historical information</string>
+    <string name="logotype">Logotype</string>
+    <string name="building_img">Image of building</string>
+    <string name="future_feature">This feature will be developed in future</string>
+</resources>

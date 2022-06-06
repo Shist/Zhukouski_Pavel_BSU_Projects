@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/shist/AndroidStudioProjects/BSU_Interactive_Map_Android/ui/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1625" />
+        <entry key="..\:/Users/shist/AndroidStudioProjects/BSU_Interactive_Map_Android/ui/src/main/res/drawable/button_bg.xml" value="0.2085" />
+        <entry key="..\:/Users/shist/AndroidStudioProjects/BSU_Interactive_Map_Android/ui/src/main/res/drawable/ic_launcher_bsu_background.xml" value="0.2335" />
+        <entry key="..\:/Users/shist/AndroidStudioProjects/BSU_Interactive_Map_Android/ui/src/main/res/drawable/ic_launcher_bsu_foreground.xml" value="0.2335" />
+        <entry key="..\:/Users/shist/AndroidStudioProjects/BSU_Interactive_Map_Android/ui/src/main/res/drawable/ic_map_dialog.xml" value="0.1625" />
+        <entry key="..\:/Users/shist/AndroidStudioProjects/BSU_Interactive_Map_Android/ui/src/main/res/drawable/ic_marker_admin_hoz.xml" value="0.155" />
+        <entry key="..\:/Users/shist/AndroidStudioProjects/BSU_Interactive_Map_Android/ui/src/main/res/drawable/ic_marker_historical.xml" value="0.1625" />
+        <entry key="..\:/Users/shist/AndroidStudioProjects/BSU_Interactive_Map_Android/ui/src/main/res/drawable/ic_marker_sport.xml" value="0.1625" />
+        <entry key="..\:/Users/shist/AndroidStudioProjects/BSU_Interactive_Map_Android/ui/src/main/res/drawable/ic_marker_transform.xml" value="0.1625" />
+        <entry key="..\:/Users/shist/AndroidStudioProjects/BSU_Interactive_Map_Android/ui/src/main/res/drawable/ic_marker_uchebnoye.xml" value="0.1" />
+        <entry key="..\:/Users/shist/AndroidStudioProjects/BSU_Interactive_Map_Android/ui/src/main/res/drawable/marker_dialog.xml" value="0.1625" />
+        <entry key="..\:/Users/shist/AndroidStudioProjects/BSU_Interactive_Map_Android/ui/src/main/res/layout/activity_main.xml" value="0.122181813944667" />
+        <entry key="..\:/Users/shist/AndroidStudioProjects/BSU_Interactive_Map_Android/ui/src/main/res/layout/department_preview_info.xml" value="0.21818181061547676" />
+        <entry key="..\:/Users/shist/AndroidStudioProjects/BSU_Interactive_Map_Android/ui/src/main/res/layout/hist_build_details.xml" value="0.2125" />
+        <entry key="..\:/Users/shist/AndroidStudioProjects/BSU_Interactive_Map_Android/ui/src/main/res/layout/hist_build_info.xml" value="0.21614583333333334" />
+        <entry key="..\:/Users/shist/AndroidStudioProjects/BSU_Interactive_Map_Android/ui/src/main/res/layout/hist_depart_details.xml" value="0.2557291666666667" />
+        <entry key="..\:/Users/shist/AndroidStudioProjects/BSU_Interactive_Map_Android/ui/src/main/res/layout/hist_icon_info.xml" value="0.21818181061547676" />
+        <entry key="..\:/Users/shist/AndroidStudioProjects/BSU_Interactive_Map_Android/ui/src/main/res/layout/historical_icon_info.xml" value="0.21041666666666667" />
+        <entry key="..\:/Users/shist/AndroidStudioProjects/BSU_Interactive_Map_Android/ui/src/main/res/layout/icon_info.xml" value="0.19199999334161955" />
+        <entry key="..\:/Users/shist/AndroidStudioProjects/BSU_Interactive_Map_Android/ui/src/main/res/layout/img_pager_item.xml" value="0.18327272091700048" />
+        <entry key="..\:/Users/shist/AndroidStudioProjects/BSU_Interactive_Map_Android/ui/src/main/res/layout/map.xml" value="0.11956521739130435" />
+        <entry key="..\:/Users/shist/AndroidStudioProjects/BSU_Interactive_Map_Android/ui/src/main/res/layout/modern_build_info.xml" value="0.2125" />
+        <entry key="..\:/Users/shist/AndroidStudioProjects/BSU_Interactive_Map_Android/ui/src/main/res/layout/modern_depart_details.xml" value="0.1" />
+        <entry key="..\:/Users/shist/AndroidStudioProjects/BSU_Interactive_Map_Android/ui/src/main/res/layout/modern_depart_info.xml" value="0.21614583333333334" />
+        <entry key="..\:/Users/shist/AndroidStudioProjects/BSU_Interactive_Map_Android/ui/src/main/res/layout/modern_icon_info.xml" value="0.21818181061547676" />
+        <entry key="..\:/Users/shist/AndroidStudioProjects/BSU_Interactive_Map_Android/ui/src/main/res/mipmap-anydpi-v26/ic_launcher_bsu.xml" value="0.2335" />
+        <entry key="..\:/Users/shist/AndroidStudioProjects/BSU_Interactive_Map_Android/ui/src/main/res/mipmap-anydpi-v26/ic_launcher_bsu_round.xml" value="0.2335" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

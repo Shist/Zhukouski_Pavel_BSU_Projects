@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Интерактивная карта БГУ</string>
+    <string name="loading">Загрузка новых данных</string>
+    <string name="loadingSuccess">Новые данные карты были успешно загружены</string>
+    <string name="errorNetwork">Не удается загрузить новые данные. Проверьте интернет-соединение.</string>
+    <string name="errorUnknownNoData">Неизвестная ошибка при загрузке данных из локальной базы данных.</string>
+    <string name="errorNoNewsOnAPI">Нет новых данных от http://map.bsu.by:51107/api/buildings/all</string>
+    <string name="launching">Запуск приложения</string>
+    <string name="reload">Перезагрузить</string>
+    <string name="more">Ещё</string>
+    <string name="building_blank">Здание</string>
+    <string name="departments_label_blank">Подразделения:</string>
+    <string name="no_data_at_db_label_blank">Нет информации в базе данных</string>
+    <string name="btn_see_details">Подробнее</string>
+    <string name="btn_route">Маршрут</string>
+    <string name="btn_3d_model">3D Модель</string>
+    <string name="btn_see_historical_information">Исторические сведения</string>
+    <string name="logotype">Логотип</string>
+    <string name="building_img">Изображение достопримечательности</string>
+    <string name="future_feature">Эта функция будет разработана в будущем</string>
+</resources>
