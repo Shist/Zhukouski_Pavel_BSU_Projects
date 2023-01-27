@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">TechnoBear</string>
+    <string name="menu_name">TechnoBear Menu</string>
+    <string name="account">Account</string>
+    <string name="catalog">Catalog</string>
+    <string name="basket">Basket</string>
+    <string name="about_company">About Company</string>
+    <string name="about_TechnoBear">About TechnoBear</string>
+    <string name="faq">FAQ</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="swipe_hint_image">Swipe from left to right to open menu</string>
+    <string name="send_feedback">Send Feedback</string>
+    <string name="no_items_found">No products were found for the entered query…</string>
+    <string name="back_to_catalog">Back to catalog</string>
+    <string name="amount">Amount</string>
+    <string name="price">Price</string>
+    <string name="total_price">Total Price: </string>
+    <string name="add_to_basket">Add to basket</string>
+    <string name="description">Description</string>
+    <string name="basket_is_empty">Your basket is empty. Add some goods to it!</string>
+    <string name="checkout_order">Checkout Order</string>
+    <string name="back_to_basket">Back to basket</string>
+    <string name="order_details">Orders details</string>
+    <string name="empty_phone_number">You entered empty phone number. Please, enter some…</string>
+    <string name="delivery_details">Delivery Details</string>
+    <string name="back_to_checkout_order">Back to checkout order</string>
+    <string name="pick_up_point">Pick-Up Point</string>
+    <string name="home_delivery">Home Delivery</string>
+    <string name="choose_delivery">Choose Method of Receiving:</string>
+    <string name="personal_area">Personal Area</string>
+    <string name="choose_pick_up">Choose some pick-up point from the dropdown list:</string>
+    <string name="enter_address">Enter your address and other contact information:</string>
+    <string name="complete_order">Complete Order</string>
+</resources>

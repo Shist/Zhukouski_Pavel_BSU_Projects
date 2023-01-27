@@ -1,0 +1,10 @@
+D:\MyGitRepository\Zhukouski_Pavel_BSU_Projects\Other Programming (C#)\Вы дурак\Вы дурак\bin\Debug\Вы дурак.exe.config
+D:\MyGitRepository\Zhukouski_Pavel_BSU_Projects\Other Programming (C#)\Вы дурак\Вы дурак\bin\Debug\Вы дурак.exe
+D:\MyGitRepository\Zhukouski_Pavel_BSU_Projects\Other Programming (C#)\Вы дурак\Вы дурак\bin\Debug\Вы дурак.pdb
+D:\MyGitRepository\Zhukouski_Pavel_BSU_Projects\Other Programming (C#)\Вы дурак\Вы дурак\obj\Debug\Вы дурак.csprojAssemblyReference.cache
+D:\MyGitRepository\Zhukouski_Pavel_BSU_Projects\Other Programming (C#)\Вы дурак\Вы дурак\obj\Debug\Вы_дурак.Form1.resources
+D:\MyGitRepository\Zhukouski_Pavel_BSU_Projects\Other Programming (C#)\Вы дурак\Вы дурак\obj\Debug\Вы_дурак.Properties.Resources.resources
+D:\MyGitRepository\Zhukouski_Pavel_BSU_Projects\Other Programming (C#)\Вы дурак\Вы дурак\obj\Debug\Вы дурак.csproj.GenerateResource.cache
+D:\MyGitRepository\Zhukouski_Pavel_BSU_Projects\Other Programming (C#)\Вы дурак\Вы дурак\obj\Debug\Вы дурак.csproj.CoreCompileInputs.cache
+D:\MyGitRepository\Zhukouski_Pavel_BSU_Projects\Other Programming (C#)\Вы дурак\Вы дурак\obj\Debug\Вы дурак.exe
+D:\MyGitRepository\Zhukouski_Pavel_BSU_Projects\Other Programming (C#)\Вы дурак\Вы дурак\obj\Debug\Вы дурак.pdb
