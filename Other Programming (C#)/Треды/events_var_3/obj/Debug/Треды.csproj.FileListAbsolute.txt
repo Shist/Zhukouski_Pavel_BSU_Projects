@@ -1,0 +1,10 @@
+D:\MyGitRepository\Zhukouski_Pavel_BSU_Projects\Other Programming (C#)\Треды\events_var_3\bin\Debug\events_var_3.exe.config
+D:\MyGitRepository\Zhukouski_Pavel_BSU_Projects\Other Programming (C#)\Треды\events_var_3\bin\Debug\events_var_3.exe
+D:\MyGitRepository\Zhukouski_Pavel_BSU_Projects\Other Programming (C#)\Треды\events_var_3\bin\Debug\events_var_3.pdb
+D:\MyGitRepository\Zhukouski_Pavel_BSU_Projects\Other Programming (C#)\Треды\events_var_3\obj\Debug\Треды.csprojAssemblyReference.cache
+D:\MyGitRepository\Zhukouski_Pavel_BSU_Projects\Other Programming (C#)\Треды\events_var_3\obj\Debug\events.EventsForm.resources
+D:\MyGitRepository\Zhukouski_Pavel_BSU_Projects\Other Programming (C#)\Треды\events_var_3\obj\Debug\events_var_3.Properties.Resources.resources
+D:\MyGitRepository\Zhukouski_Pavel_BSU_Projects\Other Programming (C#)\Треды\events_var_3\obj\Debug\Треды.csproj.GenerateResource.cache
+D:\MyGitRepository\Zhukouski_Pavel_BSU_Projects\Other Programming (C#)\Треды\events_var_3\obj\Debug\Треды.csproj.CoreCompileInputs.cache
+D:\MyGitRepository\Zhukouski_Pavel_BSU_Projects\Other Programming (C#)\Треды\events_var_3\obj\Debug\events_var_3.exe
+D:\MyGitRepository\Zhukouski_Pavel_BSU_Projects\Other Programming (C#)\Треды\events_var_3\obj\Debug\events_var_3.pdb

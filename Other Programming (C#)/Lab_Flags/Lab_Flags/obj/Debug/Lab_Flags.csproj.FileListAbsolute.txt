@@ -1,0 +1,10 @@
+D:\MyGitRepository\Zhukouski_Pavel_BSU_Projects\Other Programming (C#)\Lab_Flags\Lab_Flags\bin\Debug\Lab_Flags.exe.config
+D:\MyGitRepository\Zhukouski_Pavel_BSU_Projects\Other Programming (C#)\Lab_Flags\Lab_Flags\bin\Debug\Lab_Flags.exe
+D:\MyGitRepository\Zhukouski_Pavel_BSU_Projects\Other Programming (C#)\Lab_Flags\Lab_Flags\bin\Debug\Lab_Flags.pdb
+D:\MyGitRepository\Zhukouski_Pavel_BSU_Projects\Other Programming (C#)\Lab_Flags\Lab_Flags\obj\Debug\Lab_Flags.csprojAssemblyReference.cache
+D:\MyGitRepository\Zhukouski_Pavel_BSU_Projects\Other Programming (C#)\Lab_Flags\Lab_Flags\obj\Debug\Lab_Flags.Form1.resources
+D:\MyGitRepository\Zhukouski_Pavel_BSU_Projects\Other Programming (C#)\Lab_Flags\Lab_Flags\obj\Debug\Lab_Flags.Properties.Resources.resources
+D:\MyGitRepository\Zhukouski_Pavel_BSU_Projects\Other Programming (C#)\Lab_Flags\Lab_Flags\obj\Debug\Lab_Flags.csproj.GenerateResource.cache
+D:\MyGitRepository\Zhukouski_Pavel_BSU_Projects\Other Programming (C#)\Lab_Flags\Lab_Flags\obj\Debug\Lab_Flags.csproj.CoreCompileInputs.cache
+D:\MyGitRepository\Zhukouski_Pavel_BSU_Projects\Other Programming (C#)\Lab_Flags\Lab_Flags\obj\Debug\Lab_Flags.exe
+D:\MyGitRepository\Zhukouski_Pavel_BSU_Projects\Other Programming (C#)\Lab_Flags\Lab_Flags\obj\Debug\Lab_Flags.pdb

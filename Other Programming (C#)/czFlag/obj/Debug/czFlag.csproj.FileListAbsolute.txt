@@ -1,0 +1,9 @@
+D:\MyGitRepository\Zhukouski_Pavel_BSU_Projects\Other Programming (C#)\czFlag\bin\Debug\czFlag.exe
+D:\MyGitRepository\Zhukouski_Pavel_BSU_Projects\Other Programming (C#)\czFlag\bin\Debug\czFlag.pdb
+D:\MyGitRepository\Zhukouski_Pavel_BSU_Projects\Other Programming (C#)\czFlag\obj\Debug\czFlag.csprojAssemblyReference.cache
+D:\MyGitRepository\Zhukouski_Pavel_BSU_Projects\Other Programming (C#)\czFlag\obj\Debug\czFlag.Form1.resources
+D:\MyGitRepository\Zhukouski_Pavel_BSU_Projects\Other Programming (C#)\czFlag\obj\Debug\czFlag.Properties.Resources.resources
+D:\MyGitRepository\Zhukouski_Pavel_BSU_Projects\Other Programming (C#)\czFlag\obj\Debug\czFlag.csproj.GenerateResource.cache
+D:\MyGitRepository\Zhukouski_Pavel_BSU_Projects\Other Programming (C#)\czFlag\obj\Debug\czFlag.csproj.CoreCompileInputs.cache
+D:\MyGitRepository\Zhukouski_Pavel_BSU_Projects\Other Programming (C#)\czFlag\obj\Debug\czFlag.exe
+D:\MyGitRepository\Zhukouski_Pavel_BSU_Projects\Other Programming (C#)\czFlag\obj\Debug\czFlag.pdb

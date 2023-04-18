@@ -1,0 +1,9 @@
+D:\MyGitRepository\Zhukouski_Pavel_BSU_Projects\Other Programming (C#)\Стрельба\Стрельба\bin\Debug\Стрельба.exe.config
+D:\MyGitRepository\Zhukouski_Pavel_BSU_Projects\Other Programming (C#)\Стрельба\Стрельба\bin\Debug\Стрельба.exe
+D:\MyGitRepository\Zhukouski_Pavel_BSU_Projects\Other Programming (C#)\Стрельба\Стрельба\bin\Debug\Стрельба.pdb
+D:\MyGitRepository\Zhukouski_Pavel_BSU_Projects\Other Programming (C#)\Стрельба\Стрельба\obj\Debug\Стрельба.Form1.resources
+D:\MyGitRepository\Zhukouski_Pavel_BSU_Projects\Other Programming (C#)\Стрельба\Стрельба\obj\Debug\Стрельба.Properties.Resources.resources
+D:\MyGitRepository\Zhukouski_Pavel_BSU_Projects\Other Programming (C#)\Стрельба\Стрельба\obj\Debug\Стрельба.csproj.GenerateResource.cache
+D:\MyGitRepository\Zhukouski_Pavel_BSU_Projects\Other Programming (C#)\Стрельба\Стрельба\obj\Debug\Стрельба.csproj.CoreCompileInputs.cache
+D:\MyGitRepository\Zhukouski_Pavel_BSU_Projects\Other Programming (C#)\Стрельба\Стрельба\obj\Debug\Стрельба.exe
+D:\MyGitRepository\Zhukouski_Pavel_BSU_Projects\Other Programming (C#)\Стрельба\Стрельба\obj\Debug\Стрельба.pdb

@@ -1,7 +1,8 @@
 Учебные проекты за все семестры (БГУ, ФПМИ, ПИ, КТС) - Жуковский Павел (2018-2022)
 ===
 ### "В какой-то момент всем нужна рука помощи, так уж устроен этот мир. Будь готов и ты протянуть её, когда настанет твой черёд..."
-![Here could be image, but your Internet is too slow...](https://github.com/Shist/Zhukouski_Pavel_BSU_Projects/blob/master/Other%20documents/BG.png)
+![Here could be image, but your Internet is too slow...](https://github.com/Shist/Zhukouski_Pavel_BSU_Projects/blob/master/Other%20documents/BG.jpg)
+### Ссылка на фотографию диплома: https://i.ibb.co/bvv1BcW/BG.png
 #### В этом репозитории представлены все проекты за все семестры.
 ---
 [АиСД (Соболевская)](https://github.com/Shist/Zhukouski_Pavel_BSU_Projects/tree/master/Algorithms%20and%20data%20structures)
